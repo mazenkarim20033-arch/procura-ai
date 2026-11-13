@@ -87,7 +87,7 @@ def run_llm_stage(
             "LLM-UNAVAILABLE", INCONCLUSIVE, "AI clause reasoning could not run",
             f"The language-model step failed ({str(exc)[:150]}); only deterministic checks were applied.",
             [Evidence("request_field", None, None, None, {"field": "llm_stage", "value": "failed"})],
-            SEVERITY[INCONCLUSIVE]))
+            SEVERITY[INCONCLUSIVE], source="llm"))  # produced by the LLM stage, not a policy rule
         return out
     out.calls.append({**call, "status": "ok", "error": None, "input_tokens": res.input_tokens,
                       "output_tokens": res.output_tokens, "latency_ms": res.latency_ms, "retries": res.retries})

@@ -241,6 +241,18 @@ def test_provider_retries_transient_errors_with_backoff_then_succeeds():
     assert res.retries == 2 and sleeps == [1, 2]
 
 
+def test_provider_honours_retry_after_and_caps_the_wait():
+    responses = iter([httpx.Response(429, headers={"retry-after": "7"}), httpx.Response(429, headers={"retry-after": "900"})])
+    sleeps: list[float] = []
+
+    def handler(request):
+        r = next(responses, None)
+        return r if r is not None else ok_response(GOOD)
+
+    res = call(make_provider(handler, sleeps))
+    assert res.retries == 2 and sleeps == [7.0, 60.0]  # header respected, capped at max_retry_wait
+
+
 def test_provider_feeds_validation_errors_back_and_counts_tokens_across_attempts():
     bodies = []
 
@@ -341,6 +353,7 @@ def test_llm_failure_is_reported_not_hidden(corpus):
     res = run(ctx(req=request(justification="Laptop fleet for new hires, custom configuration")), corpus, Broken())
     f = [x for x in res.findings if x.rule_code == "LLM-UNAVAILABLE"]
     assert f and f[0].category == "inconclusive" and res.compliance_status == "inconclusive"
+    assert f[0].source == "llm"  # operational marker from the LLM stage, excluded from rule metrics
     assert res.llm_calls[0]["status"] == "error"
 
 

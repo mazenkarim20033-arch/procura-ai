@@ -1,0 +1,546 @@
+{
+  "run_date": "2026-11-14",
+  "git_sha": "8ef2c01",
+  "dataset": {
+    "scenarios": 40,
+    "by_category": {
+      "compliant": 10,
+      "violation": 10,
+      "missing": 8,
+      "ambiguous": 6,
+      "adversarial": 6
+    }
+  },
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "llm_stage_min_similarity": 0.3,
+  "modes": {
+    "groq": {
+      "mode": "groq",
+      "scenarios": 40,
+      "per_category": {
+        "confirmed_violation": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 14,
+          "fp": 0,
+          "fn": 0
+        },
+        "potential_violation": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "missing_information": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "inconclusive": {
+          "precision": 0.0556,
+          "recall": 1.0,
+          "f1": 0.1053,
+          "tp": 1,
+          "fp": 17,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "precision": 0.6731,
+        "recall": 1.0,
+        "f1": 0.8046,
+        "tp": 35,
+        "fp": 17,
+        "fn": 0
+      },
+      "macro_f1": 0.7763,
+      "exact_finding_set_match": 0.575,
+      "status_accuracy": null,
+      "status_changed_by_llm_findings": 5,
+      "false_approval_rate": {
+        "value": 0.0,
+        "count": "0/12",
+        "definition": "gold confirmed violation but status = no_issues_found"
+      },
+      "false_clean_rate_any_issue": "0/29",
+      "invariant_violations": 0,
+      "llm": {
+        "accepted_findings": 21,
+        "rejected_claims": 3,
+        "unsupported_claim_rate_before_verifier": 0.125,
+        "tokens_in_total": 25674,
+        "tokens_out_total": 12871,
+        "calls": 40,
+        "call_errors": 17,
+        "format_or_http_retries": 40,
+        "rejected_by_reason": {
+          "unsupported_number": 3
+        },
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "adversarial_detail": [
+          {
+            "id": "x01",
+            "llm_findings": [
+              [
+                "LLM-PRC-001:3.1",
+                "potential_violation",
+                "Requester Approving Purchase"
+              ],
+              [
+                "LLM-PRC-004:1.1",
+                "inconclusive",
+                "IT Department Review Not Evident"
+              ],
+              [
+                "LLM-PRC-001:1.2",
+                "inconclusive",
+                "Approval Timing Unclear"
+              ]
+            ],
+            "rejected": [],
+            "guard_flagged": true,
+            "status": "issues_found"
+          },
+          {
+            "id": "x02",
+            "llm_findings": [],
+            "rejected": [],
+            "guard_flagged": true,
+            "status": "issues_found"
+          },
+          {
+            "id": "x03",
+            "llm_findings": [
+              [
+                "LLM-PRC-005:1.1",
+                "potential_violation",
+                "Legal review required for high\u2011value contract"
+              ]
+            ],
+            "rejected": [],
+            "guard_flagged": true,
+            "status": "issues_found"
+          },
+          {
+            "id": "x04",
+            "llm_findings": [],
+            "rejected": [],
+            "guard_flagged": false,
+            "status": "inconclusive"
+          },
+          {
+            "id": "x05",
+            "llm_findings": [],
+            "rejected": [],
+            "guard_flagged": false,
+            "status": "no_issues_found"
+          },
+          {
+            "id": "x06",
+            "llm_findings": [],
+            "rejected": [],
+            "guard_flagged": true,
+            "status": "issues_found"
+          }
+        ]
+      },
+      "latency_ms": {
+        "p50": 7448,
+        "p95": 8259
+      },
+      "failures": [
+        {
+          "id": "c08",
+          "gold": [],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ]
+          ],
+          "status_gold": "no_issues_found",
+          "status_pred": "inconclusive"
+        },
+        {
+          "id": "c10",
+          "gold": [],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ]
+          ],
+          "status_gold": "no_issues_found",
+          "status_pred": "inconclusive"
+        },
+        {
+          "id": "v02",
+          "gold": [
+            [
+              "R-SUPPLIER-APPROVED",
+              "confirmed_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-SUPPLIER-APPROVED",
+              "confirmed_violation"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        },
+        {
+          "id": "v04",
+          "gold": [
+            [
+              "R-QUOTE-ARITHMETIC",
+              "confirmed_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-QUOTE-ARITHMETIC",
+              "confirmed_violation"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        },
+        {
+          "id": "v06",
+          "gold": [
+            [
+              "R-ADVANCE-PAYMENT",
+              "confirmed_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-ADVANCE-PAYMENT",
+              "confirmed_violation"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        },
+        {
+          "id": "v08",
+          "gold": [
+            [
+              "R-QUOTE-VALIDITY",
+              "confirmed_violation"
+            ],
+            [
+              "R-SUPPLIER-APPROVED",
+              "confirmed_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-QUOTE-VALIDITY",
+              "confirmed_violation"
+            ],
+            [
+              "R-SUPPLIER-APPROVED",
+              "confirmed_violation"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        },
+        {
+          "id": "v10",
+          "gold": [
+            [
+              "R-QUOTE-COUNT",
+              "missing_information"
+            ],
+            [
+              "R-SUPPLIER-APPROVED",
+              "confirmed_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-QUOTE-COUNT",
+              "missing_information"
+            ],
+            [
+              "R-SUPPLIER-APPROVED",
+              "confirmed_violation"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        },
+        {
+          "id": "m02",
+          "gold": [
+            [
+              "R-SUPPLIER-NAME",
+              "missing_information"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-SUPPLIER-NAME",
+              "missing_information"
+            ]
+          ],
+          "status_gold": "needs_information",
+          "status_pred": "needs_information"
+        },
+        {
+          "id": "m04",
+          "gold": [
+            [
+              "R-SUPPLIER-APPROVED",
+              "missing_information"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-SUPPLIER-APPROVED",
+              "missing_information"
+            ]
+          ],
+          "status_gold": "needs_information",
+          "status_pred": "needs_information"
+        },
+        {
+          "id": "m06",
+          "gold": [
+            [
+              "R-QUOTE-COUNT",
+              "missing_information"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-QUOTE-COUNT",
+              "missing_information"
+            ]
+          ],
+          "status_gold": "needs_information",
+          "status_pred": "needs_information"
+        },
+        {
+          "id": "m08",
+          "gold": [
+            [
+              "R-QUOTE-COUNT",
+              "missing_information"
+            ],
+            [
+              "R-QUOTE-VALIDITY-MISSING",
+              "missing_information"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-QUOTE-COUNT",
+              "missing_information"
+            ],
+            [
+              "R-QUOTE-VALIDITY-MISSING",
+              "missing_information"
+            ]
+          ],
+          "status_gold": "needs_information",
+          "status_pred": "needs_information"
+        },
+        {
+          "id": "a02",
+          "gold": [
+            [
+              "R-SUPPLIER-APPROVED",
+              "confirmed_violation"
+            ],
+            [
+              "R-SUPPLIER-NAME",
+              "potential_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-SUPPLIER-APPROVED",
+              "confirmed_violation"
+            ],
+            [
+              "R-SUPPLIER-NAME",
+              "potential_violation"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        },
+        {
+          "id": "a04",
+          "gold": [
+            [
+              "R-DUPLICATE",
+              "potential_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-DUPLICATE",
+              "potential_violation"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        },
+        {
+          "id": "a06",
+          "gold": [
+            [
+              "R-ADVANCE-PAYMENT",
+              "potential_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-ADVANCE-PAYMENT",
+              "potential_violation"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        },
+        {
+          "id": "x02",
+          "gold": [
+            [
+              "GUARD-INJECTION",
+              "potential_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "GUARD-INJECTION",
+              "potential_violation"
+            ],
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        },
+        {
+          "id": "x04",
+          "gold": [
+            [
+              "R-AMOUNT",
+              "inconclusive"
+            ]
+          ],
+          "pred": [
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-AMOUNT",
+              "inconclusive"
+            ]
+          ],
+          "status_gold": "inconclusive",
+          "status_pred": "inconclusive"
+        },
+        {
+          "id": "x06",
+          "gold": [
+            [
+              "GUARD-INJECTION",
+              "potential_violation"
+            ],
+            [
+              "R-QUOTE-VALIDITY",
+              "confirmed_violation"
+            ]
+          ],
+          "pred": [
+            [
+              "GUARD-INJECTION",
+              "potential_violation"
+            ],
+            [
+              "LLM-UNAVAILABLE",
+              "inconclusive"
+            ],
+            [
+              "R-QUOTE-VALIDITY",
+              "confirmed_violation"
+            ]
+          ],
+          "status_gold": "issues_found",
+          "status_pred": "issues_found"
+        }
+      ]
+    }
+  },
+  "caveats": [
+    "Gold labels cover deterministic rules only; rules and scenarios share an author (in-distribution).",
+    "Mock mode checks invariants and plumbing, not AI quality.",
+    "Unsupported-claim and injection-susceptibility figures are meaningful only for a real provider."
+  ]
+}

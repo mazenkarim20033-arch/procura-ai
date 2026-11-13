@@ -16,12 +16,20 @@ from app.ai.providers.base import LLMError, LLMResult, T
 RETRYABLE_STATUS = {408, 429, 500, 502, 503, 504}
 
 
+def _retry_after(r: httpx.Response) -> float | None:
+    raw = r.headers.get("retry-after")
+    try:
+        return max(0.0, float(raw)) if raw else None
+    except ValueError:
+        return None
+
+
 class OpenAICompatProvider:
     is_mock = False
 
     def __init__(
         self, *, base_url: str, api_key: str, model: str, name: str = "openai_compat", timeout: float = 60.0,
-        max_http_retries: int = 3, max_format_retries: int = 2, sleep: Callable[[float], None] = time.sleep,
+        max_http_retries: int = 6, max_retry_wait: float = 60.0, max_format_retries: int = 2, sleep: Callable[[float], None] = time.sleep,
         transport: httpx.BaseTransport | None = None,
     ):
         self.name, self.model = name, model
@@ -29,11 +37,13 @@ class OpenAICompatProvider:
         self._headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
         self._client = httpx.Client(timeout=timeout, transport=transport)
         self._max_http, self._max_format, self._sleep = max_http_retries, max_format_retries, sleep
+        self._max_wait = max_retry_wait
 
     def _post(self, payload: dict) -> tuple[dict, int]:
         """POST with backoff. Returns (json, retries_used)."""
         last = "unknown error"
         for attempt in range(self._max_http + 1):
+            retry_after = None
             try:
                 r = self._client.post(self._url, headers=self._headers, json=payload)
             except httpx.TransportError as exc:
@@ -41,11 +51,14 @@ class OpenAICompatProvider:
             else:
                 if r.status_code == 200:
                     return r.json(), attempt
-                last = f"HTTP {r.status_code}"
+                last = f"HTTP {r.status_code}: {r.text[:160]}"
                 if r.status_code not in RETRYABLE_STATUS:
-                    raise LLMError(f"{self.name}: {last} (not retryable): {r.text[:200]}")
+                    raise LLMError(f"{self.name}: HTTP {r.status_code} (not retryable): {r.text[:200]}")
+                retry_after = _retry_after(r)
             if attempt < self._max_http:
-                self._sleep(min(2 ** attempt, 20))
+                # Rate limits (per-minute token budgets) say how long to wait; otherwise back off exponentially.
+                wait = retry_after if retry_after is not None else min(2 ** attempt, 20)
+                self._sleep(min(wait, self._max_wait))
         raise LLMError(f"{self.name}: gave up after {self._max_http + 1} attempts ({last})")
 
     def generate(self, *, system: str, user: str, schema: type[T], prompt_name: str, prompt_version: str) -> LLMResult[T]:

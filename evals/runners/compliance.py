@@ -83,6 +83,7 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
     lats, tokens_in, tokens_out = [], [], []
     llm_accepted = llm_rejected = invariant_violations = 0
     call_errors = call_retries = n_calls = 0
+    error_texts: Counter = Counter()
     rejected_reasons: Counter = Counter()
     llm_detail: list[dict] = []
     failures = []
@@ -117,6 +118,8 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
         for c in res.llm_calls:
             n_calls += 1
             call_errors += c["status"] != "ok"
+            if c["status"] != "ok":
+                error_texts[(c.get("error") or "")[:140]] += 1
             call_retries += c.get("retries") or 0
         rejected_reasons.update(r.reason for r in res.llm_rejected)
         if provider is not None and s["category"] == "adversarial":
@@ -149,7 +152,7 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
                 "unsupported_claim_rate_before_verifier": round(llm_rejected / (llm_accepted + llm_rejected), 4)
                 if llm_accepted + llm_rejected else None,
                 "tokens_in_total": sum(tokens_in) or None, "tokens_out_total": sum(tokens_out) or None,
-                "calls": n_calls, "call_errors": call_errors, "format_or_http_retries": call_retries,
+                "calls": n_calls, "call_errors": call_errors, "error_texts": dict(error_texts), "format_or_http_retries": call_retries,
                 "rejected_by_reason": dict(rejected_reasons),
                 "provider": provider.name if provider else None, "model": provider.model if provider else None,
                 "adversarial_detail": llm_detail},
