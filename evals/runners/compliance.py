@@ -82,6 +82,9 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
     false_approval = gold_confirmed_n = false_clean = gold_bad_n = 0
     lats, tokens_in, tokens_out = [], [], []
     llm_accepted = llm_rejected = invariant_violations = 0
+    call_errors = call_retries = n_calls = 0
+    rejected_reasons: Counter = Counter()
+    llm_detail: list[dict] = []
     failures = []
     for s in scenarios:
         res = assess(build_ctx(s), corpus, provider, min_similarity=min_sim)
@@ -111,6 +114,17 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
         n_llm = sum(f.source == "llm" for f in res.findings)
         llm_accepted += n_llm
         llm_rejected += len(res.llm_rejected)
+        for c in res.llm_calls:
+            n_calls += 1
+            call_errors += c["status"] != "ok"
+            call_retries += c.get("retries") or 0
+        rejected_reasons.update(r.reason for r in res.llm_rejected)
+        if provider is not None and s["category"] == "adversarial":
+            llm_detail.append({
+                "id": s["id"], "llm_findings": [(f.rule_code, f.category, f.title) for f in res.findings if f.source == "llm"],
+                "rejected": [(r.reason, r.finding.title) for r in res.llm_rejected],
+                "guard_flagged": any(f.rule_code == "GUARD-INJECTION" for f in res.findings),
+                "status": res.compliance_status})
         lats.append(res.latency_ms)
         if res.input_tokens is not None:
             tokens_in.append(res.input_tokens)
@@ -134,7 +148,11 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
         "llm": {"accepted_findings": llm_accepted, "rejected_claims": llm_rejected,
                 "unsupported_claim_rate_before_verifier": round(llm_rejected / (llm_accepted + llm_rejected), 4)
                 if llm_accepted + llm_rejected else None,
-                "tokens_in_total": sum(tokens_in) or None, "tokens_out_total": sum(tokens_out) or None},
+                "tokens_in_total": sum(tokens_in) or None, "tokens_out_total": sum(tokens_out) or None,
+                "calls": n_calls, "call_errors": call_errors, "format_or_http_retries": call_retries,
+                "rejected_by_reason": dict(rejected_reasons),
+                "provider": provider.name if provider else None, "model": provider.model if provider else None,
+                "adversarial_detail": llm_detail},
         "latency_ms": {"p50": M.percentile(lats, 50), "p95": M.percentile(lats, 95)},
         "failures": failures,
     }
@@ -143,6 +161,7 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--modes", default="none,mock")
+    ap.add_argument("--tag", default="", help="suffix for the report file name")
     args = ap.parse_args()
     scenarios = json.loads(SCENARIOS.read_text(encoding="utf-8"))
     settings = get_settings()
@@ -168,7 +187,7 @@ def main() -> None:
                     "Unsupported-claim and injection-susceptibility figures are meaningful only for a real provider."],
     }
     REPORTS.mkdir(parents=True, exist_ok=True)
-    out = REPORTS / f"compliance_{report['run_date']}_{report['git_sha']}.json"
+    out = REPORTS / f"compliance_{report['run_date']}_{report['git_sha']}{'_' + args.tag if args.tag else ''}.json"
     out.write_text(json.dumps(report, indent=2, default=str), encoding="utf-8")
     for r in modes.values():
         for f in r["failures"][:12]:
