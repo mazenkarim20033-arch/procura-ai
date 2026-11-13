@@ -99,7 +99,7 @@ def assess_request(session: Session, request_id: UUID, *, provider: LLMProvider 
     settings = get_settings()
     ctx = build_context(session, req)
     corpus = DbPolicyCorpus(session, embedder, req.submitted_at.date() if req.submitted_at else None)
-    result = assess(ctx, corpus, provider, min_similarity=settings.relevance_min_similarity)
+    result = assess(ctx, corpus, provider, min_similarity=settings.llm_stage_min_similarity)
     return persist_assessment(session, req, result, corpus.retrievals, actor=actor)
 
 

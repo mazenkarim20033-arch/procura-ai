@@ -170,7 +170,7 @@ def main() -> None:
     modes = {}
     for m in args.modes.split(","):
         provider = None if m == "none" else MockProvider() if m == "mock" else build_provider(settings)
-        modes[m] = run_mode(m, provider, scenarios, corpus, settings.relevance_min_similarity)
+        modes[m] = run_mode(m, provider, scenarios, corpus, settings.llm_stage_min_similarity)
         r = modes[m]
         print(f"[{m}] micro P/R/F1 {r['micro']['precision']}/{r['micro']['recall']}/{r['micro']['f1']}  "
               f"exact {r['exact_finding_set_match']}  status {r['status_accuracy']} (llm-changed: {r['status_changed_by_llm_findings']})  "
@@ -180,7 +180,7 @@ def main() -> None:
         "run_date": date.today().isoformat(),
         "git_sha": subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=ROOT, text=True).strip(),
         "dataset": {"scenarios": len(scenarios), "by_category": dict(Counter(s["category"] for s in scenarios))},
-        "embedding_model": settings.embedding_model, "relevance_threshold": settings.relevance_min_similarity,
+        "embedding_model": settings.embedding_model, "llm_stage_min_similarity": settings.llm_stage_min_similarity,
         "modes": modes,
         "caveats": ["Gold labels cover deterministic rules only; rules and scenarios share an author (in-distribution).",
                     "Mock mode checks invariants and plumbing, not AI quality.",

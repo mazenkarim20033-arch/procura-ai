@@ -58,7 +58,7 @@ def client(db, monkeypatch):
     emb = HashingEmbedder()
     monkeypatch.setattr(a_api, "get_embedder", lambda: emb)
     monkeypatch.setattr(r_api, "get_embedder", lambda: emb)
-    monkeypatch.setattr(get_settings(), "relevance_min_similarity", -1.0)  # let the LLM stage run with hashing vectors
+    monkeypatch.setattr(get_settings(), "llm_stage_min_similarity", -1.0)  # let the LLM stage run with hashing vectors
     app = create_app()
     app.dependency_overrides[get_session] = lambda: db
     return TestClient(app)

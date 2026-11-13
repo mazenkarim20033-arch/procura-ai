@@ -29,9 +29,15 @@ class Settings(BaseSettings):
     retrieval_mode: str = "dense"  # dense beat hybrid-RRF and FTS on the benchmark; hybrid stays available
     rerank_enabled: bool = False  # cross-encoder gave no gain on the benchmark and costs latency
     rerank_model: str = "Xenova/ms-marco-MiniLM-L-6-v2"
-    # Relevance gate: minimum cosine similarity of the best hit. Tuned for MiniLM-L6-v2 on the dev split
-    # (evals/reports/gate_*.json); NOT portable to other embedding models.
+    # Relevance gate for policy QUESTIONS (POST /policies/search): minimum cosine similarity of the best hit.
+    # Tuned for MiniLM-L6-v2 on the dev split (evals/reports/gate_*.json); NOT portable to other models.
     relevance_min_similarity: float = 0.385
+    # Minimum similarity for a clause to be SHOWN to the LLM stage. Deliberately lower than the gate above:
+    # request-style queries ("Purchase of laptops from X for N USD") score about 0.36 against judgement
+    # clauses, so the 0.385 gate switched the stage off in 36 of 40 benchmark scenarios. UNCALIBRATED
+    # (no relevance labels for this query type); the prompt tells the model to stay silent when nothing
+    # applies and the evidence verifier drops unsupported claims.
+    llm_stage_min_similarity: float = 0.30
 
     cors_origins: list[str] = ["http://localhost:5173"]
 
