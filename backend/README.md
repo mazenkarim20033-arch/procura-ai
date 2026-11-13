@@ -16,6 +16,13 @@ Milestone 4 (document ingestion) — implemented and tested:
 
 Limitations: extraction is rule-based and only handles "Label: value" headers plus one-line item rows; no field-level confidence; **OCR code exists but is unverified** (Tesseract is not installed here, so scanned pages produce a warning instead of text); no DOCX/image upload; no LLM fallback yet; the `pymupdf` package currently pulls in heavy optional dependencies (onnxruntime etc.) that should be trimmed before deployment.
 
+Milestone 5 (retrieval) — implemented and tested:
+
+- `app/retrieval/`: `Embedder`/`Reranker` interfaces; fastembed (ONNX, no torch) embedder, a test-only hashing embedder, optional cross-encoder reranker; `index_chunks` (embeds the context-prefixed text, keeps `Chunk.text` verbatim for citations); hybrid search = pgvector cosine + Postgres FTS fused with RRF, filtered by policy status / effective date / category / code; relevance gate; retrieval logging.
+- API: `GET /policies`, `GET /policies/{id}`, `POST /policies/search` (debug view of what the pipeline would retrieve), `POST /policies/reindex` (admin).
+- Benchmark: `evals/runners/retrieval.py` (ablations over search mode, embedding model, query prefix, reranker). Results live in `evals/reports/`; the embedding model downloads to the fastembed cache on first use (about 130 MB for bge-small).
+- Test-suite embedder is a hashing stub, so the unit/integration tests verify SQL, filters and wiring, not retrieval quality.
+
 ## Setup
 
 ```bash

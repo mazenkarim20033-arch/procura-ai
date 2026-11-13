@@ -1,0 +1,124 @@
+{
+  "run_date": "2026-11-13",
+  "git_sha": "586e566",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "mode": "dense",
+  "tuned_on_dev": {
+    "threshold": 0.3849,
+    "balanced_accuracy": 0.959,
+    "n_pos": 61,
+    "n_neg": 10
+  },
+  "at_tuned_threshold": {
+    "v1_test_positives_passed": 1.0,
+    "v1_test_negatives_rejected": "1/2",
+    "fresh_adjacent_negatives_rejected": 0.7857,
+    "n_test_pos": 35,
+    "n_fresh_neg": 28
+  },
+  "auc_all_positives_vs_all_negatives": 0.9419,
+  "similarity_summary": {
+    "positives_min_median_max": [
+      0.232,
+      0.541,
+      0.807
+    ],
+    "negatives_min_median_max": [
+      0.075,
+      0.318,
+      0.505
+    ]
+  },
+  "threshold_sweep_all_queries": [
+    {
+      "threshold": 0.2,
+      "positives_passed": 1.0,
+      "negatives_rejected": 0.125
+    },
+    {
+      "threshold": 0.25,
+      "positives_passed": 0.979,
+      "negatives_rejected": 0.35
+    },
+    {
+      "threshold": 0.3,
+      "positives_passed": 0.969,
+      "negatives_rejected": 0.45
+    },
+    {
+      "threshold": 0.35,
+      "positives_passed": 0.958,
+      "negatives_rejected": 0.65
+    },
+    {
+      "threshold": 0.4,
+      "positives_passed": 0.917,
+      "negatives_rejected": 0.85
+    },
+    {
+      "threshold": 0.45,
+      "positives_passed": 0.74,
+      "negatives_rejected": 0.95
+    },
+    {
+      "threshold": 0.5,
+      "positives_passed": 0.615,
+      "negatives_rejected": 0.975
+    },
+    {
+      "threshold": 0.55,
+      "positives_passed": 0.49,
+      "negatives_rejected": 1.0
+    },
+    {
+      "threshold": 0.6,
+      "positives_passed": 0.344,
+      "negatives_rejected": 1.0
+    },
+    {
+      "threshold": 0.65,
+      "positives_passed": 0.073,
+      "negatives_rejected": 1.0
+    },
+    {
+      "threshold": 0.7,
+      "positives_passed": 0.031,
+      "negatives_rejected": 1.0
+    },
+    {
+      "threshold": 0.75,
+      "positives_passed": 0.021,
+      "negatives_rejected": 1.0
+    },
+    {
+      "threshold": 0.8,
+      "positives_passed": 0.01,
+      "negatives_rejected": 1.0
+    }
+  ],
+  "highest_scoring_fresh_negatives": [
+    {
+      "query": "How should purchase orders be numbered?",
+      "sim": 0.5046
+    },
+    {
+      "query": "What is the process to dispute an invoice with a supplier?",
+      "sim": 0.4411
+    },
+    {
+      "query": "Which software is approved for video calls?",
+      "sim": 0.4316
+    },
+    {
+      "query": "What is the procedure for returning defective goods to a supplier?",
+      "sim": 0.4233
+    },
+    {
+      "query": "How long must procurement records be kept?",
+      "sim": 0.4031
+    }
+  ],
+  "caveats": [
+    "Synthetic corpus; 28 hand-written adjacent negatives; thresholds do not transfer to other models/corpora."
+  ]
+}

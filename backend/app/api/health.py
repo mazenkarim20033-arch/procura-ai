@@ -6,6 +6,13 @@ from app.config import get_settings
 router = APIRouter(prefix="/health", tags=["health"])
 
 
+def _peek_embedder():
+    """The cached embedder if one was already built; never constructs or loads a model."""
+    from app.retrieval.embedders import get_embedder
+
+    return get_embedder() if get_embedder.cache_info().currsize else None
+
+
 @router.get("/live")
 def live() -> dict:
     return {"status": "ok"}
@@ -30,7 +37,11 @@ def ready(response: Response) -> dict:
         checks["database"] = {"ok": False, "error": type(exc).__name__}
         checks["pgvector"] = {"ok": False}
 
-    # Honest status: the embedding model and real LLM are wired in later milestones.
+    # Report the embedder without loading it (loading downloads/reads the model).
+    emb = get_settings()
+    checks["embedding"] = {"ok": True, "provider": emb.embedding_provider, "model": emb.embedding_model,
+                           "loaded": getattr(_peek_embedder(), "loaded", None)}
+    # Honest status: the real LLM provider is wired in a later milestone.
     checks["llm"] = {"ok": True, "provider": settings.llm_provider, "mock": settings.is_mock_ai}
 
     healthy = all(c["ok"] for c in checks.values())

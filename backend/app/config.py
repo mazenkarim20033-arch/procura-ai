@@ -16,8 +16,19 @@ class Settings(BaseSettings):
     llm_model: str | None = None
     llm_api_key: str | None = None
     llm_base_url: str | None = None
-    embedding_model: str = "BAAI/bge-small-en-v1.5"
+    embedding_provider: str = "fastembed"  # fastembed | hashing (test-only, not semantic)
+    # Chosen on dev-split MRR in evals/reports/retrieval_2026-11-13_498ec60.json (bge-small was within
+    # noise; MiniLM is smaller and faster). Changing the model REQUIRES re-indexing and re-tuning the gate.
+    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
     embedding_dim: int = 384
+    embedding_cache_dir: str | None = None  # fastembed defaults to the OS temp dir, which can be wiped
+    embedding_query_prefix: bool = True  # BGE-style instruction; only applied to bge models
+    retrieval_mode: str = "dense"  # dense beat hybrid-RRF and FTS on the benchmark; hybrid stays available
+    rerank_enabled: bool = False  # cross-encoder gave no gain on the benchmark and costs latency
+    rerank_model: str = "Xenova/ms-marco-MiniLM-L-6-v2"
+    # Relevance gate: minimum cosine similarity of the best hit. Tuned for MiniLM-L6-v2 on the dev split
+    # (evals/reports/gate_*.json); NOT portable to other embedding models.
+    relevance_min_similarity: float = 0.385
 
     cors_origins: list[str] = ["http://localhost:5173"]
 
