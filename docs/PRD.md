@@ -62,7 +62,7 @@ Finding classes (mutually exclusive): `CONFIRMED_VIOLATION`, `POTENTIAL_VIOLATIO
 - `LLM_PROVIDER=mock` runs the whole app with no credentials using recorded fixtures. UI shows a persistent "MOCK AI — recorded responses" badge. Retrieval, rules, extraction, and analytics are real in this mode; only LLM calls are replayed.
 
 ## 6. Non-functional requirements
-- Local setup in ≤ 5 commands (Docker Compose runs Postgres+pgvector; no SQLite fallback, since pgvector is required).
+- Local setup in ≤ 5 commands: app runs locally against a free hosted Postgres+pgvector (Neon) via `DATABASE_URL`; no Docker needed. No SQLite fallback, since pgvector is required. Requires internet for DB access.
 - No secrets in repo; `.env` driven config; `.env.example` provided.
 - Health endpoints `/health/live`, `/health/ready` (DB, embedding model loaded, LLM provider reachable).
 - Structured JSON logging with request ids; per-LLM-call token, latency, cost recorded.
