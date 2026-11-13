@@ -77,7 +77,12 @@ Overview, Purchase Requests, Request Detail + AI Assessment, Document Intelligen
 - Extraction field-level accuracy, retrieval Recall@5, compliance precision/recall per class, **false approval rate** (violation labelled compliant) and unsupported-claim rate are reported from the eval harness on the synthetic gold set, with the caveat that the set is synthetic and small.
 - Zero code paths that set a request to approved without a human decision (enforced by tests).
 
-## 9. Open questions for you
+## 9. Decisions (resolved)
+- **LLM:** Groq (free tier, OpenAI-compatible API) via the `openai_compat` provider; Mock provider for demo mode. Free-tier rate limits and model JSON reliability will be measured, not assumed.
+- **Auth:** demo-grade. A user picker in the UI sets the role (requester / reviewer / admin); the API enforces role permissions server-side (e.g. only reviewers can record decisions). No passwords or SSO; documented as a limitation.
+- **Arabic:** English-only v1. Architecture stays Arabic-ready (multilingual embedder option, Unicode-safe chunking). Arabic is added only if retrieval over a small Arabic policy proves cheap in M5; Arabic extraction and rules are out of scope.
+
+## 10. Original open questions (kept for history)
 1. Dev location: I used `Desktop\MY PROJECTS\procura-ai` (matches your other projects). OK?
 2. LLM for real-AI mode: which do you have access to (Anthropic API, OpenAI, local Ollama)? Default plan: Anthropic via an adapter, Ollama as free option.
 3. Should auth be a simple role switcher (demo-grade) or real login? Plan assumes role switcher + JWT stub.
