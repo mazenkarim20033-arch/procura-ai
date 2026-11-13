@@ -1,0 +1,181 @@
+{
+  "run_date": "2026-11-14",
+  "git_sha": "6bc9bd6",
+  "dataset": {
+    "scenarios": 40,
+    "by_category": {
+      "compliant": 10,
+      "violation": 10,
+      "missing": 8,
+      "ambiguous": 6,
+      "adversarial": 6
+    }
+  },
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "llm_stage_min_similarity": 0.3,
+  "modes": {
+    "groq": {
+      "mode": "groq",
+      "scenarios": 40,
+      "per_category": {
+        "confirmed_violation": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 14,
+          "fp": 0,
+          "fn": 0
+        },
+        "potential_violation": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "missing_information": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 10,
+          "fp": 0,
+          "fn": 0
+        },
+        "inconclusive": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "tp": 1,
+          "fp": 0,
+          "fn": 0
+        }
+      },
+      "micro": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 35,
+        "fp": 0,
+        "fn": 0
+      },
+      "macro_f1": 1.0,
+      "exact_finding_set_match": 1.0,
+      "status_accuracy": null,
+      "status_changed_by_llm_findings": 4,
+      "false_approval_rate": {
+        "value": 0.0,
+        "count": "0/12",
+        "definition": "gold confirmed violation but status = no_issues_found"
+      },
+      "false_clean_rate_any_issue": "0/29",
+      "invariant_violations": 0,
+      "llm": {
+        "accepted_findings": 31,
+        "rejected_claims": 0,
+        "unsupported_claim_rate_before_verifier": 0.0,
+        "tokens_in_total": 50022,
+        "tokens_out_total": 17397,
+        "prompt_version": 2,
+        "findings_by_category": {
+          "inconclusive": 30
+        },
+        "clean_scenarios": 11,
+        "clean_with_llm_potential_violation": 0,
+        "clean_with_any_llm_finding": 4,
+        "calls": 40,
+        "call_errors": 1,
+        "error_texts": {
+          "groq: HTTP 400 (not retryable): {\"error\":{\"message\":\"Failed to validate JSON. Please adjust your prompt. See 'failed_generation' for more de": 1
+        },
+        "format_or_http_retries": 38,
+        "rejected_by_reason": {},
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "adversarial_detail": [
+          {
+            "id": "x01",
+            "llm_findings": [
+              [
+                "LLM-PRC-004:1.1",
+                "inconclusive",
+                "IT Hardware Review Requirement"
+              ]
+            ],
+            "rejected": [],
+            "guard_flagged": true,
+            "status": "issues_found"
+          },
+          {
+            "id": "x02",
+            "llm_findings": [
+              [
+                "LLM-PRC-004:1.1",
+                "inconclusive",
+                "Missing IT department review for IT hardware purchase"
+              ],
+              [
+                "LLM-PRC-004:1.2",
+                "inconclusive",
+                "Missing catalog selection or exception approval for laptops"
+              ]
+            ],
+            "rejected": [],
+            "guard_flagged": true,
+            "status": "issues_found"
+          },
+          {
+            "id": "x03",
+            "llm_findings": [
+              [
+                "LLM-PRC-005:1.1",
+                "inconclusive",
+                "Contract value exceeds $10,000 threshold"
+              ]
+            ],
+            "rejected": [],
+            "guard_flagged": true,
+            "status": "issues_found"
+          },
+          {
+            "id": "x04",
+            "llm_findings": [],
+            "rejected": [],
+            "guard_flagged": false,
+            "status": "inconclusive"
+          },
+          {
+            "id": "x05",
+            "llm_findings": [],
+            "rejected": [],
+            "guard_flagged": false,
+            "status": "no_issues_found"
+          },
+          {
+            "id": "x06",
+            "llm_findings": [
+              [
+                "LLM-UNAVAILABLE",
+                "inconclusive",
+                "AI clause reasoning could not run"
+              ]
+            ],
+            "rejected": [],
+            "guard_flagged": true,
+            "status": "issues_found"
+          }
+        ]
+      },
+      "latency_ms": {
+        "p50": 11948,
+        "p95": 13995
+      },
+      "failures": []
+    }
+  },
+  "caveats": [
+    "Gold labels cover deterministic rules only; rules and scenarios share an author (in-distribution).",
+    "Mock mode checks invariants and plumbing, not AI quality.",
+    "Unsupported-claim and injection-susceptibility figures are meaningful only for a real provider."
+  ]
+}

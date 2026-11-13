@@ -73,4 +73,26 @@ Full pipeline with the **mock** provider: the same rule results (the LLM stage n
 
 How to read the perfect rule scores: the rules and the scenarios were written by the same person against the same policy text, so this is a consistency and regression check, not a measure of how well the rules would hold up on other people's requests. Only one scenario exercises the `inconclusive` category and 12 exercise confirmed violations, so per-category figures rest on very few cases.
 
-**Not yet measured** (needs a real provider; run `python ../evals/runners/compliance.py --modes none,groq` once `LLM_PROVIDER=groq`, `LLM_API_KEY` and `LLM_MODEL` are set): unsupported-claim rate of a real model before the verifier, how often injected text changes a real model's output, tokens, latency and cost per assessment, and Groq's JSON reliability.
+### Real LLM stage (Groq), prompt v1 vs v2
+Reports: `compliance_2026-11-14_6bc9bd6_gptoss{20b,120b}_prompt-v{1,2}.json` (plus earlier repeats and two instructive failed runs, kept and labelled: `*_run1_stage-gated-off`, `*_run2_rate-limited`). Same 40 scenarios, `openai/gpt-oss-20b` and `openai/gpt-oss-120b` on Groq's free tier, temperature 0, one run per configuration.
+
+| | 120b v1 | 120b v2 | 20b v1 | 20b v2 |
+|---|---|---|---|---|
+| Rule findings P / R | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 |
+| False approvals / invariant violations | 0 / 0 | 0 / 0 | 0 / 0 | 0 / 0 |
+| LLM `potential_violation` findings | 29 | 1 | 19 | 0 |
+| LLM `inconclusive` findings | 12 | 39 | 22 | 30 |
+| Clean scenarios (11) given a model-raised potential violation | 4 | 0 | 2 | 0 |
+| Scenarios whose status the LLM stage changed | 11 | 4 | 9 | 4 |
+| Claims rejected by the evidence verifier | 0 | 0 | 3 (invented numbers) | 0 |
+| Failed calls / retries absorbed | 0 / 28 | 0 / 44 | 0 / 38 | 1 / 38 |
+| Tokens per assessment (in / out) | 1,117 / 554 | 1,379 / 514 | 1,117 / 597 | 1,251 / 435 |
+
+What this shows, and what it does not:
+- v1 made models flag almost every laptop request with speculative "potential violations" (undocumented IT review, "requester may be self-approving", approval status unknown). v2 tells the model to report only clauses triggered by stated facts and to use `inconclusive` for requirements the data cannot verify; speculative flags dropped from 29 to 1 (120b) and 19 to 0 (20b). This is a prompt change judged on the same 40 scenarios I wrote it against, so some overfitting is possible; "clean scenarios flagged" rests on 11 cases.
+- The deterministic rules were never changed by the LLM stage in any run (0 false approvals, rule P/R stayed 1.00). The LLM stage can only add findings, and v2 adds mostly `inconclusive` ones, which still turn an otherwise clean request's status from `no_issues_found` to `inconclusive` (4 scenarios).
+- Injection: in every injected scenario that reached the model (x01, x02, x06; x03's injected text sits in a document the model is not shown) no run followed the injected instruction; the guard flagged all four injected scenarios. Only 3 cases per run, so this is weak evidence.
+- Verifier: the one model that invented numbers (20b, v1: 3 of 41 claims, 7.3%) was caught by the verifier; v2 had none. The "unsupported-claim rate before the verifier" is therefore 0-7% here, on a small sample.
+- Reliability: Groq's JSON mode produced valid schema output on every call that returned; there were no format retries. The free tier rate-limits sustained load, which the provider now absorbs with Retry-After backoff; one 20b call still failed after all retries. Latency (median 4-12 s, slowest 10-16 s) is dominated by those waits and is not representative of a paid tier.
+- Cost: not computed. Groq prices are not configured; `LLM_PRICE_IN_PER_M` / `LLM_PRICE_OUT_PER_M` turn the recorded token counts into an estimate.
+- Default: prompt v2 and `openai/gpt-oss-120b` (0 failed calls, 0 rejected claims, no speculative flags in v2). The two models are close and single runs are noisy, so this is a weak preference, not a measured win. Run-to-run variation: repeating 120b v1 gave 40 vs 41 findings.
