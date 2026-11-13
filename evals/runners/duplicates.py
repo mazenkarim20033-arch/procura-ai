@@ -18,9 +18,9 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "backend"))
 
-from app.retrieval.embedders import FastEmbedEmbedder  # noqa: E402
-from app.services.duplicates import RequestView, classify_duplicates  # noqa: E402
-from app.vendors.normalize import request_fingerprint  # noqa: E402
+from app.retrieval.embedders import FastEmbedEmbedder
+from app.services.duplicates import RequestView, classify_duplicates
+from app.vendors.normalize import request_fingerprint
 
 CASES = ROOT / "evals" / "datasets" / "duplicate_cases.json"
 REPORTS = ROOT / "evals" / "reports"

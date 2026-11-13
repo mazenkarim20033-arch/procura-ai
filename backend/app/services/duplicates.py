@@ -97,8 +97,8 @@ def classify_duplicates(
             else:
                 # An identical order months later is usually a legitimate repeat purchase: informational.
                 out.append(DuplicateMatch(o.id, o.request_no, "repeat_purchase", 1.0, days,
-                                          [f"identical to a request {days} days earlier/later (outside the "
-                                           f"{SAME_SUPPLIER_WINDOW_DAYS}-day duplicate window)"]))
+                                          [f"identical to a request {days} days apart (outside the "
+                                           + f"{SAME_SUPPLIER_WINDOW_DAYS}-day duplicate window)"]))
             continue
         sim = item_set_similarity(target.item_vectors, o.item_vectors)
         same_supplier = bool(t_supplier) and t_supplier == normalize_vendor_name(o.supplier_name)

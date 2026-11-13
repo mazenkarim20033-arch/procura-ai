@@ -46,3 +46,13 @@ Report: `gate_2026-11-13_586e566.json` (`evals/runners/gate.py`). Threshold on b
 | AUC, all positives vs all negatives | 0.94 |
 
 So roughly one in five off-topic but procurement-flavoured questions still passes the gate (highest-scoring offenders: "How should purchase orders be numbered?", "What is the process to dispute an invoice with a supplier?"). The gate reduces, but does not eliminate, the chance of reasoning over irrelevant clauses; the evidence verifier and human review remain necessary. The threshold is specific to this model and corpus.
+
+## Duplicate detection
+Reports: `duplicates_2026-11-13_791e6af.json` (run 1) and `duplicates_2026-11-13_21e4d1a.json` (run 2) from `evals/runners/duplicates.py`. 64 synthetic request pairs (52 scored), labelled by construction and frozen before tuning (`evals/datasets/make_duplicate_cases.py`); real MiniLM embeddings; paraphrases are hand-written by me.
+
+| Run | Precision | Recall | Notes |
+|---|---|---|---|
+| 1 (test split) | 0.60 | 1.00 | All 12 false positives were identical requests 120-300 days apart, flagged "exact" |
+| 2 (test split) | 1.00 | 1.00 | Identical requests outside the 90-day window now report as informational `repeat_purchase` |
+
+The run-1 failures exposed a design flaw (a legitimate repeat order is not a duplicate), not a threshold problem; I changed the logic, then re-ran. F1 is 1.0 on dev for every similarity threshold from 0.65 to 0.85, so the shipped default (0.80) sits inside that plateau rather than at its edge. Treat the perfect score with suspicion: the pairs are easy and synthetic (n = 12 per type), so this shows the logic does what it is meant to on cases I could think of, not that it will catch messy real-world duplicates. Split-purchase and near-threshold detection are covered by unit tests only; they have no benchmark.

@@ -23,6 +23,16 @@ Milestone 5 (retrieval) — implemented and tested:
 - Benchmark: `evals/runners/retrieval.py` (ablations over search mode, embedding model, query prefix, reranker). Results live in `evals/reports/`; the embedding model downloads to the fastembed cache on first use (about 130 MB for bge-small).
 - Test-suite embedder is a hashing stub, so the unit/integration tests verify SQL, filters and wiring, not retrieval quality.
 
+Milestone 6 (purchase request intelligence) — implemented and tested:
+
+- `POST /requests` (all fields optional: incomplete requests are accepted and reported), `POST /requests/from-document/{id}` (from an extracted purchase-request PDF), `GET /requests`, `GET /requests/{id}`, `POST /requests/{id}/documents`, `GET /requests/{id}/intake`.
+- `app/rules/intake.py`: deterministic checks for missing information, arithmetic/currency/date inconsistencies, and request-vs-quotation comparison (competing quotes are normal; it only warns if none matches the requested supplier).
+- `app/services/duplicates.py`: exact duplicates (fingerprint), similar requests (item-embedding similarity), same-items-other-supplier, informational repeat purchases, split-purchase and near-threshold detection (USD only: no exchange-rate source, so other currencies are reported as a limitation).
+- The intake report is computed live and not stored; milestone 7 folds it into the persisted assessment. Requests are never approved here; status stays `submitted`.
+- Migration `0002` (applied with `alembic upgrade head`); migration SQL is now frozen/hand-written and `schema_snapshot.sql` is a drift-checked snapshot.
+
+Limitations: no vendor identity resolution yet (names are compared after simple normalisation); category is not extracted from documents so split detection matches on supplier and period only (and says so); request-vs-quote total variance threshold (15%) and the near-threshold band (15%) are heuristics, not policy values.
+
 ## Setup
 
 ```bash
