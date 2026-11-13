@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D01_vertex-industrial-tools-llc.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D01",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Vertex Industrial Tools LLC",
+    "quote_no": "OF-VI-0002",
+    "issue_date": "2025-12-28",
+    "valid_until": "2026-01-11",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Design software licence",
+        "quantity": "5",
+        "unit_price": "484.32",
+        "line_total": "2421.60"
+      },
+      {
+        "description": "Monitor 27in",
+        "quantity": "5",
+        "unit_price": "220.34",
+        "line_total": "1101.70"
+      }
+    ],
+    "subtotal": "3523.30",
+    "tax": "0.00",
+    "total": "3523.30",
+    "payment_terms": "Net 30",
+    "delivery_days": 30
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D09_cairo-print-packaging-co.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D09",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Cairo Print & Packaging Co.",
+    "quote_no": "OF-CP-0022",
+    "issue_date": "2026-03-08",
+    "valid_until": "2026-05-07",
+    "currency": "EGP",
+    "items": [
+      {
+        "description": "LED desk lamp",
+        "quantity": "5",
+        "unit_price": "2884.94",
+        "line_total": "14424.70"
+      },
+      {
+        "description": "Printed brochures (500)",
+        "quantity": "1",
+        "unit_price": "9289.18",
+        "line_total": "9289.18"
+      },
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "1",
+        "unit_price": "12071.83",
+        "line_total": "12071.83"
+      }
+    ],
+    "subtotal": "35785.71",
+    "tax": "5010.00",
+    "total": "40795.71",
+    "payment_terms": "Net 60",
+    "delivery_days": 7
+  }
+}

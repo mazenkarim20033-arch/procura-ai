@@ -23,7 +23,7 @@ Submit → extract & validate → duplicate check → retrieve policies → rule
 - Upload PDF/DOCX/TXT/images (policies, quotations, contracts, invoices, request forms).
 - Text extraction (PyMuPDF); OCR fallback for scanned pages (Tesseract, optional install; detected at runtime).
 - Document-type classification (rules + keyword features first; LLM fallback when confidence is low).
-- Structured extraction into strict Pydantic models per type (Quotation, Invoice, Contract, PurchaseRequest). Each extracted field carries `source_span` (page, char offsets) and `confidence`.
+- Structured extraction into strict Pydantic models per type (Quotation, Invoice, Contract, PurchaseRequest). Each extracted field carries a source span (page, char offsets, text). Numeric confidence is not produced by rule-based extraction; the extraction status is "found" or a validation issue.
 - Validation: arithmetic (line totals = qty × unit price, totals sum), currency/date formats, required fields.
 - Language field on every document; English first, schema and chunker Unicode/RTL-safe for later Arabic support (multilingual embedding model option).
 

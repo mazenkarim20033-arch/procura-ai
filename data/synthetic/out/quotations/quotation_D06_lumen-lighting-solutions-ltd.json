@@ -1,0 +1,42 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D06_lumen-lighting-solutions-ltd.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D06",
+  "injected_issues": [
+    "line_total_mismatch"
+  ],
+  "fields": {
+    "vendor_name": "Lumen Lighting Solutions Ltd.",
+    "quote_no": "Q-2026-0015",
+    "issue_date": "2026-02-09",
+    "valid_until": "2026-04-10",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Printed brochures (500)",
+        "quantity": "1",
+        "unit_price": "306.85",
+        "line_total": "347.85"
+      },
+      {
+        "description": "Standing desk",
+        "quantity": "5",
+        "unit_price": "432.62",
+        "line_total": "2163.10"
+      },
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "2",
+        "unit_price": "163.86",
+        "line_total": "327.72"
+      }
+    ],
+    "subtotal": "2838.67",
+    "tax": "0.00",
+    "total": "2838.67",
+    "payment_terms": "Net 60",
+    "delivery_days": 7
+  }
+}

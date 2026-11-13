@@ -1,0 +1,36 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D01_orion-tech-supplies-ltd.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D01",
+  "injected_issues": [
+    "line_total_mismatch"
+  ],
+  "fields": {
+    "vendor_name": "Orion Tech Supplies Ltd.",
+    "quote_no": "Q-2026-0003",
+    "issue_date": "2025-12-27",
+    "valid_until": "2026-02-10",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Design software licence",
+        "quantity": "5",
+        "unit_price": "435.16",
+        "line_total": "2190.80"
+      },
+      {
+        "description": "Monitor 27in",
+        "quantity": "5",
+        "unit_price": "229.52",
+        "line_total": "1147.60"
+      }
+    ],
+    "subtotal": "3338.40",
+    "tax": "0.00",
+    "total": "3338.40",
+    "payment_terms": "50% advance, balance Net 30",
+    "delivery_days": 14
+  }
+}

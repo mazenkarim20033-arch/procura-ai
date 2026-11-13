@@ -1,0 +1,28 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D02_vertex-industrial-tools-llc.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D02",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Vertex Industrial Tools L.L.C.",
+    "quote_no": "OF-VI-0004",
+    "issue_date": "2026-01-05",
+    "valid_until": "2026-02-19",
+    "currency": "EUR",
+    "items": [
+      {
+        "description": "Monitor 27in",
+        "quantity": "5",
+        "unit_price": "246.40",
+        "line_total": "1232.00"
+      }
+    ],
+    "subtotal": "1232.00",
+    "tax": "0.00",
+    "total": "1232.00",
+    "payment_terms": "Net 60",
+    "delivery_days": 7
+  }
+}

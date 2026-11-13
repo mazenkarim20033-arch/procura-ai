@@ -9,6 +9,7 @@ os.environ.pop("DATABASE_URL", None)
 @pytest.fixture(autouse=True)
 def _no_database(monkeypatch, request):
     if "integration" in request.keywords:
+        yield
         return
     monkeypatch.delenv("DATABASE_URL", raising=False)
     from app.config import get_settings

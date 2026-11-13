@@ -1,0 +1,28 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D02_orion-tech-supplies-ltd.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D02",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Orion Tech Supplies Ltd.",
+    "quote_no": "Q-2026-0005",
+    "issue_date": "2026-01-04",
+    "valid_until": "2026-03-05",
+    "currency": "EUR",
+    "items": [
+      {
+        "description": "Monitor 27in",
+        "quantity": "5",
+        "unit_price": "216.73",
+        "line_total": "1083.65"
+      }
+    ],
+    "subtotal": "1083.65",
+    "tax": "0.00",
+    "total": "1083.65",
+    "payment_terms": "50% advance, balance Net 30",
+    "delivery_days": 30
+  }
+}

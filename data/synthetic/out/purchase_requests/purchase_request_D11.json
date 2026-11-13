@@ -1,0 +1,32 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D11.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D11",
+  "injected_issues": [],
+  "fields": {
+    "request_no": "PR-2026-0011",
+    "requester": "Layla Hassan",
+    "department": "Finance",
+    "request_date": "2026-04-05",
+    "supplier": "Summit Networks Inc.",
+    "currency": "EGP",
+    "justification": "New hires starting next month need standard workstations.",
+    "items": [
+      {
+        "description": "Network switch 24-port",
+        "quantity": "10",
+        "unit_price": "30569.85",
+        "line_total": "305698.50"
+      },
+      {
+        "description": "Docking station USB-C",
+        "quantity": "5",
+        "unit_price": "5766.30",
+        "line_total": "28831.50"
+      }
+    ],
+    "total": "334530.00"
+  }
+}

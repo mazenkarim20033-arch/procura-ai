@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D03_lumen-lighting-solutions-ltd.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D03",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Lumen Lighting Solutions Ltd.",
+    "quote_no": "Q-2026-0007",
+    "issue_date": "2026-01-17",
+    "valid_until": "2026-02-07",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "1",
+        "unit_price": "175.93",
+        "line_total": "175.93"
+      },
+      {
+        "description": "Whiteboard 120x90",
+        "quantity": "5",
+        "unit_price": "84.76",
+        "line_total": "423.80"
+      }
+    ],
+    "subtotal": "599.73",
+    "tax": "0.00",
+    "total": "599.73",
+    "payment_terms": "Net 30",
+    "delivery_days": 21
+  }
+}

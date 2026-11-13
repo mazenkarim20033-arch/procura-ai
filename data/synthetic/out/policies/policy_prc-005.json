@@ -1,0 +1,51 @@
+{
+  "synthetic": true,
+  "file": "policies/policy_prc-005.pdf",
+  "doc_type": "policy",
+  "template": "policy",
+  "injected_issues": [],
+  "fields": {
+    "code": "PRC-005",
+    "title": "Services and Contracts",
+    "version": "1.1",
+    "effective_date": "2025-01-01",
+    "category": "contracts"
+  },
+  "clauses": [
+    {
+      "num": "1.1",
+      "section": "1 Contract Review",
+      "text": "Contracts with a total value above USD 10,000 require legal review before signature."
+    },
+    {
+      "num": "1.2",
+      "section": "1 Contract Review",
+      "text": "Contracts must state the effective date, the end date, the total value and the payment terms."
+    },
+    {
+      "num": "2.1",
+      "section": "2 Payment Terms",
+      "text": "Payment terms must be at least net 30 days."
+    },
+    {
+      "num": "2.2",
+      "section": "2 Payment Terms",
+      "text": "Payment terms longer than net 60 days require finance director approval."
+    },
+    {
+      "num": "2.3",
+      "section": "2 Payment Terms",
+      "text": "Advance payments must not exceed 30 percent of the contract value."
+    },
+    {
+      "num": "3.1",
+      "section": "3 Services",
+      "text": "Consulting engagements must define deliverables and an acceptance procedure."
+    },
+    {
+      "num": "3.2",
+      "section": "3 Services",
+      "text": "Services must not begin before the contract is signed by both parties."
+    }
+  ]
+}

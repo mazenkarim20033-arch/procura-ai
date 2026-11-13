@@ -1,0 +1,42 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D09_lumen-lighting-solutions-ltd.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D09",
+  "injected_issues": [
+    "total_mismatch"
+  ],
+  "fields": {
+    "vendor_name": "Lumen Lighting Solutions Ltd.",
+    "quote_no": "Q-2026-0021",
+    "issue_date": "2026-03-15",
+    "valid_until": "2026-04-05",
+    "currency": "EGP",
+    "items": [
+      {
+        "description": "LED desk lamp",
+        "quantity": "5",
+        "unit_price": "2436.53",
+        "line_total": "12182.65"
+      },
+      {
+        "description": "Printed brochures (500)",
+        "quantity": "1",
+        "unit_price": "8011.27",
+        "line_total": "8011.27"
+      },
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "1",
+        "unit_price": "12451.28",
+        "line_total": "12451.28"
+      }
+    ],
+    "subtotal": "32645.20",
+    "tax": "4570.33",
+    "total": "37348.53",
+    "payment_terms": "50% advance, balance Net 30",
+    "delivery_days": 7
+  }
+}

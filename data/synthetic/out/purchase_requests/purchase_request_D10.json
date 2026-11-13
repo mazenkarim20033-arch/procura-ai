@@ -1,0 +1,28 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D10.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D10",
+  "injected_issues": [
+    "missing_field"
+  ],
+  "fields": {
+    "request_no": "PR-2026-0010",
+    "requester": "Karim Mansour",
+    "department": null,
+    "request_date": "2026-03-27",
+    "supplier": "Nile Cloud Services",
+    "currency": "USD",
+    "justification": "Required for the planned office refurbishment on the second floor.",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "12",
+        "unit_price": "406.77",
+        "line_total": "4881.24"
+      }
+    ],
+    "total": "4881.24"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D04_nile-cloud-services.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D04",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Nile Cloud Services",
+    "quote_no": "OF-NC-0010",
+    "issue_date": "2026-01-26",
+    "valid_until": "2026-02-09",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "3",
+        "unit_price": "372.72",
+        "line_total": "1118.16"
+      },
+      {
+        "description": "Cloud hosting (monthly)",
+        "quantity": "6",
+        "unit_price": "1598.44",
+        "line_total": "9590.64"
+      },
+      {
+        "description": "Security audit (fixed)",
+        "quantity": "12",
+        "unit_price": "7138.74",
+        "line_total": "85664.88"
+      }
+    ],
+    "subtotal": "96373.68",
+    "tax": "0.00",
+    "total": "96373.68",
+    "payment_terms": "Net 30",
+    "delivery_days": 7
+  }
+}

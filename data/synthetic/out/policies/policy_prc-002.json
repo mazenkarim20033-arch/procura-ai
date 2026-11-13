@@ -1,0 +1,61 @@
+{
+  "synthetic": true,
+  "file": "policies/policy_prc-002.pdf",
+  "doc_type": "policy",
+  "template": "policy",
+  "injected_issues": [],
+  "fields": {
+    "code": "PRC-002",
+    "title": "Competitive Quotations",
+    "version": "2.1",
+    "effective_date": "2025-01-01",
+    "category": "quotations"
+  },
+  "clauses": [
+    {
+      "num": "1.1",
+      "section": "1 Quotation Requirements",
+      "text": "Purchases up to USD 1,000 do not require a competitive quotation."
+    },
+    {
+      "num": "1.2",
+      "section": "1 Quotation Requirements",
+      "text": "Purchases above USD 1,000 and up to USD 5,000 require at least one written quotation."
+    },
+    {
+      "num": "1.3",
+      "section": "1 Quotation Requirements",
+      "text": "Purchases above USD 5,000 and up to USD 25,000 require at least three written quotations from different suppliers."
+    },
+    {
+      "num": "1.4",
+      "section": "1 Quotation Requirements",
+      "text": "Purchases above USD 25,000 must be run as a formal tender."
+    },
+    {
+      "num": "2.1",
+      "section": "2 Quotation Validity and Content",
+      "text": "Quotations must remain valid for at least 30 days from the date of the purchase request."
+    },
+    {
+      "num": "2.2",
+      "section": "2 Quotation Validity and Content",
+      "text": "Quotations must show the supplier name, a quotation number, itemised prices and the currency."
+    },
+    {
+      "num": "2.3",
+      "section": "2 Quotation Validity and Content",
+      "text": "Quotations that contain arithmetic errors must be corrected by the supplier before they can be used."
+    },
+    {
+      "num": "3.1",
+      "section": "3 Exceptions",
+      "text": "A single-source purchase above USD 1,000 requires a written sole-source justification approved by the procurement officer."
+    },
+    {
+      "num": "3.2",
+      "section": "3 Exceptions",
+      "text": "Emergency purchases are exempt from the quotation requirements in section 1."
+    }
+  ]
+}

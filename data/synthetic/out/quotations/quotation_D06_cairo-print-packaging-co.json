@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D06_cairo-print-packaging-co.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D06",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Cairo Print & Packaging Co.",
+    "quote_no": "OF-CP-0014",
+    "issue_date": "2026-02-11",
+    "valid_until": "2026-03-13",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Printed brochures (500)",
+        "quantity": "1",
+        "unit_price": "334.98",
+        "line_total": "334.98"
+      },
+      {
+        "description": "Standing desk",
+        "quantity": "5",
+        "unit_price": "491.27",
+        "line_total": "2456.35"
+      },
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "2",
+        "unit_price": "141.44",
+        "line_total": "282.88"
+      }
+    ],
+    "subtotal": "3074.21",
+    "tax": "0.00",
+    "total": "3074.21",
+    "payment_terms": "Net 30",
+    "delivery_days": 21
+  }
+}

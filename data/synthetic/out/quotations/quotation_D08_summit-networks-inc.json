@@ -1,0 +1,28 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D08_summit-networks-inc.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D08",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Summit Networks Incorporated",
+    "quote_no": "OF-SN-0020",
+    "issue_date": "2026-03-06",
+    "valid_until": "2026-05-05",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Design software licence",
+        "quantity": "20",
+        "unit_price": "547.30",
+        "line_total": "10946.00"
+      }
+    ],
+    "subtotal": "10946.00",
+    "tax": "0.00",
+    "total": "10946.00",
+    "payment_terms": "Net 45",
+    "delivery_days": 7
+  }
+}

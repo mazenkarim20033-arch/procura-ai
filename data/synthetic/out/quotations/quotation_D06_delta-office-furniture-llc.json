@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D06_delta-office-furniture-llc.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D06",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Delta Office Furniture LLC",
+    "quote_no": "OF-DO-0016",
+    "issue_date": "2026-02-09",
+    "valid_until": "2026-04-10",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Printed brochures (500)",
+        "quantity": "1",
+        "unit_price": "356.01",
+        "line_total": "356.01"
+      },
+      {
+        "description": "Standing desk",
+        "quantity": "5",
+        "unit_price": "411.56",
+        "line_total": "2057.80"
+      },
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "2",
+        "unit_price": "176.95",
+        "line_total": "353.90"
+      }
+    ],
+    "subtotal": "2767.71",
+    "tax": "0.00",
+    "total": "2767.71",
+    "payment_terms": "50% advance, balance Net 30",
+    "delivery_days": 14
+  }
+}

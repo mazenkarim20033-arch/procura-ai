@@ -1,0 +1,38 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D06.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D06",
+  "injected_issues": [],
+  "fields": {
+    "request_no": "PR-2026-0006",
+    "requester": "Omar Farouk",
+    "department": "IT",
+    "request_date": "2026-02-19",
+    "supplier": "Cairo Print & Packaging Co.",
+    "currency": "USD",
+    "justification": "Contractor agreement ends; service must continue without interruption.",
+    "items": [
+      {
+        "description": "Printed brochures (500)",
+        "quantity": "1",
+        "unit_price": "346.41",
+        "line_total": "346.41"
+      },
+      {
+        "description": "Standing desk",
+        "quantity": "5",
+        "unit_price": "444.31",
+        "line_total": "2221.55"
+      },
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "2",
+        "unit_price": "158.90",
+        "line_total": "317.80"
+      }
+    ],
+    "total": "2885.76"
+  }
+}

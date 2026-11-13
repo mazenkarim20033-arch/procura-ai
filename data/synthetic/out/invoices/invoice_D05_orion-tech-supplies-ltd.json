@@ -1,0 +1,27 @@
+{
+  "synthetic": true,
+  "file": "invoices/invoice_D05_orion-tech-supplies-ltd.pdf",
+  "doc_type": "invoice",
+  "template": "A",
+  "deal_id": "D05",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Orion Tech Supplies Ltd.",
+    "invoice_no": "INV-2026-0004",
+    "invoice_date": "2026-03-11",
+    "due_date": "2026-04-10",
+    "po_reference": "PO-D05",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Network switch 24-port",
+        "quantity": "5",
+        "unit_price": "415.96",
+        "line_total": "2079.80"
+      }
+    ],
+    "subtotal": "2079.80",
+    "tax": "0.00",
+    "total": "2079.80"
+  }
+}

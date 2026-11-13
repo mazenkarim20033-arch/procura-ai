@@ -1,0 +1,32 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D01.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D01",
+  "injected_issues": [],
+  "fields": {
+    "request_no": "PR-2026-0001",
+    "requester": "Layla Hassan",
+    "department": "Finance",
+    "request_date": "2026-01-05",
+    "supplier": "Summit Networks Inc.",
+    "currency": "USD",
+    "justification": "Contractor agreement ends; service must continue without interruption.",
+    "items": [
+      {
+        "description": "Design software licence",
+        "quantity": "5",
+        "unit_price": "492.15",
+        "line_total": "2460.75"
+      },
+      {
+        "description": "Monitor 27in",
+        "quantity": "5",
+        "unit_price": "216.32",
+        "line_total": "1081.60"
+      }
+    ],
+    "total": "3542.35"
+  }
+}

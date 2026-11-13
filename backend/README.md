@@ -7,6 +7,15 @@ Milestone 3 (foundation) — implemented and tested:
 - DB-level integrity: append-only `audit_log`, immutable assessments/findings/decisions, "only rules can confirm violations", "a request is approved/rejected only after a matching human decision", RLS on every table.
 - Hash-chained audit log service (`app/services/audit.py`), demo-grade role enforcement (`app/api/auth.py`).
 
+Milestone 4 (document ingestion) — implemented and tested:
+
+- `app/documents/`: PDF/TXT parsing (PyMuPDF), rule-based classification, rule-based field extraction with per-field source tracking (page, offsets, text), strict Pydantic models, arithmetic/date validation, clause-level policy chunking.
+- `app/services/ingest.py`: parse → classify → extract → validate → chunk → persist (dedupe by SHA-256). Chunks are stored without embeddings; embedding arrives in milestone 5.
+- API: `POST /documents` (multipart; only admins may upload policies), `GET /documents`, `GET /documents/{id}`. Uploads are audit-logged.
+- Benchmark: `evals/runners/extraction.py` → `evals/reports/`. See `data/synthetic/README.md`.
+
+Limitations: extraction is rule-based and only handles "Label: value" headers plus one-line item rows; no field-level confidence; **OCR code exists but is unverified** (Tesseract is not installed here, so scanned pages produce a warning instead of text); no DOCX/image upload; no LLM fallback yet; the `pymupdf` package currently pulls in heavy optional dependencies (onnxruntime etc.) that should be trimmed before deployment.
+
 ## Setup
 
 ```bash
@@ -20,8 +29,6 @@ cp .env.example .env                               # then set DATABASE_URL (Supa
 
 If you change `app/db/models.py`, regenerate the SQL with `python scripts/gen_ddl.py` (a unit test fails if it is stale).
 
-## Not verified yet
+## Verified against the live Supabase database
 
-- `alembic upgrade head` against a real connection string has not been run (the schema was applied to Supabase through the SQL API and stamped as revision `0001`).
-- `/health/ready` has only been tested in its "no database" path.
-- The audit-log `append()` function has not been run against a live database (hash/verify logic is unit-tested).
+`alembic upgrade head` (no-op at revision `0001`), `/health/ready`, the audit-log chain, and document ingestion/upload (integration tests run inside a transaction that is rolled back; the database is left empty).

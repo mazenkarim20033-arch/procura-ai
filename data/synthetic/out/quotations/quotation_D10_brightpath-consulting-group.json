@@ -1,0 +1,28 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D10_brightpath-consulting-group.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D10",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "BrightPath Consulting Group",
+    "quote_no": "Q-2026-0025",
+    "issue_date": "2026-03-18",
+    "valid_until": "2026-04-01",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "12",
+        "unit_price": "416.57",
+        "line_total": "4998.84"
+      }
+    ],
+    "subtotal": "4998.84",
+    "tax": "0.00",
+    "total": "4998.84",
+    "payment_terms": "Net 30",
+    "delivery_days": 14
+  }
+}

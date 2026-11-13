@@ -1,0 +1,32 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D03.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D03",
+  "injected_issues": [],
+  "fields": {
+    "request_no": "PR-2026-0003",
+    "requester": "Karim Mansour",
+    "department": "HR",
+    "request_date": "2026-01-23",
+    "supplier": "Cairo Print & Packaging Co.",
+    "currency": "USD",
+    "justification": "Supports the quarterly compliance audit scheduled for next quarter.",
+    "items": [
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "1",
+        "unit_price": "184.78",
+        "line_total": "184.78"
+      },
+      {
+        "description": "Whiteboard 120x90",
+        "quantity": "5",
+        "unit_price": "84.46",
+        "line_total": "422.30"
+      }
+    ],
+    "total": "607.08"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D03_cairo-print-packaging-co.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D03",
+  "injected_issues": [
+    "subtotal_mismatch"
+  ],
+  "fields": {
+    "vendor_name": "Cairo Print & Packaging Co.",
+    "quote_no": "OF-CP-0006",
+    "issue_date": "2026-01-17",
+    "valid_until": "2026-03-18",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "1",
+        "unit_price": "191.43",
+        "line_total": "191.43"
+      },
+      {
+        "description": "Whiteboard 120x90",
+        "quantity": "5",
+        "unit_price": "81.99",
+        "line_total": "409.95"
+      }
+    ],
+    "subtotal": "631.38",
+    "tax": "0.00",
+    "total": "631.38",
+    "payment_terms": "Net 30",
+    "delivery_days": 30
+  }
+}

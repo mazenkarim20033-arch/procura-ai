@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D05.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D05",
+  "injected_issues": [],
+  "fields": {
+    "request_no": "PR-2026-0005",
+    "requester": "Omar Farouk",
+    "department": "IT",
+    "request_date": "2026-02-10",
+    "supplier": "Orion Tech Supplies Ltd.",
+    "currency": "USD",
+    "justification": "Replacement of end-of-life equipment used by the finance team.",
+    "items": [
+      {
+        "description": "Network switch 24-port",
+        "quantity": "5",
+        "unit_price": "433.79",
+        "line_total": "2168.95"
+      }
+    ],
+    "total": "2168.95"
+  }
+}

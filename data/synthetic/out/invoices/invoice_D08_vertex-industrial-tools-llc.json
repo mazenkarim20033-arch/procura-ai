@@ -1,0 +1,27 @@
+{
+  "synthetic": true,
+  "file": "invoices/invoice_D08_vertex-industrial-tools-llc.pdf",
+  "doc_type": "invoice",
+  "template": "A",
+  "deal_id": "D08",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Vertex Industrial Tools L.L.C.",
+    "invoice_no": "INV-2026-0006",
+    "invoice_date": "2026-04-01",
+    "due_date": "2026-05-16",
+    "po_reference": "PO-D08",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Design software licence",
+        "quantity": "20",
+        "unit_price": "519.21",
+        "line_total": "10384.20"
+      }
+    ],
+    "subtotal": "10384.20",
+    "tax": "0.00",
+    "total": "10384.20"
+  }
+}

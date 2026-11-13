@@ -1,0 +1,39 @@
+{
+  "synthetic": true,
+  "file": "invoices/invoice_D04_brightpath-consulting-group.pdf",
+  "doc_type": "invoice",
+  "template": "A",
+  "deal_id": "D04",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "BrightPath Consulting Group",
+    "invoice_no": "INV-2026-0003",
+    "invoice_date": "2026-02-22",
+    "due_date": "2026-04-08",
+    "po_reference": "PO-D04",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "3",
+        "unit_price": "421.72",
+        "line_total": "1265.16"
+      },
+      {
+        "description": "Cloud hosting (monthly)",
+        "quantity": "6",
+        "unit_price": "1705.24",
+        "line_total": "10231.44"
+      },
+      {
+        "description": "Security audit (fixed)",
+        "quantity": "12",
+        "unit_price": "7654.64",
+        "line_total": "91855.68"
+      }
+    ],
+    "subtotal": "103352.28",
+    "tax": "0.00",
+    "total": "103352.28"
+  }
+}

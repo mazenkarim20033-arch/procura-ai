@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D07.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D07",
+  "injected_issues": [
+    "total_mismatch"
+  ],
+  "fields": {
+    "request_no": "PR-2026-0007",
+    "requester": "Layla Hassan",
+    "department": "Finance",
+    "request_date": "2026-02-28",
+    "supplier": "Apex Facilities Management",
+    "currency": "EUR",
+    "justification": "Replacement of end-of-life equipment used by the finance team.",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "3",
+        "unit_price": "526.99",
+        "line_total": "1580.97"
+      },
+      {
+        "description": "Cloud hosting (monthly)",
+        "quantity": "6",
+        "unit_price": "1785.44",
+        "line_total": "10712.64"
+      },
+      {
+        "description": "Security audit (fixed)",
+        "quantity": "12",
+        "unit_price": "7231.92",
+        "line_total": "86783.04"
+      }
+    ],
+    "total": "99189.65"
+  }
+}

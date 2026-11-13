@@ -1,0 +1,33 @@
+{
+  "synthetic": true,
+  "file": "invoices/invoice_D01_summit-networks-inc.pdf",
+  "doc_type": "invoice",
+  "template": "A",
+  "deal_id": "D01",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Summit Networks Incorporated",
+    "invoice_no": "INV-2026-0001",
+    "invoice_date": "2026-01-23",
+    "due_date": "2026-02-22",
+    "po_reference": "PO-D01",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Design software licence",
+        "quantity": "5",
+        "unit_price": "513.80",
+        "line_total": "2569.00"
+      },
+      {
+        "description": "Monitor 27in",
+        "quantity": "5",
+        "unit_price": "220.37",
+        "line_total": "1101.85"
+      }
+    ],
+    "subtotal": "3670.85",
+    "tax": "0.00",
+    "total": "3670.85"
+  }
+}

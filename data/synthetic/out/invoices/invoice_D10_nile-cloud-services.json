@@ -1,0 +1,27 @@
+{
+  "synthetic": true,
+  "file": "invoices/invoice_D10_nile-cloud-services.pdf",
+  "doc_type": "invoice",
+  "template": "A",
+  "deal_id": "D10",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Nile Cloud Services",
+    "invoice_no": "INV-2026-0007",
+    "invoice_date": "2026-04-18",
+    "due_date": "2026-06-02",
+    "po_reference": "PO-D10",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "12",
+        "unit_price": "391.39",
+        "line_total": "4696.68"
+      }
+    ],
+    "subtotal": "4696.68",
+    "tax": "0.00",
+    "total": "4696.68"
+  }
+}

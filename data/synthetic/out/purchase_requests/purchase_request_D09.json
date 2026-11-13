@@ -1,0 +1,38 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D09.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D09",
+  "injected_issues": [],
+  "fields": {
+    "request_no": "PR-2026-0009",
+    "requester": "Salma Adel",
+    "department": "Facilities",
+    "request_date": "2026-03-18",
+    "supplier": "Lumen Lighting Solutions Ltd.",
+    "currency": "EGP",
+    "justification": "Replacement of end-of-life equipment used by the finance team.",
+    "items": [
+      {
+        "description": "LED desk lamp",
+        "quantity": "5",
+        "unit_price": "2670.75",
+        "line_total": "13353.75"
+      },
+      {
+        "description": "Printed brochures (500)",
+        "quantity": "1",
+        "unit_price": "8617.05",
+        "line_total": "8617.05"
+      },
+      {
+        "description": "Ergonomic office chair",
+        "quantity": "1",
+        "unit_price": "11568.60",
+        "line_total": "11568.60"
+      }
+    ],
+    "total": "33539.40"
+  }
+}

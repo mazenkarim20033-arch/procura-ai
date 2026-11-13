@@ -1,0 +1,28 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D08_vertex-industrial-tools-llc.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D08",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Vertex Industrial Tools L.L.C.",
+    "quote_no": "Q-2026-0019",
+    "issue_date": "2026-03-01",
+    "valid_until": "2026-04-30",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Design software licence",
+        "quantity": "20",
+        "unit_price": "517.53",
+        "line_total": "10350.60"
+      }
+    ],
+    "subtotal": "10350.60",
+    "tax": "0.00",
+    "total": "10350.60",
+    "payment_terms": "50% advance, balance Net 30",
+    "delivery_days": 14
+  }
+}

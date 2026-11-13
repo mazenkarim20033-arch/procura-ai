@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D12_nile-cloud-services.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D12",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Nile Cloud Services",
+    "quote_no": "Q-2026-0031",
+    "issue_date": "2026-04-04",
+    "valid_until": "2026-06-03",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Security audit (fixed)",
+        "quantity": "3",
+        "unit_price": "8957.07",
+        "line_total": "26871.21"
+      },
+      {
+        "description": "Cloud hosting (monthly)",
+        "quantity": "1",
+        "unit_price": "1557.89",
+        "line_total": "1557.89"
+      },
+      {
+        "description": "Cleaning service (monthly)",
+        "quantity": "1",
+        "unit_price": "778.88",
+        "line_total": "778.88"
+      }
+    ],
+    "subtotal": "29207.98",
+    "tax": "0.00",
+    "total": "29207.98",
+    "payment_terms": "50% advance, balance Net 30",
+    "delivery_days": 14
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D07_apex-facilities-management.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D07",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Apex Facilities Management",
+    "quote_no": "Q-2026-0017",
+    "issue_date": "2026-02-21",
+    "valid_until": "2026-03-07",
+    "currency": "EUR",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "3",
+        "unit_price": "476.45",
+        "line_total": "1429.35"
+      },
+      {
+        "description": "Cloud hosting (monthly)",
+        "quantity": "6",
+        "unit_price": "1782.76",
+        "line_total": "10696.56"
+      },
+      {
+        "description": "Security audit (fixed)",
+        "quantity": "12",
+        "unit_price": "7950.05",
+        "line_total": "95400.60"
+      }
+    ],
+    "subtotal": "107526.51",
+    "tax": "0.00",
+    "total": "107526.51",
+    "payment_terms": "Net 45",
+    "delivery_days": 30
+  }
+}

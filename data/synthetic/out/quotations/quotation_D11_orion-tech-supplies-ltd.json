@@ -1,0 +1,34 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D11_orion-tech-supplies-ltd.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D11",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Orion Tech Supplies Ltd.",
+    "quote_no": "Q-2026-0029",
+    "issue_date": "2026-03-28",
+    "valid_until": "2026-05-27",
+    "currency": "EGP",
+    "items": [
+      {
+        "description": "Network switch 24-port",
+        "quantity": "10",
+        "unit_price": "31450.26",
+        "line_total": "314502.60"
+      },
+      {
+        "description": "Docking station USB-C",
+        "quantity": "5",
+        "unit_price": "5364.97",
+        "line_total": "26824.85"
+      }
+    ],
+    "subtotal": "341327.45",
+    "tax": "47785.84",
+    "total": "389113.29",
+    "payment_terms": "Net 30",
+    "delivery_days": 30
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D08.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D08",
+  "injected_issues": [],
+  "fields": {
+    "request_no": "PR-2026-0008",
+    "requester": "Salma Adel",
+    "department": "Facilities",
+    "request_date": "2026-03-09",
+    "supplier": "Vertex Industrial Tools LLC",
+    "currency": "USD",
+    "justification": "New hires starting next month need standard workstations.",
+    "items": [
+      {
+        "description": "Design software licence",
+        "quantity": "20",
+        "unit_price": "540.22",
+        "line_total": "10804.40"
+      }
+    ],
+    "total": "10804.40"
+  }
+}

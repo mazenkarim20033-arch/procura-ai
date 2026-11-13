@@ -7,7 +7,7 @@ Each milestone ends with: tests run, functionality verified, weaknesses noted, d
 | 1 | Environment & repo | Private repo, README, planning docs | Done (this commit pending approval) |
 | 2 | Requirements & architecture | PRD, architecture, eval strategy, costs/risks | **You approve this plan** |
 | 3 | DB + backend foundation | Supabase Postgres+pgvector connection (no Docker), SQLAlchemy models, Alembic migration, config, logging, health endpoints, error handling, audit log with hash chain, auth stub | Migrations apply cleanly; health/ready green; unit+integration tests pass |
-| 4 | Document ingestion | Upload, parse, OCR (if installed), classify, extract w/ provenance, validators, chunker; synthetic data generator v1 (policies + quotes) | Extraction accuracy measured on templated set; OCR test on scanned sample; tests pass |
+| 4 | Document ingestion | Upload, parse, OCR (if installed), classify, extract w/ provenance, validators, chunker; synthetic data generator v1 (policies + quotes) | Extraction accuracy measured on templated set; OCR test on scanned sample; tests pass  Status: done except OCR (unverified) and LLM fallback. |
 | 5 | RAG engine | Embedder/VectorStore/Reranker interfaces, hybrid search, relevance gate, retrieval eval runner | Retrieval metrics produced from a real run; ablation table |
 | 6 | Purchase request intelligence | Request model/API, missing/inconsistent checks, duplicate/split detection | Rule tests + synthetic dup cases pass |
 | 7 | Compliance engine | Rules engine, LLM provider abstraction (Anthropic/OpenAI-compat/Mock), prompts@v1, pipeline, evidence verifier, injection guard | Golden cases run; false-approval-rate and unsupported-claim rate measured; invariant "AI can't approve" tested |

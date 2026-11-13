@@ -1,0 +1,40 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D04.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D04",
+  "injected_issues": [
+    "missing_field"
+  ],
+  "fields": {
+    "request_no": "PR-2026-0004",
+    "requester": "Karim Mansour",
+    "department": null,
+    "request_date": "2026-02-01",
+    "supplier": "BrightPath Consulting Group",
+    "currency": "USD",
+    "justification": "Upgrade needed to meet the new reporting deadlines.",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "3",
+        "unit_price": "415.57",
+        "line_total": "1246.71"
+      },
+      {
+        "description": "Cloud hosting (monthly)",
+        "quantity": "6",
+        "unit_price": "1725.25",
+        "line_total": "10351.50"
+      },
+      {
+        "description": "Security audit (fixed)",
+        "quantity": "12",
+        "unit_price": "7912.59",
+        "line_total": "94951.08"
+      }
+    ],
+    "total": "106549.29"
+  }
+}

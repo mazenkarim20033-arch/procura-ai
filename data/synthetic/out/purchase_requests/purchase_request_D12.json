@@ -1,0 +1,38 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D12.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D12",
+  "injected_issues": [],
+  "fields": {
+    "request_no": "PR-2026-0012",
+    "requester": "Salma Adel",
+    "department": "Facilities",
+    "request_date": "2026-04-14",
+    "supplier": "BrightPath Consulting Group",
+    "currency": "USD",
+    "justification": "New hires starting next month need standard workstations.",
+    "items": [
+      {
+        "description": "Security audit (fixed)",
+        "quantity": "3",
+        "unit_price": "8103.75",
+        "line_total": "24311.25"
+      },
+      {
+        "description": "Cloud hosting (monthly)",
+        "quantity": "1",
+        "unit_price": "1508.71",
+        "line_total": "1508.71"
+      },
+      {
+        "description": "Cleaning service (monthly)",
+        "quantity": "1",
+        "unit_price": "880.19",
+        "line_total": "880.19"
+      }
+    ],
+    "total": "26700.15"
+  }
+}

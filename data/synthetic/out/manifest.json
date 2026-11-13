@@ -1,0 +1,342 @@
+[
+  {
+    "file": "contracts/contract_D04_brightpath-consulting-group.pdf",
+    "doc_type": "contract",
+    "deal_id": "D04"
+  },
+  {
+    "file": "contracts/contract_D07_apex-facilities-management.pdf",
+    "doc_type": "contract",
+    "deal_id": "D07"
+  },
+  {
+    "file": "contracts/contract_D10_nile-cloud-services.pdf",
+    "doc_type": "contract",
+    "deal_id": "D10"
+  },
+  {
+    "file": "contracts/contract_D12_brightpath-consulting-group.pdf",
+    "doc_type": "contract",
+    "deal_id": "D12"
+  },
+  {
+    "file": "contracts/contract_X05_nile-cloud-services.pdf",
+    "doc_type": "contract",
+    "deal_id": "X05"
+  },
+  {
+    "file": "contracts/contract_X06_nile-cloud-services.pdf",
+    "doc_type": "contract",
+    "deal_id": "X06"
+  },
+  {
+    "file": "invoices/invoice_D01_summit-networks-inc.pdf",
+    "doc_type": "invoice",
+    "deal_id": "D01"
+  },
+  {
+    "file": "invoices/invoice_D02_vertex-industrial-tools-llc.pdf",
+    "doc_type": "invoice",
+    "deal_id": "D02"
+  },
+  {
+    "file": "invoices/invoice_D04_brightpath-consulting-group.pdf",
+    "doc_type": "invoice",
+    "deal_id": "D04"
+  },
+  {
+    "file": "invoices/invoice_D05_orion-tech-supplies-ltd.pdf",
+    "doc_type": "invoice",
+    "deal_id": "D05"
+  },
+  {
+    "file": "invoices/invoice_D07_apex-facilities-management.pdf",
+    "doc_type": "invoice",
+    "deal_id": "D07"
+  },
+  {
+    "file": "invoices/invoice_D08_vertex-industrial-tools-llc.pdf",
+    "doc_type": "invoice",
+    "deal_id": "D08"
+  },
+  {
+    "file": "invoices/invoice_D10_nile-cloud-services.pdf",
+    "doc_type": "invoice",
+    "deal_id": "D10"
+  },
+  {
+    "file": "invoices/invoice_D11_summit-networks-inc.pdf",
+    "doc_type": "invoice",
+    "deal_id": "D11"
+  },
+  {
+    "file": "other/memo_01.pdf",
+    "doc_type": "other",
+    "deal_id": null
+  },
+  {
+    "file": "other/memo_02.pdf",
+    "doc_type": "other",
+    "deal_id": null
+  },
+  {
+    "file": "other/memo_03.pdf",
+    "doc_type": "other",
+    "deal_id": null
+  },
+  {
+    "file": "other/memo_04.pdf",
+    "doc_type": "other",
+    "deal_id": null
+  },
+  {
+    "file": "policies/policy_prc-001.pdf",
+    "doc_type": "policy",
+    "deal_id": null
+  },
+  {
+    "file": "policies/policy_prc-002.pdf",
+    "doc_type": "policy",
+    "deal_id": null
+  },
+  {
+    "file": "policies/policy_prc-003.pdf",
+    "doc_type": "policy",
+    "deal_id": null
+  },
+  {
+    "file": "policies/policy_prc-004.pdf",
+    "doc_type": "policy",
+    "deal_id": null
+  },
+  {
+    "file": "policies/policy_prc-005.pdf",
+    "doc_type": "policy",
+    "deal_id": null
+  },
+  {
+    "file": "policies/policy_prc-006.pdf",
+    "doc_type": "policy",
+    "deal_id": null
+  },
+  {
+    "file": "purchase_requests/purchase_request_D01.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D01"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D02.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D02"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D03.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D03"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D04.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D04"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D05.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D05"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D06.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D06"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D07.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D07"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D08.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D08"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D09.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D09"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D10.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D10"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D11.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D11"
+  },
+  {
+    "file": "purchase_requests/purchase_request_D12.pdf",
+    "doc_type": "purchase_request",
+    "deal_id": "D12"
+  },
+  {
+    "file": "quotations/quotation_D01_orion-tech-supplies-ltd.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D01"
+  },
+  {
+    "file": "quotations/quotation_D01_summit-networks-inc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D01"
+  },
+  {
+    "file": "quotations/quotation_D01_vertex-industrial-tools-llc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D01"
+  },
+  {
+    "file": "quotations/quotation_D02_orion-tech-supplies-ltd.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D02"
+  },
+  {
+    "file": "quotations/quotation_D02_vertex-industrial-tools-llc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D02"
+  },
+  {
+    "file": "quotations/quotation_D03_cairo-print-packaging-co.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D03"
+  },
+  {
+    "file": "quotations/quotation_D03_delta-office-furniture-llc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D03"
+  },
+  {
+    "file": "quotations/quotation_D03_lumen-lighting-solutions-ltd.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D03"
+  },
+  {
+    "file": "quotations/quotation_D04_brightpath-consulting-group.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D04"
+  },
+  {
+    "file": "quotations/quotation_D04_nile-cloud-services.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D04"
+  },
+  {
+    "file": "quotations/quotation_D05_orion-tech-supplies-ltd.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D05"
+  },
+  {
+    "file": "quotations/quotation_D05_summit-networks-inc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D05"
+  },
+  {
+    "file": "quotations/quotation_D05_vertex-industrial-tools-llc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D05"
+  },
+  {
+    "file": "quotations/quotation_D06_cairo-print-packaging-co.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D06"
+  },
+  {
+    "file": "quotations/quotation_D06_delta-office-furniture-llc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D06"
+  },
+  {
+    "file": "quotations/quotation_D06_lumen-lighting-solutions-ltd.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D06"
+  },
+  {
+    "file": "quotations/quotation_D07_apex-facilities-management.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D07"
+  },
+  {
+    "file": "quotations/quotation_D07_brightpath-consulting-group.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D07"
+  },
+  {
+    "file": "quotations/quotation_D08_summit-networks-inc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D08"
+  },
+  {
+    "file": "quotations/quotation_D08_vertex-industrial-tools-llc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D08"
+  },
+  {
+    "file": "quotations/quotation_D09_cairo-print-packaging-co.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D09"
+  },
+  {
+    "file": "quotations/quotation_D09_delta-office-furniture-llc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D09"
+  },
+  {
+    "file": "quotations/quotation_D09_lumen-lighting-solutions-ltd.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D09"
+  },
+  {
+    "file": "quotations/quotation_D10_apex-facilities-management.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D10"
+  },
+  {
+    "file": "quotations/quotation_D10_brightpath-consulting-group.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D10"
+  },
+  {
+    "file": "quotations/quotation_D10_nile-cloud-services.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D10"
+  },
+  {
+    "file": "quotations/quotation_D11_orion-tech-supplies-ltd.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D11"
+  },
+  {
+    "file": "quotations/quotation_D11_summit-networks-inc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D11"
+  },
+  {
+    "file": "quotations/quotation_D11_vertex-industrial-tools-llc.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D11"
+  },
+  {
+    "file": "quotations/quotation_D12_apex-facilities-management.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D12"
+  },
+  {
+    "file": "quotations/quotation_D12_brightpath-consulting-group.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D12"
+  },
+  {
+    "file": "quotations/quotation_D12_nile-cloud-services.pdf",
+    "doc_type": "quotation",
+    "deal_id": "D12"
+  }
+]

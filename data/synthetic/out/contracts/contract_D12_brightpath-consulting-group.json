@@ -1,0 +1,17 @@
+{
+  "synthetic": true,
+  "file": "contracts/contract_D12_brightpath-consulting-group.pdf",
+  "doc_type": "contract",
+  "template": "A",
+  "deal_id": "D12",
+  "injected_issues": [],
+  "fields": {
+    "contract_no": "CT-2026-0004",
+    "vendor_name": "BrightPath Consulting Group",
+    "effective_date": "2026-04-24",
+    "end_date": "2027-04-24",
+    "currency": "USD",
+    "total_value": "26909.69",
+    "payment_terms": "Net 45"
+  }
+}

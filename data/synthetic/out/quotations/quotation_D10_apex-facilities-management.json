@@ -1,0 +1,28 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D10_apex-facilities-management.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D10",
+  "injected_issues": [],
+  "fields": {
+    "vendor_name": "Apex Facilities Management",
+    "quote_no": "OF-AF-0026",
+    "issue_date": "2026-03-21",
+    "valid_until": "2026-05-05",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "12",
+        "unit_price": "364.14",
+        "line_total": "4369.68"
+      }
+    ],
+    "subtotal": "4369.68",
+    "tax": "0.00",
+    "total": "4369.68",
+    "payment_terms": "50% advance, balance Net 30",
+    "delivery_days": 14
+  }
+}

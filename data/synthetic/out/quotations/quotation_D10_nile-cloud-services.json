@@ -1,0 +1,30 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D10_nile-cloud-services.pdf",
+  "doc_type": "quotation",
+  "template": "B",
+  "deal_id": "D10",
+  "injected_issues": [
+    "subtotal_mismatch"
+  ],
+  "fields": {
+    "vendor_name": "Nile Cloud Services",
+    "quote_no": "OF-NC-0024",
+    "issue_date": "2026-03-24",
+    "valid_until": "2026-05-08",
+    "currency": "USD",
+    "items": [
+      {
+        "description": "Consulting day rate",
+        "quantity": "12",
+        "unit_price": "421.09",
+        "line_total": "5053.08"
+      }
+    ],
+    "subtotal": "5116.08",
+    "tax": "0.00",
+    "total": "5116.08",
+    "payment_terms": "Net 60",
+    "delivery_days": 30
+  }
+}

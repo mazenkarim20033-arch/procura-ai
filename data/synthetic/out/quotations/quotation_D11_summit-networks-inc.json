@@ -1,0 +1,36 @@
+{
+  "synthetic": true,
+  "file": "quotations/quotation_D11_summit-networks-inc.pdf",
+  "doc_type": "quotation",
+  "template": "A",
+  "deal_id": "D11",
+  "injected_issues": [
+    "missing_optional"
+  ],
+  "fields": {
+    "vendor_name": "Summit Networks Inc.",
+    "quote_no": "Q-2026-0027",
+    "issue_date": "2026-04-02",
+    "valid_until": null,
+    "currency": "EGP",
+    "items": [
+      {
+        "description": "Network switch 24-port",
+        "quantity": "10",
+        "unit_price": "28130.38",
+        "line_total": "281303.80"
+      },
+      {
+        "description": "Docking station USB-C",
+        "quantity": "5",
+        "unit_price": "6032.13",
+        "line_total": "30160.65"
+      }
+    ],
+    "subtotal": "311464.45",
+    "tax": "43605.02",
+    "total": "355069.47",
+    "payment_terms": "Net 45",
+    "delivery_days": 14
+  }
+}

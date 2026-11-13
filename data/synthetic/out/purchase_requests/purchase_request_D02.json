@@ -1,0 +1,26 @@
+{
+  "synthetic": true,
+  "file": "purchase_requests/purchase_request_D02.pdf",
+  "doc_type": "purchase_request",
+  "template": "A",
+  "deal_id": "D02",
+  "injected_issues": [],
+  "fields": {
+    "request_no": "PR-2026-0002",
+    "requester": "Omar Farouk",
+    "department": "IT",
+    "request_date": "2026-01-14",
+    "supplier": "Vertex Industrial Tools LLC",
+    "currency": "EUR",
+    "justification": "Contractor agreement ends; service must continue without interruption.",
+    "items": [
+      {
+        "description": "Monitor 27in",
+        "quantity": "5",
+        "unit_price": "243.98",
+        "line_total": "1219.90"
+      }
+    ],
+    "total": "1219.90"
+  }
+}

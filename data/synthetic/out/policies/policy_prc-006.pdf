@@ -1,0 +1,116 @@
+%PDF-1.3
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Courier-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/BaseFont /Courier /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+5 0 obj
+<<
+/Contents 9 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 8 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/PageMode /UseNone /Pages 8 0 R /Type /Catalog
+>>
+endobj
+7 0 obj
+<<
+/Author (anonymous) /CreationDate (D:20000101000000+00'00') /Creator (anonymous) /Keywords () /ModDate (D:20000101000000+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (unspecified) /Title (untitled) /Trapped /False
+>>
+endobj
+8 0 obj
+<<
+/Count 1 /Kids [ 5 0 R ] /Type /Pages
+>>
+endobj
+9 0 obj
+<<
+/Length 2219
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 12 Tf 14.4 TL ET
+BT 1 0 0 1 40 800 Tm (PROCUREMENT POLICY) Tj T* ET
+BT /F3 10 Tf 12 TL ET
+BT 1 0 0 1 40 788 Tm (Policy Code: PRC-006) Tj T* ET
+BT 1 0 0 1 40 776 Tm (Title: Purchase Integrity and Special Cases) Tj T* ET
+BT 1 0 0 1 40 764 Tm (Version: 1.0) Tj T* ET
+BT 1 0 0 1 40 752 Tm (Effective Date: 2025-06-01) Tj T* ET
+BT 1 0 0 1 40 740 Tm (Category: integrity) Tj T* ET
+BT 1 0 0 1 40 728 Tm (Company: Northwind Industrial Co.) Tj T* ET
+BT 1 0 0 1 40 716 Tm  T* ET
+BT 1 0 0 1 40 704 Tm (1. Split Purchases) Tj T* ET
+BT 1 0 0 1 40 692 Tm (1.1 Purchases must not be split into smaller orders to avoid an approval threshold or) Tj T* ET
+BT 1 0 0 1 40 680 Tm (    quotation requirement.) Tj T* ET
+BT 1 0 0 1 40 668 Tm (1.2 Purchases from the same supplier in the same category within 30 days are combined) Tj T* ET
+BT 1 0 0 1 40 656 Tm (    when determining the approval level.) Tj T* ET
+BT 1 0 0 1 40 644 Tm  T* ET
+BT 1 0 0 1 40 632 Tm (2. Justification) Tj T* ET
+BT 1 0 0 1 40 620 Tm (2.1 Every purchase request must include a business justification.) Tj T* ET
+BT 1 0 0 1 40 608 Tm (2.2 Purchases of items outside the standard catalog must be accompanied by a reasonable) Tj T* ET
+BT 1 0 0 1 40 596 Tm (    justification.) Tj T* ET
+BT 1 0 0 1 40 584 Tm  T* ET
+BT 1 0 0 1 40 572 Tm (3. Emergency Purchases) Tj T* ET
+BT 1 0 0 1 40 560 Tm (3.1 An emergency purchase is one needed to prevent immediate harm to people, property or) Tj T* ET
+BT 1 0 0 1 40 548 Tm (    operations.) Tj T* ET
+BT 1 0 0 1 40 536 Tm (3.2 Emergency purchases require retrospective approval within 3 business days.) Tj T* ET
+BT 1 0 0 1 40 524 Tm (3.3 Emergency purchases above USD 5,000 still require at least two written quotations) Tj T* ET
+BT 1 0 0 1 40 512 Tm (    where feasible.) Tj T* ET
+BT 1 0 0 1 40 500 Tm  T* ET
+BT 1 0 0 1 40 488 Tm (4. Duplicate Requests) Tj T* ET
+BT 1 0 0 1 40 476 Tm (4.1 Requests that duplicate an open request for the same items and supplier must be) Tj T* ET
+BT 1 0 0 1 40 464 Tm (    rejected or merged.) Tj T* ET
+BT 1 0 0 1 40 452 Tm  T* ET
+BT /F3 8 Tf 9.6 TL ET
+BT 1 0 0 1 40 28 Tm (SYNTHETIC DATA - fictional company and vendors, not a real document) Tj T* ET
+ 
+endstream
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000061 00000 n 
+0000000112 00000 n 
+0000000219 00000 n 
+0000000329 00000 n 
+0000000434 00000 n 
+0000000637 00000 n 
+0000000705 00000 n 
+0000000966 00000 n 
+0000001025 00000 n 
+trailer
+<<
+/ID 
+[<1c178198fbdfa51b25995d89d4102043><1c178198fbdfa51b25995d89d4102043>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 7 0 R
+/Root 6 0 R
+/Size 10
+>>
+startxref
+3295
+%%EOF
