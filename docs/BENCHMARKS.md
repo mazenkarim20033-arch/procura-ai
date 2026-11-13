@@ -56,3 +56,21 @@ Reports: `duplicates_2026-11-13_791e6af.json` (run 1) and `duplicates_2026-11-13
 | 2 (test split) | 1.00 | 1.00 | Identical requests outside the 90-day window now report as informational `repeat_purchase` |
 
 The run-1 failures exposed a design flaw (a legitimate repeat order is not a duplicate), not a threshold problem; I changed the logic, then re-ran. F1 is 1.0 on dev for every similarity threshold from 0.65 to 0.85, so the shipped default (0.80) sits inside that plateau rather than at its edge. Treat the perfect score with suspicion: the pairs are easy and synthetic (n = 12 per type), so this shows the logic does what it is meant to on cases I could think of, not that it will catch messy real-world duplicates. Split-purchase and near-threshold detection are covered by unit tests only; they have no benchmark.
+
+## Compliance assessment
+Report: `compliance_2026-11-14_7fabb54.json` (`evals/runners/compliance.py`). 40 hand-designed scenarios (10 compliant, 10 clear violations, 8 missing-information, 6 ambiguous, 6 adversarial) with gold `(rule, category)` labels written from the policy text and frozen before the pipeline was run on them (`evals/datasets/make_compliance_scenarios.py`). Gold labels cover the **deterministic rules only**.
+
+| Rules only (no LLM) | Result |
+|---|---|
+| Precision / recall / F1 over (rule, category) pairs | 1.00 / 1.00 / 1.00 (35 expected findings) |
+| Per category (confirmed 14, potential 10, missing 10, inconclusive 1) | 1.00 precision and recall each |
+| Exact finding-set match / status accuracy | 40 / 40 and 40 / 40 |
+| False approval rate (gold confirmed violation, status `no_issues_found`) | 0 / 12 |
+| Scenarios with any gold issue reported as `no_issues_found` | 0 / 29 |
+| Invariant violations (LLM-confirmed violation, finding without evidence, an "approved" status) | 0 |
+
+Full pipeline with the **mock** provider: the same rule results (the LLM stage never hid or changed a rule finding), 0 invariant violations, 40 mock findings accepted and none rejected. The mock adds a keyword-based IT-review finding to every laptop request, so it moved the status away from the rules-only gold in 20 scenarios; status is therefore not scored in that mode. **These numbers say nothing about AI quality.**
+
+How to read the perfect rule scores: the rules and the scenarios were written by the same person against the same policy text, so this is a consistency and regression check, not a measure of how well the rules would hold up on other people's requests. Only one scenario exercises the `inconclusive` category and 12 exercise confirmed violations, so per-category figures rest on very few cases.
+
+**Not yet measured** (needs a real provider; run `python ../evals/runners/compliance.py --modes none,groq` once `LLM_PROVIDER=groq`, `LLM_API_KEY` and `LLM_MODEL` are set): unsupported-claim rate of a real model before the verifier, how often injected text changes a real model's output, tokens, latency and cost per assessment, and Groq's JSON reliability.
