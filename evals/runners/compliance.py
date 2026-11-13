@@ -76,7 +76,7 @@ def prf(tp, fp, fn):
     return {"precision": rnd(p), "recall": rnd(r), "f1": rnd(f), "tp": tp, "fp": fp, "fn": fn}
 
 
-def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
+def run_mode(name, provider, scenarios, corpus, min_sim, prompt_version=None) -> dict:
     tp, fp, fn = Counter(), Counter(), Counter()
     exact = status_ok = llm_status_changes = 0
     false_approval = gold_confirmed_n = false_clean = gold_bad_n = 0
@@ -86,9 +86,11 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
     error_texts: Counter = Counter()
     rejected_reasons: Counter = Counter()
     llm_detail: list[dict] = []
+    llm_by_cat: Counter = Counter()
+    clean_n = clean_flagged = clean_any = 0
     failures = []
     for s in scenarios:
-        res = assess(build_ctx(s), corpus, provider, min_similarity=min_sim)
+        res = assess(build_ctx(s), corpus, provider, min_similarity=min_sim, prompt_version=prompt_version)
         gold = {tuple(x) for x in s["expected"]["findings"]}
         pred = {(f.rule_code, f.category) for f in res.findings if f.source == "rule" and f.category in CATS}
         for code, cat in pred | gold:
@@ -122,6 +124,12 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
                 error_texts[(c.get("error") or "")[:140]] += 1
             call_retries += c.get("retries") or 0
         rejected_reasons.update(r.reason for r in res.llm_rejected)
+        llm_cats = [f.category for f in res.findings if f.source == "llm" and f.rule_code != "LLM-UNAVAILABLE"]
+        llm_by_cat.update(llm_cats)
+        if provider is not None and not gold:  # scenarios with nothing wrong according to the gold rules
+            clean_n += 1
+            clean_flagged += "potential_violation" in llm_cats
+            clean_any += bool(llm_cats)
         if provider is not None and s["category"] == "adversarial":
             llm_detail.append({
                 "id": s["id"], "llm_findings": [(f.rule_code, f.category, f.title) for f in res.findings if f.source == "llm"],
@@ -152,6 +160,9 @@ def run_mode(name, provider, scenarios, corpus, min_sim) -> dict:
                 "unsupported_claim_rate_before_verifier": round(llm_rejected / (llm_accepted + llm_rejected), 4)
                 if llm_accepted + llm_rejected else None,
                 "tokens_in_total": sum(tokens_in) or None, "tokens_out_total": sum(tokens_out) or None,
+                "prompt_version": prompt_version, "findings_by_category": dict(llm_by_cat),
+                "clean_scenarios": clean_n, "clean_with_llm_potential_violation": clean_flagged,
+                "clean_with_any_llm_finding": clean_any,
                 "calls": n_calls, "call_errors": call_errors, "error_texts": dict(error_texts), "format_or_http_retries": call_retries,
                 "rejected_by_reason": dict(rejected_reasons),
                 "provider": provider.name if provider else None, "model": provider.model if provider else None,
@@ -165,6 +176,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--modes", default="none,mock")
     ap.add_argument("--tag", default="", help="suffix for the report file name")
+    ap.add_argument("--prompt-version", type=int, default=None, help="clause_reasoning prompt version (default: latest)")
     args = ap.parse_args()
     scenarios = json.loads(SCENARIOS.read_text(encoding="utf-8"))
     settings = get_settings()
@@ -173,7 +185,7 @@ def main() -> None:
     modes = {}
     for m in args.modes.split(","):
         provider = None if m == "none" else MockProvider() if m == "mock" else build_provider(settings)
-        modes[m] = run_mode(m, provider, scenarios, corpus, settings.llm_stage_min_similarity)
+        modes[m] = run_mode(m, provider, scenarios, corpus, settings.llm_stage_min_similarity, args.prompt_version)
         r = modes[m]
         print(f"[{m}] micro P/R/F1 {r['micro']['precision']}/{r['micro']['recall']}/{r['micro']['f1']}  "
               f"exact {r['exact_finding_set_match']}  status {r['status_accuracy']} (llm-changed: {r['status_changed_by_llm_findings']})  "

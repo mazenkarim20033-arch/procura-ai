@@ -85,7 +85,7 @@ def test_assess_endpoint_persists_findings_with_evidence_and_never_approves(db, 
     assert a["version"] == 1 and a["is_mock"] and a["provider"] == "mock"
     assert a["compliance_status"] in {"issues_found", "needs_information", "inconclusive", "no_issues_found"}
     assert a["findings"] and "human procurement officer" in a["decision_required"]
-    assert a["prompt_versions"]["clause_reasoning"] == "clause_reasoning@v1"
+    assert a["prompt_versions"]["clause_reasoning"] == "clause_reasoning@v2"
     for f in a["findings"]:
         if f["category"] != "inconclusive":
             assert f["evidence"], f

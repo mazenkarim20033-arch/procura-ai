@@ -43,13 +43,13 @@ def build_user_message(clauses: list[Clause], payload: dict) -> str:
 
 def run_llm_stage(
     ctx: AssessmentContext, corpus: PolicyCorpus, provider: LLMProvider | None, *, min_similarity: float,
-    k_per_query: int = 4, max_clauses: int = 6,
+    k_per_query: int = 4, max_clauses: int = 6, prompt_version: int | None = None,
 ) -> LLMStageResult:
     out = LLMStageResult()
     if provider is None:
         out.skipped_reason = "no LLM provider configured"
         return out
-    out.prompt = load_prompt(PROMPT_NAME)
+    out.prompt = load_prompt(PROMPT_NAME, prompt_version)
     r = ctx.request
     items = ", ".join(i.description for i in r.items if i.description) or "unspecified items"
     out.queries = [

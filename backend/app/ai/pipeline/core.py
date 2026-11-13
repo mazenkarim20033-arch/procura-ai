@@ -37,10 +37,10 @@ class AssessmentResult:
 
 
 def assess(ctx: AssessmentContext, corpus: PolicyCorpus, provider: LLMProvider | None, *,
-           min_similarity: float) -> AssessmentResult:
+           min_similarity: float, prompt_version: int | None = None) -> AssessmentResult:
     start = time.perf_counter()
     findings, ran = evaluate_rules(ctx, corpus)
-    stage = run_llm_stage(ctx, corpus, provider, min_similarity=min_similarity)
+    stage = run_llm_stage(ctx, corpus, provider, min_similarity=min_similarity, prompt_version=prompt_version)
     findings = [*findings, *stage.findings]
 
     # Retrieval is "relevant" if the policy corpus returned clauses above the gate for this request.

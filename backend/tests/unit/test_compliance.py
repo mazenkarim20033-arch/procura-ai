@@ -278,8 +278,11 @@ def test_provider_gives_up_cleanly():
 
 def test_prompt_registry_versions_and_hash():
     p = load_prompt("clause_reasoning")
-    assert p.label == "clause_reasoning@v1" and len(p.sha256) == 64 and "UNTRUSTED" in p.text
-    assert load_prompt("clause_reasoning", 1).sha256 == p.sha256
+    assert p.label == "clause_reasoning@v2"  # latest version is the default
+    v1 = load_prompt("clause_reasoning", 1)
+    assert v1.label == "clause_reasoning@v1" and v1.sha256 != p.sha256 and len(p.sha256) == 64
+    assert "UNTRUSTED" in p.text and "UNTRUSTED" in v1.text  # both versions keep the injection warning
+    assert load_prompt("clause_reasoning", 2).sha256 == p.sha256
     with pytest.raises(KeyError):
         load_prompt("clause_reasoning", 99)
     with pytest.raises(KeyError):
@@ -293,7 +296,7 @@ def run(c, corpus, provider=None):
 
 def test_pipeline_invariants_with_mock_provider(corpus):
     res = run(ctx(req=request(justification="Urgent emergency replacement of a custom bespoke laptop fleet")), corpus)
-    assert res.is_mock and res.provider == "mock" and res.prompt_versions["clause_reasoning"] == "clause_reasoning@v1"
+    assert res.is_mock and res.provider == "mock" and res.prompt_versions["clause_reasoning"] == "clause_reasoning@v2"
     assert res.compliance_status in {"no_issues_found", "issues_found", "needs_information", "inconclusive"}
     assert "approved" not in res.compliance_status
     llm = [f for f in res.findings if f.source == "llm"]
