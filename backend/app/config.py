@@ -12,10 +12,13 @@ class Settings(BaseSettings):
     database_url: str | None = None
 
     # AI (provider wiring lands in a later milestone; "mock" needs no credentials)
-    llm_provider: str = "mock"
+    llm_provider: str = "mock"  # mock | groq | openai_compat
     llm_model: str | None = None
     llm_api_key: str | None = None
-    llm_base_url: str | None = None
+    llm_base_url: str | None = None  # groq defaults to https://api.groq.com/openai/v1
+    # Optional USD prices per million tokens. Cost is only estimated when BOTH are set; none are assumed.
+    llm_price_in_per_m: float | None = None
+    llm_price_out_per_m: float | None = None
     embedding_provider: str = "fastembed"  # fastembed | hashing (test-only, not semantic)
     # Chosen on dev-split MRR in evals/reports/retrieval_2026-11-13_498ec60.json (bge-small was within
     # noise; MiniLM is smaller and faster). Changing the model REQUIRES re-indexing and re-tuning the gate.

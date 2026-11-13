@@ -30,4 +30,4 @@ target-version = "py312"
 
 [tool.ruff.lint]
 extend-select = ["B", "I", "UP"]
-ignore = ["B008", "C408"]  # B008: FastAPI's Depends() in defaults is the idiom; C408: dict(...) is fine
+ignore = ["B008", "C408", "UP046"]  # B008: FastAPI Depends() idiom; C408: dict() ok; UP046: classic Generic is fine
