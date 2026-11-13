@@ -1,0 +1,2154 @@
+[
+ {
+  "id": "c001",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 160,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 10
+    },
+    {
+     "description": "LED desk lamp",
+     "quantity": 1
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "DELTA OFFICE FURNITURE L.L.C.",
+   "day": 176,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 10
+    },
+    {
+     "description": "LED desk lamp",
+     "quantity": 1
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c002",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 198,
+   "items": [
+    {
+     "description": "LED desk lamp",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 205,
+   "items": [
+    {
+     "description": "LED lamp for desk",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c003",
+  "type": "partial_overlap",
+  "label": 0,
+  "a": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 68,
+   "items": [
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 10
+    },
+    {
+     "description": "Standing desk",
+     "quantity": 5
+    },
+    {
+     "description": "LED desk lamp",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 107,
+   "items": [
+    {
+     "description": "Whiteboard (120x90 cm)",
+     "quantity": 1
+    },
+    {
+     "description": "Ergonomic desk chair",
+     "quantity": 1
+    },
+    {
+     "description": "500 printed brochures",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c004",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 8,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 279,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c005",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 146,
+   "items": [
+    {
+     "description": "LED desk lamp",
+     "quantity": 5
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 10
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 165,
+   "items": [
+    {
+     "description": "LED lamp for desk",
+     "quantity": 5
+    },
+    {
+     "description": "Ergonomic chair for office",
+     "quantity": 10
+    },
+    {
+     "description": "500 printed brochures",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c006",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 194,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 216,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c007",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 167,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 10
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 179,
+   "items": [
+    {
+     "description": "Desk, standing",
+     "quantity": 10
+    },
+    {
+     "description": "Print run of 500 brochures",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c008",
+  "type": "same_supplier_other_items",
+  "label": 0,
+  "a": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 115,
+   "items": [
+    {
+     "description": "Consulting day rate",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 119,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c009",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 51,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 302,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c010",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "BrightPath Consulting Group",
+   "day": 6,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 1
+    },
+    {
+     "description": "Consulting day rate",
+     "quantity": 1
+    },
+    {
+     "description": "Security audit (fixed)",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 14,
+   "items": [
+    {
+     "description": "Cloud hosting per month",
+     "quantity": 1
+    },
+    {
+     "description": "Consultant daily rate",
+     "quantity": 1
+    },
+    {
+     "description": "Security audit, fixed fee",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c011",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Orion Tech Supplies Ltd.",
+   "day": 137,
+   "items": [
+    {
+     "description": "Laptop 14in business",
+     "quantity": 1
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "ORION TECH SUPPLIES LIMITED",
+   "day": 139,
+   "items": [
+    {
+     "description": "Laptop 14in business",
+     "quantity": 1
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c012",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 0,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 1
+    },
+    {
+     "description": "Consulting day rate",
+     "quantity": 2
+    },
+    {
+     "description": "Security audit (fixed)",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 45,
+   "items": [
+    {
+     "description": "Cloud hosting per month",
+     "quantity": 1
+    },
+    {
+     "description": "Consulting, per day",
+     "quantity": 2
+    },
+    {
+     "description": "Fixed security audit",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c013",
+  "type": "same_supplier_other_items",
+  "label": 0,
+  "a": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 97,
+   "items": [
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 98,
+   "items": [
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c014",
+  "type": "partial_overlap",
+  "label": 0,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 11,
+   "items": [
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 5
+    },
+    {
+     "description": "LED desk lamp",
+     "quantity": 2
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 31,
+   "items": [
+    {
+     "description": "500 printed brochures",
+     "quantity": 1
+    },
+    {
+     "description": "Whiteboard (120x90 cm)",
+     "quantity": 1
+    },
+    {
+     "description": "Desk, standing",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c015",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Summit Networks Inc.",
+   "day": 81,
+   "items": [
+    {
+     "description": "Design software licence",
+     "quantity": 5
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Summit Networks Inc.",
+   "day": 354,
+   "items": [
+    {
+     "description": "Design software licence",
+     "quantity": 5
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c016",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 53,
+   "items": [
+    {
+     "description": "Consulting day rate",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 56,
+   "items": [
+    {
+     "description": "Day rate for consulting",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c017",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 106,
+   "items": [
+    {
+     "description": "Consulting day rate",
+     "quantity": 1
+    },
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    },
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 146,
+   "items": [
+    {
+     "description": "Consulting day rate",
+     "quantity": 1
+    },
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    },
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c018",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 155,
+   "items": [
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 5
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 5
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 201,
+   "items": [
+    {
+     "description": "Ergonomic chair for office",
+     "quantity": 5
+    },
+    {
+     "description": "Whiteboard (120x90 cm)",
+     "quantity": 5
+    },
+    {
+     "description": "Brochure printing, 500 copies",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c019",
+  "type": "same_supplier_other_items",
+  "label": 0,
+  "a": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 125,
+   "items": [
+    {
+     "description": "Consulting day rate",
+     "quantity": 10
+    },
+    {
+     "description": "Security audit (fixed)",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 137,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    },
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c020",
+  "type": "partial_overlap",
+  "label": 0,
+  "a": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 148,
+   "items": [
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 1
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 2
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 168,
+   "items": [
+    {
+     "description": "500 printed brochures",
+     "quantity": 1
+    },
+    {
+     "description": "Height-adjustable standing desk",
+     "quantity": 1
+    },
+    {
+     "description": "Desk LED light",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c021",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 97,
+   "items": [
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 10
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 217,
+   "items": [
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 10
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c022",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "BrightPath Consulting Group",
+   "day": 3,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 10
+    },
+    {
+     "description": "Consulting day rate",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 5,
+   "items": [
+    {
+     "description": "Hosting in the cloud, monthly",
+     "quantity": 10
+    },
+    {
+     "description": "Consulting, per day",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c023",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 144,
+   "items": [
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 5
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 2
+    },
+    {
+     "description": "LED desk lamp",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 184,
+   "items": [
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 5
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 2
+    },
+    {
+     "description": "LED desk lamp",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c024",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "BrightPath Consulting Group",
+   "day": 96,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    },
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "BrightPath Consulting Group",
+   "day": 138,
+   "items": [
+    {
+     "description": "Cleaning services, monthly",
+     "quantity": 5
+    },
+    {
+     "description": "Cloud hosting per month",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c025",
+  "type": "same_supplier_other_items",
+  "label": 0,
+  "a": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 20,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 23,
+   "items": [
+    {
+     "description": "Security audit (fixed)",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c026",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 2,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 2
+    },
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 10
+    },
+    {
+     "description": "Security audit (fixed)",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 195,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 2
+    },
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 10
+    },
+    {
+     "description": "Security audit (fixed)",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c027",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 46,
+   "items": [
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 2
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 64,
+   "items": [
+    {
+     "description": "Office chair, ergonomic",
+     "quantity": 2
+    },
+    {
+     "description": "White board 120 by 90",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c028",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 163,
+   "items": [
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "LUMEN LIGHTING SOLUTIONS LIMITED",
+   "day": 173,
+   "items": [
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c029",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 74,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 2
+    },
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 97,
+   "items": [
+    {
+     "description": "Monthly cloud hosting",
+     "quantity": 2
+    },
+    {
+     "description": "Cleaning services, monthly",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c030",
+  "type": "partial_overlap",
+  "label": 0,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 196,
+   "items": [
+    {
+     "description": "LED desk lamp",
+     "quantity": 1
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 2
+    },
+    {
+     "description": "Standing desk",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 235,
+   "items": [
+    {
+     "description": "LED lamp for desk",
+     "quantity": 1
+    },
+    {
+     "description": "500 printed brochures",
+     "quantity": 1
+    },
+    {
+     "description": "Office chair, ergonomic",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c031",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 170,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 1
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 10
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 402,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 1
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 10
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c032",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 10,
+   "items": [
+    {
+     "description": "Network switch 24-port",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Summit Networks Inc.",
+   "day": 29,
+   "items": [
+    {
+     "description": "24-port network switch",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c033",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 22,
+   "items": [
+    {
+     "description": "LED desk lamp",
+     "quantity": 5
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 1
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "LUMEN LIGHTING SOLUTIONS LIMITED",
+   "day": 40,
+   "items": [
+    {
+     "description": "LED desk lamp",
+     "quantity": 5
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 1
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c034",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Summit Networks Inc.",
+   "day": 45,
+   "items": [
+    {
+     "description": "Monitor 27in",
+     "quantity": 10
+    },
+    {
+     "description": "Network switch 24-port",
+     "quantity": 2
+    },
+    {
+     "description": "Docking station USB-C",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Summit Networks Inc.",
+   "day": 65,
+   "items": [
+    {
+     "description": "Monitor 27 inch",
+     "quantity": 10
+    },
+    {
+     "description": "24 port ethernet switch",
+     "quantity": 2
+    },
+    {
+     "description": "Laptop docking station (USB-C)",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c035",
+  "type": "same_supplier_other_items",
+  "label": 0,
+  "a": {
+   "supplier_name": "BrightPath Consulting Group",
+   "day": 150,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "BrightPath Consulting Group",
+   "day": 164,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c036",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 49,
+   "items": [
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 222,
+   "items": [
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c037",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Summit Networks Inc.",
+   "day": 139,
+   "items": [
+    {
+     "description": "Network switch 24-port",
+     "quantity": 2
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 1
+    },
+    {
+     "description": "Laptop 14in business",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 145,
+   "items": [
+    {
+     "description": "Switch, 24 ports, network",
+     "quantity": 2
+    },
+    {
+     "description": "27-inch monitor",
+     "quantity": 1
+    },
+    {
+     "description": "14-inch business laptop",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c038",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 38,
+   "items": [
+    {
+     "description": "Monitor 27in",
+     "quantity": 5
+    },
+    {
+     "description": "Network switch 24-port",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "VERTEX INDUSTRIAL TOOLS L.L.C.",
+   "day": 49,
+   "items": [
+    {
+     "description": "Monitor 27in",
+     "quantity": 5
+    },
+    {
+     "description": "Network switch 24-port",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c039",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 4,
+   "items": [
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 10
+    },
+    {
+     "description": "LED desk lamp",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 42,
+   "items": [
+    {
+     "description": "Ergonomic desk chair",
+     "quantity": 10
+    },
+    {
+     "description": "LED lamp for desk",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c040",
+  "type": "same_supplier_other_items",
+  "label": 0,
+  "a": {
+   "supplier_name": "Orion Tech Supplies Ltd.",
+   "day": 57,
+   "items": [
+    {
+     "description": "Monitor 27in",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Orion Tech Supplies Ltd.",
+   "day": 73,
+   "items": [
+    {
+     "description": "Design software licence",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c041",
+  "type": "partial_overlap",
+  "label": 0,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 145,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 1
+    },
+    {
+     "description": "LED desk lamp",
+     "quantity": 10
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 178,
+   "items": [
+    {
+     "description": "Sit-stand desk",
+     "quantity": 1
+    },
+    {
+     "description": "Brochure printing, 500 copies",
+     "quantity": 1
+    },
+    {
+     "description": "Office chair, ergonomic",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c042",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 40,
+   "items": [
+    {
+     "description": "Network switch 24-port",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 281,
+   "items": [
+    {
+     "description": "Network switch 24-port",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c043",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 15,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 19,
+   "items": [
+    {
+     "description": "Desk, standing",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c044",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 151,
+   "items": [
+    {
+     "description": "Docking station USB-C",
+     "quantity": 10
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "VERTEX INDUSTRIAL TOOLS L.L.C.",
+   "day": 152,
+   "items": [
+    {
+     "description": "Docking station USB-C",
+     "quantity": 10
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c045",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 164,
+   "items": [
+    {
+     "description": "Security audit (fixed)",
+     "quantity": 5
+    },
+    {
+     "description": "Consulting day rate",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 211,
+   "items": [
+    {
+     "description": "Fixed-price security audit",
+     "quantity": 5
+    },
+    {
+     "description": "Day rate for consulting",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c046",
+  "type": "partial_overlap",
+  "label": 0,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 167,
+   "items": [
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 10
+    },
+    {
+     "description": "LED desk lamp",
+     "quantity": 1
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 179,
+   "items": [
+    {
+     "description": "Ergonomic desk chair",
+     "quantity": 1
+    },
+    {
+     "description": "Sit-stand desk",
+     "quantity": 1
+    },
+    {
+     "description": "Brochure printing, 500 copies",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c047",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 66,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 222,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c048",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Apex Facilities Management",
+   "day": 162,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "BrightPath Consulting Group",
+   "day": 182,
+   "items": [
+    {
+     "description": "Monthly cleaning service",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c049",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 3,
+   "items": [
+    {
+     "description": "Design software licence",
+     "quantity": 10
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 1
+    },
+    {
+     "description": "Docking station USB-C",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "VERTEX INDUSTRIAL TOOLS L.L.C.",
+   "day": 34,
+   "items": [
+    {
+     "description": "Design software licence",
+     "quantity": 10
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 1
+    },
+    {
+     "description": "Docking station USB-C",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c050",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 172,
+   "items": [
+    {
+     "description": "Docking station USB-C",
+     "quantity": 10
+    },
+    {
+     "description": "Laptop 14in business",
+     "quantity": 1
+    },
+    {
+     "description": "Network switch 24-port",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 204,
+   "items": [
+    {
+     "description": "Laptop docking station (USB-C)",
+     "quantity": 10
+    },
+    {
+     "description": "Business notebook 14 inch",
+     "quantity": 1
+    },
+    {
+     "description": "24 port ethernet switch",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c051",
+  "type": "partial_overlap",
+  "label": 0,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 136,
+   "items": [
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 10
+    },
+    {
+     "description": "Standing desk",
+     "quantity": 10
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 139,
+   "items": [
+    {
+     "description": "120x90 whiteboard",
+     "quantity": 1
+    },
+    {
+     "description": "500 printed brochures",
+     "quantity": 1
+    },
+    {
+     "description": "Desk LED light",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c052",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 104,
+   "items": [
+    {
+     "description": "LED desk lamp",
+     "quantity": 2
+    },
+    {
+     "description": "Standing desk",
+     "quantity": 1
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 337,
+   "items": [
+    {
+     "description": "LED desk lamp",
+     "quantity": 2
+    },
+    {
+     "description": "Standing desk",
+     "quantity": 1
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 10
+    }
+   ]
+  }
+ },
+ {
+  "id": "c053",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 190,
+   "items": [
+    {
+     "description": "Laptop 14in business",
+     "quantity": 1
+    },
+    {
+     "description": "Network switch 24-port",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Orion Tech Supplies Ltd.",
+   "day": 206,
+   "items": [
+    {
+     "description": "14-inch business laptop",
+     "quantity": 1
+    },
+    {
+     "description": "24-port network switch",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c054",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 115,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 1
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "LUMEN LIGHTING SOLUTIONS LIMITED",
+   "day": 146,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 1
+    },
+    {
+     "description": "Ergonomic office chair",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c055",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Summit Networks Inc.",
+   "day": 5,
+   "items": [
+    {
+     "description": "Monitor 27in",
+     "quantity": 1
+    },
+    {
+     "description": "Docking station USB-C",
+     "quantity": 5
+    },
+    {
+     "description": "Network switch 24-port",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Summit Networks Inc.",
+   "day": 18,
+   "items": [
+    {
+     "description": "Monitor 27 inch",
+     "quantity": 1
+    },
+    {
+     "description": "USB-C docking adapter station",
+     "quantity": 5
+    },
+    {
+     "description": "Switch, 24 ports, network",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c056",
+  "type": "same_supplier_other_items",
+  "label": 0,
+  "a": {
+   "supplier_name": "BrightPath Consulting Group",
+   "day": 77,
+   "items": [
+    {
+     "description": "Security audit (fixed)",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "BrightPath Consulting Group",
+   "day": 91,
+   "items": [
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c057",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 11,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 1
+    },
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 1
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Nile Cloud Services",
+   "day": 291,
+   "items": [
+    {
+     "description": "Cleaning service (monthly)",
+     "quantity": 1
+    },
+    {
+     "description": "Cloud hosting (monthly)",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c058",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 153,
+   "items": [
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 5
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Delta Office Furniture LLC",
+   "day": 172,
+   "items": [
+    {
+     "description": "500 printed brochures",
+     "quantity": 5
+    }
+   ]
+  }
+ },
+ {
+  "id": "c059",
+  "type": "exact_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Lumen Lighting Solutions Ltd.",
+   "day": 64,
+   "items": [
+    {
+     "description": "LED desk lamp",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "LUMEN LIGHTING SOLUTIONS LIMITED",
+   "day": 84,
+   "items": [
+    {
+     "description": "LED desk lamp",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c060",
+  "type": "near_dup",
+  "label": 1,
+  "a": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 120,
+   "items": [
+    {
+     "description": "Network switch 24-port",
+     "quantity": 1
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 10
+    },
+    {
+     "description": "Docking station USB-C",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 147,
+   "items": [
+    {
+     "description": "24-port network switch",
+     "quantity": 1
+    },
+    {
+     "description": "Monitor 27 inch",
+     "quantity": 10
+    },
+    {
+     "description": "USB-C dock",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c061",
+  "type": "same_supplier_other_items",
+  "label": 0,
+  "a": {
+   "supplier_name": "Orion Tech Supplies Ltd.",
+   "day": 140,
+   "items": [
+    {
+     "description": "Laptop 14in business",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Orion Tech Supplies Ltd.",
+   "day": 168,
+   "items": [
+    {
+     "description": "Monitor 27in",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c062",
+  "type": "partial_overlap",
+  "label": 0,
+  "a": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 176,
+   "items": [
+    {
+     "description": "Docking station USB-C",
+     "quantity": 1
+    },
+    {
+     "description": "Laptop 14in business",
+     "quantity": 1
+    },
+    {
+     "description": "Design software licence",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Vertex Industrial Tools LLC",
+   "day": 197,
+   "items": [
+    {
+     "description": "USB-C docking adapter station",
+     "quantity": 1
+    },
+    {
+     "description": "27-inch monitor",
+     "quantity": 1
+    },
+    {
+     "description": "24-port network switch",
+     "quantity": 1
+    }
+   ]
+  }
+ },
+ {
+  "id": "c063",
+  "type": "stale_same",
+  "label": 0,
+  "a": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 80,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 5
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 10
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 2
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Cairo Print & Packaging Co.",
+   "day": 320,
+   "items": [
+    {
+     "description": "Standing desk",
+     "quantity": 5
+    },
+    {
+     "description": "Whiteboard 120x90",
+     "quantity": 10
+    },
+    {
+     "description": "Printed brochures (500)",
+     "quantity": 2
+    }
+   ]
+  }
+ },
+ {
+  "id": "c064",
+  "type": "other_supplier",
+  "label": null,
+  "a": {
+   "supplier_name": "Orion Tech Supplies Ltd.",
+   "day": 87,
+   "items": [
+    {
+     "description": "Laptop 14in business",
+     "quantity": 5
+    },
+    {
+     "description": "Monitor 27in",
+     "quantity": 10
+    }
+   ]
+  },
+  "b": {
+   "supplier_name": "Summit Networks Inc.",
+   "day": 105,
+   "items": [
+    {
+     "description": "14in laptop for business use",
+     "quantity": 5
+    },
+    {
+     "description": "Monitor 27 inch",
+     "quantity": 10
+    }
+   ]
+  }
+ }
+]
