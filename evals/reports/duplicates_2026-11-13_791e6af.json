@@ -1,0 +1,304 @@
+{
+  "run_date": "2026-11-13",
+  "git_sha": "791e6af",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "cases": 64,
+  "scored": 52,
+  "chosen_threshold_by_dev_f1": 0.65,
+  "at_chosen_threshold": {
+    "dev": {
+      "precision": 0.6923,
+      "recall": 1.0,
+      "f1": 0.8182,
+      "tp": 18,
+      "fp": 8,
+      "fn": 0
+    },
+    "test": {
+      "precision": 0.6,
+      "recall": 1.0,
+      "f1": 0.75,
+      "tp": 6,
+      "fp": 4,
+      "fn": 0
+    }
+  },
+  "per_type_outcomes_at_threshold": {
+    "exact_dup": {
+      "n": 12,
+      "flagged_exact": 12,
+      "flagged_similar": 0,
+      "flagged_other_supplier": 0,
+      "not_flagged": 0
+    },
+    "near_dup": {
+      "n": 12,
+      "flagged_exact": 0,
+      "flagged_similar": 12,
+      "flagged_other_supplier": 0,
+      "not_flagged": 0
+    },
+    "partial_overlap": {
+      "n": 8,
+      "flagged_exact": 0,
+      "flagged_similar": 0,
+      "flagged_other_supplier": 0,
+      "not_flagged": 8
+    },
+    "stale_same": {
+      "n": 12,
+      "flagged_exact": 12,
+      "flagged_similar": 0,
+      "flagged_other_supplier": 0,
+      "not_flagged": 0
+    },
+    "other_supplier": {
+      "n": 12,
+      "flagged_exact": 0,
+      "flagged_similar": 0,
+      "flagged_other_supplier": 12,
+      "not_flagged": 0
+    },
+    "same_supplier_other_items": {
+      "n": 8,
+      "flagged_exact": 0,
+      "flagged_similar": 0,
+      "flagged_other_supplier": 0,
+      "not_flagged": 8
+    }
+  },
+  "sweep": [
+    {
+      "threshold": 0.4,
+      "dev": {
+        "precision": 0.5143,
+        "recall": 1.0,
+        "f1": 0.6792,
+        "tp": 18,
+        "fp": 17,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.45,
+      "dev": {
+        "precision": 0.5143,
+        "recall": 1.0,
+        "f1": 0.6792,
+        "tp": 18,
+        "fp": 17,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.5,
+      "dev": {
+        "precision": 0.5625,
+        "recall": 1.0,
+        "f1": 0.72,
+        "tp": 18,
+        "fp": 14,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.55,
+      "dev": {
+        "precision": 0.5806,
+        "recall": 1.0,
+        "f1": 0.7347,
+        "tp": 18,
+        "fp": 13,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.6,
+      "dev": {
+        "precision": 0.6667,
+        "recall": 1.0,
+        "f1": 0.8,
+        "tp": 18,
+        "fp": 9,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.65,
+      "dev": {
+        "precision": 0.6923,
+        "recall": 1.0,
+        "f1": 0.8182,
+        "tp": 18,
+        "fp": 8,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.7,
+      "dev": {
+        "precision": 0.6923,
+        "recall": 1.0,
+        "f1": 0.8182,
+        "tp": 18,
+        "fp": 8,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.75,
+      "dev": {
+        "precision": 0.6923,
+        "recall": 1.0,
+        "f1": 0.8182,
+        "tp": 18,
+        "fp": 8,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.8,
+      "dev": {
+        "precision": 0.6923,
+        "recall": 1.0,
+        "f1": 0.8182,
+        "tp": 18,
+        "fp": 8,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.85,
+      "dev": {
+        "precision": 0.6923,
+        "recall": 1.0,
+        "f1": 0.8182,
+        "tp": 18,
+        "fp": 8,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.9,
+      "dev": {
+        "precision": 0.6522,
+        "recall": 0.8333,
+        "f1": 0.7317,
+        "tp": 15,
+        "fp": 8,
+        "fn": 3
+      },
+      "test": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.75,
+        "tp": 6,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.95,
+      "dev": {
+        "precision": 0.5789,
+        "recall": 0.6111,
+        "f1": 0.5946,
+        "tp": 11,
+        "fp": 8,
+        "fn": 7
+      },
+      "test": {
+        "precision": 0.5556,
+        "recall": 0.8333,
+        "f1": 0.6667,
+        "tp": 5,
+        "fp": 4,
+        "fn": 1
+      }
+    }
+  ],
+  "caveats": [
+    "Synthetic pairs with hand-written paraphrases; real descriptions will be messier.",
+    "Small n per type (12); split is by hash of case id."
+  ]
+}
