@@ -226,10 +226,13 @@ class PurchaseRequest(Base):
     id: Mapped[uuid.UUID] = pk()
     request_no: Mapped[str] = mapped_column(String(40), unique=True)
     requester_id: Mapped[uuid.UUID | None] = fk("users.id", nullable=True)
+    requester_name: Mapped[str | None] = mapped_column(String(255))  # as written; users table is demo-only
     department: Mapped[str | None] = mapped_column(String(120))
     currency: Mapped[str | None] = mapped_column(String(3))
     total_amount = money()
-    supplier_id: Mapped[uuid.UUID | None] = fk("vendors.id", nullable=True)
+    supplier_id: Mapped[uuid.UUID | None] = fk("vendors.id", nullable=True)  # resolved by vendor intelligence
+    supplier_name: Mapped[str | None] = mapped_column(String(255))  # as written on the request
+    source_document_id: Mapped[uuid.UUID | None] = fk("documents.id", nullable=True)
     justification: Mapped[str | None] = mapped_column(Text)
     category: Mapped[str | None] = mapped_column(String(80))
     status: Mapped[E.RequestStatus] = mapped_column(
@@ -238,7 +241,10 @@ class PurchaseRequest(Base):
     is_synthetic: Mapped[bool] = mapped_column(Boolean, default=False, server_default=text("false"))
     submitted_at: Mapped[datetime] = created()
     fingerprint: Mapped[str | None] = mapped_column(String(64))
-    __table_args__ = (Index("ix_purchase_requests_status", "status"),)
+    __table_args__ = (
+        Index("ix_purchase_requests_status", "status"),
+        Index("ix_purchase_requests_fingerprint", "fingerprint"),
+    )
 
 
 class RequestItem(Base):

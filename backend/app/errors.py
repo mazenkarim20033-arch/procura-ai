@@ -2,6 +2,7 @@
 import logging
 
 from fastapi import FastAPI, Request
+from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 
@@ -45,7 +46,9 @@ def install_error_handlers(app: FastAPI) -> None:
 
     @app.exception_handler(RequestValidationError)
     async def _validation(_: Request, exc: RequestValidationError):
-        return _problem(422, "validation_error", "Request validation failed", errors=exc.errors())
+        # jsonable_encoder: error contexts can hold Decimals/exceptions that plain JSON cannot serialise.
+        errors = [{k: v for k, v in e.items() if k != "ctx"} for e in jsonable_encoder(exc.errors())]
+        return _problem(422, "validation_error", "Request validation failed", errors=errors)
 
     @app.exception_handler(Exception)
     async def _unhandled(_: Request, exc: Exception):

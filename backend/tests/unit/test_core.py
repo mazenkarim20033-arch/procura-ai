@@ -52,6 +52,26 @@ def test_unhandled_errors_become_problem_json_without_leaking_details():
     assert "secret" not in r.text
 
 
+def test_validation_errors_with_decimal_context_do_not_crash_the_handler():
+    from decimal import Decimal
+
+    from pydantic import BaseModel, Field
+
+    class Body(BaseModel):
+        amount: Decimal = Field(ge=0)
+
+    app = FastAPI()
+    install_error_handlers(app)
+
+    @app.post("/x")
+    def x(body: Body):
+        return {}
+
+    r = TestClient(app).post("/x", json={"amount": "-5"})
+    assert r.status_code == 422 and r.json()["title"] == "validation_error"
+    assert r.json()["errors"][0]["loc"] == ["body", "amount"]
+
+
 def test_role_enforcement():
     app = FastAPI()
     install_error_handlers(app)
@@ -95,7 +115,7 @@ def test_generated_ddl_is_in_sync_with_models():
     spec = importlib.util.spec_from_file_location("gen_ddl", root / "scripts" / "gen_ddl.py")
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    on_disk = (root / "migrations" / "sql" / "0001_initial.sql").read_text(encoding="utf-8")
+    on_disk = (root / "migrations" / "sql" / "schema_snapshot.sql").read_text(encoding="utf-8")
     assert on_disk == mod.build(), "run scripts/gen_ddl.py"
     assert "%" not in on_disk
     for table in Base.metadata.tables:
