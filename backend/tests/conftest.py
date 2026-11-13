@@ -19,6 +19,10 @@ def _no_database(monkeypatch, request):
 
     session.get_engine.cache_clear()
     # Settings reads .env too; force "no database" for unit tests.
-    monkeypatch.setattr(get_settings(), "database_url", None)
+    settings = get_settings()
+    monkeypatch.setattr(settings, "database_url", None)
+    # Likewise never call a real LLM or depend on the developer's provider/model choice.
+    monkeypatch.setattr(settings, "llm_provider", "mock")
+    monkeypatch.setattr(settings, "llm_api_key", None)
     yield
     get_settings.cache_clear()
