@@ -4,7 +4,7 @@
 
 | Component | Free option | Notes |
 |---|---|---|
-| Postgres + pgvector | Neon free tier (dev and deployment); Supabase as alternative | Storage/compute caps (~0.5 GB on Neon free), scale-to-zero cold starts, requires internet. Docker dropped because the dev PC can't run it |
+| Postgres + pgvector | Supabase free tier (dev and deployment); Neon as fallback | Free plan allows 2 active projects (one existing project had to be paused), 500 MB DB, pauses after inactivity, requires internet. Docker dropped because the dev PC can't run it |
 | Embeddings | `bge-small-en-v1.5` local CPU | ~130 MB model download; fine on CPU for demo corpus |
 | Reranker | MiniLM cross-encoder local | Optional; adds latency |
 | PDF parsing, chunking, rules, analytics | PyMuPDF etc. | |
