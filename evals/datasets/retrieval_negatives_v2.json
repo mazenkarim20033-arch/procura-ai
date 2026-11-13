@@ -1,0 +1,33 @@
+{
+  "note": "Added AFTER retrieval benchmark run 1 (commit 498ec60 + report), because the v1 test split contained only 2 negative queries. These are domain-adjacent questions that none of the 45 synthetic policy clauses answers. They are evaluated as an untouched test set: no threshold or setting was tuned on them. Verified by hand against data/synthetic/policies.py that no clause covers these topics.",
+  "queries": [
+    "How do we dispose of old IT equipment?",
+    "What is the maximum hotel rate for business travel?",
+    "How should purchase orders be numbered?",
+    "What is the procedure for returning defective goods to a supplier?",
+    "Who manages the company vehicle fleet?",
+    "How are customer refunds processed?",
+    "What are the rules for petty cash?",
+    "How do I submit an expense report?",
+    "What insurance must contractors carry?",
+    "How long must procurement records be kept?",
+    "What is the sustainability policy for packaging?",
+    "How are supplier performance reviews scored?",
+    "Which software is approved for video calls?",
+    "What is the process for hiring temporary staff?",
+    "How do we handle customs duties on imports?",
+    "What is the budget approval calendar for next fiscal year?",
+    "How should confidential documents be stored?",
+    "What is the warranty period for office furniture?",
+    "How are carbon emissions from deliveries reported?",
+    "What is the process to dispute an invoice with a supplier?",
+    "Overtime pay rules for the finance team",
+    "What data retention applies to employee records?",
+    "How do I book a meeting room?",
+    "What training is required for new procurement staff?",
+    "How are goods received and inspected at the warehouse?",
+    "Who handles trademark and copyright questions?",
+    "Rules for using company credit cards",
+    "What is the deadline for submitting annual leave requests?"
+  ]
+}
