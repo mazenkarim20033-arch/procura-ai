@@ -1,0 +1,855 @@
+[
+ {
+  "id": "q001",
+  "query": "Which purchases does the purchasing authority policy cover?",
+  "relevant": [
+   "P1-1.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q002",
+  "query": "Does the rule apply to a service contract bought for the warehouse team?",
+  "relevant": [
+   "P1-1.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q003",
+  "query": "Can we place an order before approval is given?",
+  "relevant": [
+   "P1-1.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q004",
+  "query": "The supplier asked for a signed purchase order today but nobody has signed off yet.",
+  "relevant": [
+   "P1-1.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q005",
+  "query": "How are foreign currency amounts compared with the limits?",
+  "relevant": [
+   "P1-1.3"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q006",
+  "query": "A quote is in euros and I need to know which exchange rate decides the approval band.",
+  "relevant": [
+   "P1-1.3"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q007",
+  "query": "Who signs off small purchases?",
+  "relevant": [
+   "P1-2.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q008",
+  "query": "I want to buy a USD 800 printer for my department, who can approve it?",
+  "relevant": [
+   "P1-2.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q009",
+  "query": "Which approver handles mid-sized spend?",
+  "relevant": [
+   "P1-2.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q010",
+  "query": "A USD 7,500 monitor order needs whose approval?",
+  "relevant": [
+   "P1-2.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q011",
+  "query": "Who has to approve spend of tens of thousands?",
+  "relevant": [
+   "P1-2.3"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q012",
+  "query": "We are about to commit USD 32,000 on network equipment, who approves?",
+  "relevant": [
+   "P1-2.3"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q013",
+  "query": "Which executive must approve very large purchases?",
+  "relevant": [
+   "P1-2.4"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q014",
+  "query": "A USD 80,000 renovation order needs approval from whom?",
+  "relevant": [
+   "P1-2.4"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q015",
+  "query": "Can an employee approve their own request?",
+  "relevant": [
+   "P1-3.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q016",
+  "query": "I raised the request and I am also the department manager, can I approve it myself?",
+  "relevant": [
+   "P1-3.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q017",
+  "query": "Do approvers have to explain their decisions?",
+  "relevant": [
+   "P1-3.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q018",
+  "query": "A reviewer rejected a request without comments, is that acceptable?",
+  "relevant": [
+   "P1-3.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q019",
+  "query": "Do tiny purchases need competing quotes?",
+  "relevant": [
+   "P2-1.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q020",
+  "query": "Ordering USD 600 of stationery, do I need to collect quotations?",
+  "relevant": [
+   "P2-1.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q021",
+  "query": "How many quotes for a purchase between one and five thousand dollars?",
+  "relevant": [
+   "P2-1.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q022",
+  "query": "A USD 3,200 chair order, how many written quotes are needed?",
+  "relevant": [
+   "P2-1.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q023",
+  "query": "How many suppliers must quote for mid-range purchases?",
+  "relevant": [
+   "P2-1.3"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q024",
+  "query": "Buying 20 laptops for USD 22,000, how many quotations do we need?",
+  "relevant": [
+   "P2-1.3"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q025",
+  "query": "When is a formal tender required?",
+  "relevant": [
+   "P2-1.4"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q026",
+  "query": "A USD 40,000 consulting engagement, can we just request quotes?",
+  "relevant": [
+   "P2-1.4"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q027",
+  "query": "How long must a supplier quote stay valid?",
+  "relevant": [
+   "P2-2.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q028",
+  "query": "The quotation expires 14 days after the request date, is that long enough?",
+  "relevant": [
+   "P2-2.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q029",
+  "query": "What information must a quotation contain?",
+  "relevant": [
+   "P2-2.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q030",
+  "query": "A vendor sent a quote without a quotation number and no currency, is it acceptable?",
+  "relevant": [
+   "P2-2.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q031",
+  "query": "What happens if a quote has calculation mistakes?",
+  "relevant": [
+   "P2-2.3"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q032",
+  "query": "The subtotal on the supplier offer does not add up to the line prices.",
+  "relevant": [
+   "P2-2.3"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q033",
+  "query": "When can we buy from only one supplier?",
+  "relevant": [
+   "P2-3.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q034",
+  "query": "Only one vendor offers this proprietary part, what do we need to file?",
+  "relevant": [
+   "P2-3.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q035",
+  "query": "Are urgent purchases exempt from competitive quotes?",
+  "relevant": [
+   "P2-3.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q036",
+  "query": "The server room is flooding and we need pumps today, do we still need quotations?",
+  "relevant": [
+   "P2-3.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q037",
+  "query": "Do large orders have to go to pre-approved vendors?",
+  "relevant": [
+   "P3-1.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q038",
+  "query": "A USD 9,000 order to a supplier that is not on our vendor list.",
+  "relevant": [
+   "P3-1.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q039",
+  "query": "How does a vendor get onto the approved list?",
+  "relevant": [
+   "P3-1.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q040",
+  "query": "A new supplier wants to be registered, what do procurement officers check?",
+  "relevant": [
+   "P3-1.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q041",
+  "query": "Must staff declare ties to suppliers?",
+  "relevant": [
+   "P3-2.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q042",
+  "query": "My cousin owns the company we want to buy from, what should I do?",
+  "relevant": [
+   "P3-2.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q043",
+  "query": "Who may not be involved in choosing a supplier?",
+  "relevant": [
+   "P3-2.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q044",
+  "query": "An employee who hid a financial interest in a vendor sits on the selection panel.",
+  "relevant": [
+   "P3-2.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q045",
+  "query": "How should the supplier be named in a request?",
+  "relevant": [
+   "P3-3.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q046",
+  "query": "The request lists the supplier as just Orion, is that enough?",
+  "relevant": [
+   "P3-3.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q047",
+  "query": "Must the vendor name on quotes and invoices match the request?",
+  "relevant": [
+   "P3-3.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q048",
+  "query": "The invoice is from a different company name than the one on the purchase request.",
+  "relevant": [
+   "P3-3.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q049",
+  "query": "Who reviews IT equipment purchases?",
+  "relevant": [
+   "P4-1.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q050",
+  "query": "Marketing wants to buy tablets, does anyone need to review it first?",
+  "relevant": [
+   "P4-1.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q051",
+  "query": "Can staff choose any laptop model?",
+  "relevant": [
+   "P4-1.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q052",
+  "query": "A manager wants a gaming laptop that is not on the standard list.",
+  "relevant": [
+   "P4-1.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q053",
+  "query": "When is a technical justification needed for hardware?",
+  "relevant": [
+   "P4-1.3"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q054",
+  "query": "One workstation costs USD 3,500, is extra paperwork required?",
+  "relevant": [
+   "P4-1.3"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q055",
+  "query": "Do software licences need security approval?",
+  "relevant": [
+   "P4-2.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q056",
+  "query": "We plan to buy a new design software licence, who checks it?",
+  "relevant": [
+   "P4-2.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q057",
+  "query": "Do expensive subscriptions need legal review?",
+  "relevant": [
+   "P4-2.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q058",
+  "query": "A SaaS subscription at USD 15,000 per year needs a contract check by whom?",
+  "relevant": [
+   "P4-2.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q059",
+  "query": "Who must hold the software licence?",
+  "relevant": [
+   "P4-2.3"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q060",
+  "query": "A developer wants to buy a licence in their own name and expense it.",
+  "relevant": [
+   "P4-2.3"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q061",
+  "query": "When is legal review mandatory for contracts?",
+  "relevant": [
+   "P5-1.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q062",
+  "query": "A USD 25,000 maintenance agreement is ready to sign, is legal review needed?",
+  "relevant": [
+   "P5-1.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q063",
+  "query": "What must a contract state?",
+  "relevant": [
+   "P5-1.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q064",
+  "query": "The draft agreement has no end date or payment terms, is it complete?",
+  "relevant": [
+   "P5-1.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q065",
+  "query": "What is the shortest allowed payment period?",
+  "relevant": [
+   "P5-2.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q066",
+  "query": "A supplier wants payment within 15 days.",
+  "relevant": [
+   "P5-2.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q067",
+  "query": "Can we agree very long payment terms?",
+  "relevant": [
+   "P5-2.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q068",
+  "query": "The vendor offers net 90 days, who needs to approve that?",
+  "relevant": [
+   "P5-2.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q069",
+  "query": "How much can we pay upfront?",
+  "relevant": [
+   "P5-2.3"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q070",
+  "query": "The supplier asks for 50% advance payment on a service contract.",
+  "relevant": [
+   "P5-2.3"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q071",
+  "query": "What must consulting agreements define?",
+  "relevant": [
+   "P5-3.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q072",
+  "query": "A consultancy proposal lacks deliverables and sign-off steps.",
+  "relevant": [
+   "P5-3.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q073",
+  "query": "Can work start before the contract is executed?",
+  "relevant": [
+   "P5-3.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q074",
+  "query": "The vendor wants to begin onsite work Monday but we have not signed yet.",
+  "relevant": [
+   "P5-3.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q075",
+  "query": "Is it allowed to break one order into several smaller ones?",
+  "relevant": [
+   "P6-1.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q076",
+  "query": "Someone plans three USD 4,000 orders to stay under the approval limit.",
+  "relevant": [
+   "P6-1.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q077",
+  "query": "How are repeat orders to one supplier treated?",
+  "relevant": [
+   "P6-1.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q078",
+  "query": "We bought USD 3,000 of furniture last week and want another USD 3,000 from the same vendor.",
+  "relevant": [
+   "P6-1.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q079",
+  "query": "Is a business reason required on requests?",
+  "relevant": [
+   "P6-2.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q080",
+  "query": "A request has an empty justification field.",
+  "relevant": [
+   "P6-2.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q081",
+  "query": "What justification applies to non-standard items?",
+  "relevant": [
+   "P6-2.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q082",
+  "query": "I need an item that is not in the catalog, what explanation should I include?",
+  "relevant": [
+   "P6-2.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q083",
+  "query": "What counts as an emergency purchase?",
+  "relevant": [
+   "P6-3.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q084",
+  "query": "Is replacing a broken printer that is slowing the team an emergency?",
+  "relevant": [
+   "P6-3.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q085",
+  "query": "How soon must emergency purchases be approved after the fact?",
+  "relevant": [
+   "P6-3.2"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q086",
+  "query": "We bought emergency generators yesterday, by when must approval be recorded?",
+  "relevant": [
+   "P6-3.2"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q087",
+  "query": "Do urgent purchases of large value still need quotes?",
+  "relevant": [
+   "P6-3.3"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q088",
+  "query": "An emergency USD 12,000 repair, should we still get two offers?",
+  "relevant": [
+   "P6-3.3"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q089",
+  "query": "How are repeated identical requests handled?",
+  "relevant": [
+   "P6-4.1"
+  ],
+  "type": "question"
+ },
+ {
+  "id": "q090",
+  "query": "Two open requests exist for the same laptops from the same vendor.",
+  "relevant": [
+   "P6-4.1"
+  ],
+  "type": "scenario"
+ },
+ {
+  "id": "q091",
+  "query": "Rules for emergency purchases and quotations",
+  "relevant": [
+   "P2-3.2",
+   "P6-3.1",
+   "P6-3.2",
+   "P6-3.3"
+  ],
+  "type": "multi"
+ },
+ {
+  "id": "q092",
+  "query": "What approvals and quotes does a USD 12,000 purchase need?",
+  "relevant": [
+   "P1-2.3",
+   "P2-1.3"
+  ],
+  "type": "multi"
+ },
+ {
+  "id": "q093",
+  "query": "Requirements for a USD 30,000 purchase from a new supplier",
+  "relevant": [
+   "P1-2.3",
+   "P2-1.4",
+   "P3-1.1",
+   "P3-1.2"
+  ],
+  "type": "multi"
+ },
+ {
+  "id": "q094",
+  "query": "What checks apply to a software subscription costing USD 12,000 a year?",
+  "relevant": [
+   "P4-2.1",
+   "P4-2.2",
+   "P4-2.3",
+   "P1-2.3"
+  ],
+  "type": "multi"
+ },
+ {
+  "id": "q095",
+  "query": "Contract with 60% upfront payment and 90 day terms",
+  "relevant": [
+   "P5-2.1",
+   "P5-2.2",
+   "P5-2.3"
+  ],
+  "type": "multi"
+ },
+ {
+  "id": "q096",
+  "query": "Is splitting a USD 8,000 order to avoid quotes allowed?",
+  "relevant": [
+   "P6-1.1",
+   "P2-1.3"
+  ],
+  "type": "multi"
+ },
+ {
+  "id": "q097",
+  "query": "What is the dress code in the office?",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q098",
+  "query": "How do I reset my email password?",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q099",
+  "query": "Cafeteria opening hours",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q100",
+  "query": "Annual leave entitlement for employees",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q101",
+  "query": "How are travel expenses reimbursed?",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q102",
+  "query": "What is the parking arrangement for visitors?",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q103",
+  "query": "Company holiday calendar for next year",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q104",
+  "query": "How do I request a new access badge?",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q105",
+  "query": "Salary review process",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q106",
+  "query": "What is the policy on remote work?",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q107",
+  "query": "Steps for onboarding a new hire",
+  "relevant": [],
+  "type": "negative"
+ },
+ {
+  "id": "q108",
+  "query": "Procedure to report a workplace injury",
+  "relevant": [],
+  "type": "negative"
+ }
+]
