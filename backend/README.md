@@ -63,6 +63,14 @@ Milestone 9 (human approval workflow) — implemented and tested:
 
 Limitations: identities are demo headers, not real authentication; there are no email notifications; the approval-level mapping is read from the synthetic policy and is not configurable; a request cannot be reopened after a final decision.
 
+Milestone 10 (analytics and audit) — implemented and tested:
+
+- `GET /analytics/overview` (reviewer/admin; filters `since`, `until`, `exclude_mock`): everything is SQL over the real tables, nothing stored or hand-written. Request counts by status and per week; assessments by provider/model with latency (avg, p50, p95), tokens and (only when prices are configured) estimated cost; latest-assessment status mix and risk distribution; findings by category/source and the most frequent rules; LLM call outcomes; decisions by action; hours from request creation to first assessment and to first decision (p50/p90); AI-versus-human agreement (agreed, approved despite AI issues, rejected despite a clean AI result, no clear signal) and the reviewers' agree/disagree rate on individual findings; review queue sizes; vendor statistics (vendors without a tax ID, with conflicts or alias reviews) and quotation comparison insights (spread between lowest and highest quote, lowest-bidder wins, whether the chosen supplier was the lowest and its premium when not). The response carries a `definitions` block so no figure can be read more broadly than it is defined. Mock-provider assessments are listed separately and can be excluded.
+- `GET /audit` (filters, newest first, keyset pagination) and `GET /audit/verify` (recomputes the whole hash chain in batches, reading rows fresh from the database). Tamper-evident, not tamper-proof: truncation of the newest entries is only detectable against a head hash recorded elsewhere, and the response says so.
+- Tests check analytics as deltas around data the test creates (so they stay valid on a non-empty database), compare vendor insights with an independent computation from the synthetic documents, and prove tamper detection against the live database by switching the immutability trigger off inside a rolled-back transaction and forging a row.
+
+Limitations: no caching (each call runs a dozen queries, fine at demo scale); "AI agreement" treats the AI's "no issues found" as the only approve-like signal because the AI never recommends approval; processing times use the audit log creation time, so documents carrying older business dates do not distort them; the demo database has to be seeded for the dashboards to show anything (planned with the frontend/demo milestone).
+
 ## Setup
 
 ```bash

@@ -5,7 +5,16 @@ import uuid
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import assessments, decisions, documents, health, policies, requests, vendors
+from app.api import (
+    analytics,
+    assessments,
+    decisions,
+    documents,
+    health,
+    policies,
+    requests,
+    vendors,
+)
 from app.config import get_settings
 from app.errors import install_error_handlers
 from app.logging import configure_logging, request_id_var
@@ -48,6 +57,7 @@ def create_app() -> FastAPI:
     app.include_router(assessments.router)
     app.include_router(vendors.router)
     app.include_router(decisions.router)
+    app.include_router(analytics.router)
     return app
 
 
