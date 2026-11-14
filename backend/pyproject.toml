@@ -14,11 +14,17 @@ dependencies = [
   "pgvector>=0.2.5",
   "pymupdf>=1.24",
   "python-multipart>=0.0.9",
+  "fastembed>=0.3",
+  "httpx>=0.27",
+  "numpy>=1.26",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.4", "reportlab>=4"]  # reportlab: synthetic data generator
 ocr = ["pytesseract>=0.3", "pillow>=10"]  # also needs the Tesseract binary on PATH
+
+[tool.setuptools.packages.find]
+include = ["app*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

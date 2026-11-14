@@ -187,6 +187,10 @@ def review_queue(session: Session, statuses: tuple[str, ...] = REVIEWABLE, limit
                                        .where(Finding.assessment_id.in_([a.id for a in assess.values()] or [None]))
                                        .group_by(Finding.assessment_id, Finding.category)).all():
         counts.setdefault(aid, {})[cat.value] = n
+    created = {UUID(eid): ts for eid, ts in session.execute(
+        select(AuditLog.entity_id, func.min(AuditLog.ts)).where(
+            AuditLog.entity_type == "request", AuditLog.action == "request.created",
+            AuditLog.entity_id.in_([str(r.id) for r in reqs] or ["-"])).group_by(AuditLog.entity_id)).all()}
     open_info = {rid for (rid,) in session.execute(select(InfoRequest.request_id).where(InfoRequest.resolved_at.is_(None))).all()}
     now = datetime.now(UTC)
     out = []
@@ -199,7 +203,7 @@ def review_queue(session: Session, statuses: tuple[str, ...] = REVIEWABLE, limit
         out.append({
             "id": str(r.id), "request_no": r.request_no, "requester": r.requester_name, "supplier": r.supplier_name,
             "total": str(r.total_amount) if r.total_amount is not None else None, "currency": r.currency,
-            "status": r.status.value, "age_days": (now - r.submitted_at).days, "has_open_info_request": r.id in open_info,
+            "status": r.status.value, "age_days": (now - created.get(r.id, r.submitted_at)).days, "has_open_info_request": r.id in open_info,
             "required_approval": required, "needs_assessment": a is None,
             "latest_assessment": None if a is None else {
                 "id": str(a.id), "version": a.version, "risk": a.overall_risk.value, "status": a.compliance_status.value,

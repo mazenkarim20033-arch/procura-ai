@@ -14,6 +14,7 @@ from app.retrieval.embedders import HashingEmbedder
 from app.services import audit
 from app.services import vendors as svc
 from app.services.ingest import ingest_document
+from tests.integration.helpers import wipe_all
 
 pytestmark = pytest.mark.integration
 OUT = Path(__file__).resolve().parents[3] / "data" / "synthetic" / "out"
@@ -29,6 +30,7 @@ def db():
     get_engine.cache_clear()
     conn = get_engine().connect()
     trans = conn.begin()
+    wipe_all(conn)
     session = Session(bind=conn, join_transaction_mode="create_savepoint", expire_on_commit=False)
     yield session
     session.close()

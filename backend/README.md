@@ -71,6 +71,12 @@ Milestone 10 (analytics and audit) — implemented and tested:
 
 Limitations: no caching (each call runs a dozen queries, fine at demo scale); "AI agreement" treats the AI's "no issues found" as the only approve-like signal because the AI never recommends approval; processing times use the audit log creation time, so documents carrying older business dates do not distort them; the demo database has to be seeded for the dashboards to show anything (planned with the frontend/demo milestone).
 
+Milestone 11 (demo data and UI support):
+
+- `scripts/seed_demo.py` loads the synthetic dataset through the normal services (policies, 12 requests with documents, an approved-supplier list, assessments, a few human decisions); `--scenarios` adds extra synthetic requests (documents carry `Extraction.method="mock"`, dates are shifted to look current) so the dashboards show every risk level. It refuses to run twice; audit entries are permanent.
+- The review queue's `age_days` is measured from the audit `request.created` time, and the assessment summary is plain English ("not a decision ... a procurement officer must review and decide").
+- Integration tests now empty every table inside their own rolled-back transaction (`tests/integration/helpers.py`), so they pass on a seeded database and never touch real data.
+
 ## Setup
 
 ```bash

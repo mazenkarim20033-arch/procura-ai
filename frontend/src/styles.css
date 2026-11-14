@@ -1,0 +1,47 @@
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+@import "@fontsource-variable/newsreader";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Palette: blue-tinted ink surfaces; iris and cobalt are used sparingly (primary action, active mark). */
+  --ink: 13 15 23;
+  --panel: 20 24 38;
+  --raised: 27 33 51;
+  --line: 39 46 69;
+  --line-strong: 58 67 98;
+  --text: 232 234 243;
+  --muted: 138 147 178;
+  --faint: 100 108 138;
+  --iris: 143 123 255;
+  --cobalt: 79 124 255;
+  --danger: 239 122 133;
+  --amber: 231 185 90;
+  --ok: 92 207 154;
+  --quiet: 167 160 214;
+  color-scheme: dark;
+}
+
+@layer base {
+  html { background: rgb(var(--ink)); }
+  body {
+    @apply bg-ink font-sans text-[14px] leading-[1.55] text-text antialiased;
+    font-feature-settings: "ss01", "cv11";
+    min-height: 100vh;
+  }
+  h1, h2, h3 { @apply font-display; letter-spacing: -0.012em; }
+  ::selection { background: rgb(var(--iris) / 0.35); }
+  :focus-visible { outline: 2px solid rgb(var(--iris)); outline-offset: 2px; border-radius: 4px; }
+  * { scrollbar-width: thin; scrollbar-color: rgb(var(--line-strong)) transparent; }
+  .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum"; }
+}
+
+@layer components {
+  .reveal { @apply animate-reveal; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

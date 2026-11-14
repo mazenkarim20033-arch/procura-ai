@@ -15,6 +15,7 @@ from app.retrieval.embedders import HashingEmbedder
 from app.retrieval.index import index_chunks
 from app.services.ingest import ingest_document
 from app.vendors.normalize import normalize_vendor_name
+from tests.integration.helpers import wipe_all
 
 pytestmark = pytest.mark.integration
 OUT = Path(__file__).resolve().parents[3] / "data" / "synthetic" / "out"
@@ -31,6 +32,7 @@ def db():
     get_engine.cache_clear()
     conn = get_engine().connect()
     trans = conn.begin()
+    wipe_all(conn)
     session = Session(bind=conn, join_transaction_mode="create_savepoint", expire_on_commit=False)
     for pdf in sorted((OUT / "policies").glob("*.pdf")):
         ingest_document(session, filename=pdf.name, data=pdf.read_bytes(), mime="application/pdf")

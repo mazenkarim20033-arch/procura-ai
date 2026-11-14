@@ -11,6 +11,7 @@ from app.config import get_settings
 from app.db.models import AuditLog, Chunk, Document, Extraction, Policy
 from app.services import audit
 from app.services.ingest import ingest_document
+from tests.integration.helpers import wipe_all
 
 pytestmark = pytest.mark.integration
 
@@ -26,6 +27,7 @@ def db():
     get_engine.cache_clear()
     conn = get_engine().connect()
     trans = conn.begin()
+    wipe_all(conn)
     session = Session(bind=conn, join_transaction_mode="create_savepoint", expire_on_commit=False)
     yield session
     session.close()

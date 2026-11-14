@@ -48,11 +48,17 @@ def aggregate(findings: list[RuleFinding], ran: set[str], ctx: AssessmentContext
         - (0 if relevance_ok else 0.2)
     confidence = round(max(0.1, min(1.0, confidence)), 2)
 
-    summary = (f"Automated pre-assessment, not a decision. {len(findings)} finding(s): "
-               f"{counts[CONFIRMED]} confirmed violation(s), {counts[POTENTIAL]} potential, "
-               f"{counts[MISSING]} missing-information, {counts[INCONCLUSIVE]} inconclusive, "
-               f"{counts[COMPLIANT]} compliant. Status '{status}' means only that the checks that could run "
-               "found these results. A procurement officer must review and decide.")
+    def n(count: int, one: str, many: str | None = None) -> str:
+        return f"{count} {one if count == 1 else (many or one + 's')}"
+
+    found = [n(counts[CONFIRMED], "confirmed violation"), n(counts[POTENTIAL], "potential violation"),
+             n(counts[MISSING], "missing item"), n(counts[INCONCLUSIVE], "check that could not be completed", "checks that could not be completed")]
+    found = [f for f, c in zip(found, (counts[CONFIRMED], counts[POTENTIAL], counts[MISSING], counts[INCONCLUSIVE]), strict=True) if c]
+    passed = n(counts[COMPLIANT], "check passed", "checks passed") if counts[COMPLIANT] else None
+    listing = ", ".join([*found, *([passed] if passed else [])])
+    summary = ("Automated pre-assessment, not a decision. "
+               + (f"It found {listing}." if listing else "It found nothing to report.")
+               + " A procurement officer must review and decide.")
     if status == "no_issues_found":
         summary += " No issue was found by the checks that ran; this is not an approval."
 

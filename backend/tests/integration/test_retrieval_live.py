@@ -15,6 +15,7 @@ from app.retrieval.embedders import HashingEmbedder
 from app.retrieval.index import embedding_stats, index_chunks
 from app.retrieval.search import SearchFilters, log_retrieval, relevance_gate, search
 from app.services.ingest import ingest_document
+from tests.integration.helpers import wipe_all
 
 pytestmark = pytest.mark.integration
 POLICIES = Path(__file__).resolve().parents[3] / "data" / "synthetic" / "out" / "policies"
@@ -29,6 +30,7 @@ def db():
     get_engine.cache_clear()
     conn = get_engine().connect()
     trans = conn.begin()
+    wipe_all(conn)
     session = Session(bind=conn, join_transaction_mode="create_savepoint", expire_on_commit=False)
     for pdf in sorted(POLICIES.glob("*.pdf")):
         ingest_document(session, filename=pdf.name, data=pdf.read_bytes(), mime="application/pdf")
