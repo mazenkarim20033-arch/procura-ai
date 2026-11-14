@@ -315,7 +315,7 @@ CREATE TABLE decisions (
 	reviewer_id UUID NOT NULL, 
 	action VARCHAR(32) NOT NULL, 
 	reasoning TEXT NOT NULL, 
-	created_at TIMESTAMP WITH TIME ZONE DEFAULT now() NOT NULL, 
+	created_at TIMESTAMP WITH TIME ZONE DEFAULT clock_timestamp() NOT NULL, 
 	CONSTRAINT pk_decisions PRIMARY KEY (id), 
 	CONSTRAINT ck_decisions_reasoning_required CHECK (length(btrim(reasoning)) > 0), 
 	CONSTRAINT fk_decisions_request_id_purchase_requests FOREIGN KEY(request_id) REFERENCES purchase_requests (id) ON DELETE CASCADE, 

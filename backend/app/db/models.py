@@ -391,7 +391,8 @@ class Decision(Base):
     reviewer_id: Mapped[uuid.UUID] = fk("users.id")
     action: Mapped[E.DecisionAction] = mapped_column(enum_col(E.DecisionAction, "decision_action"))
     reasoning: Mapped[str] = mapped_column(Text)
-    created_at: Mapped[datetime] = created()
+    # clock_timestamp(), not now(): the approval-gate trigger orders decisions by this column.
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.clock_timestamp(), nullable=False)
     __table_args__ = (CheckConstraint("length(btrim(reasoning)) > 0", name="reasoning_required"),)
 
 

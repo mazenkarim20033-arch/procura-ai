@@ -10,6 +10,13 @@ os.environ.pop("DATABASE_URL", None)
 def _no_database(monkeypatch, request):
     if "integration" in request.keywords:
         yield
+        # Each integration fixture builds its own engine. Dispose it afterwards: the hosted session pooler allows
+        # only ~15 client connections, and leaked idle pools exhausted it as the suite grew.
+        from app.db import session as db_session
+
+        if db_session.get_engine.cache_info().currsize:
+            db_session.get_engine().dispose()
+        db_session.get_engine.cache_clear()
         return
     monkeypatch.delenv("DATABASE_URL", raising=False)
     from app.config import get_settings

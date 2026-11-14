@@ -54,6 +54,15 @@ Milestone 8 (vendor intelligence) — implemented and tested:
 
 Limitations: names and profile fields come from rule-based extraction of simple layouts; item alignment and price thresholds are heuristics (see docs/BENCHMARKS.md for what was and was not measured); vendor insights are not yet folded into the persisted assessment.
 
+Milestone 9 (human approval workflow) — implemented and tested:
+
+- `POST /requests/{id}/decisions` (reviewer/admin): approve, reject or request information, always with written reasoning (PRC-001:3.2). Decisions live in their own tables and are the **only** way a request becomes approved or rejected: a unit test scans the code base so that nothing outside `services/decisions.py` can assign those statuses, and a database trigger refuses them without a matching decision row (verified in a live test).
+- Rules (`app/rules/decisions.py`, unit-tested as a matrix): the requester cannot decide on their own request (PRC-001:3.1); approve/reject must name the latest assessment the reviewer actually looked at (stale or missing assessment is refused); approval level follows the USD amount (PRC-001:2.1-2.4: department manager, procurement officer, finance director, chief financial officer, set with the demo header `X-Demo-Authority`, defaults reviewer = procurement officer, admin = CFO); amounts that are missing or not in USD can only be approved by the CFO level; approving over a confirmed violation requires a per-finding override (`disagree` plus a note). Decisions are final once approved or rejected.
+- `GET /requests/{id}/decisions`, `GET /requests/{id}/history` (audit-backed timeline plus separate lists of AI assessments and human decisions, each decision showing the AI's status at that moment and whether it went against the AI signal), `POST /requests/{id}/info-response` (answers an open information request and returns the request to the queue), `GET /review/queue` (reviewer-only; highest AI risk first as an ordering signal, then oldest; shows the approval level the amount needs).
+- Migration `0003`: `decisions.created_at` uses `clock_timestamp()` so decisions inside one transaction order correctly for the database gate. `tests/unit/test_layering.py` now enforces the layer rules from docs/ARCHITECTURE.md.
+
+Limitations: identities are demo headers, not real authentication; there are no email notifications; the approval-level mapping is read from the synthetic policy and is not configurable; a request cannot be reopened after a final decision.
+
 ## Setup
 
 ```bash
