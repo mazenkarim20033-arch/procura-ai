@@ -19,7 +19,7 @@ from app.rules.intake import (
     check_request,
 )
 from app.schemas.requests import ItemIn, RequestCreate
-from app.services import audit
+from app.services import audit, vendors
 from app.services.duplicates import (
     OTHER_SUPPLIER_MARGIN,
     SIMILAR_THRESHOLD,
@@ -81,6 +81,7 @@ def create_request(
         justification=payload.justification, category=payload.category, total_amount=payload.total_amount,
         status=E.RequestStatus.submitted, is_synthetic=is_synthetic, submitted_at=submitted,
         source_document_id=source_document_id,
+        supplier_id=(v.id if (v := vendors.find_vendor_by_name(session, payload.supplier_name)) else None),
         fingerprint=request_fingerprint(payload.supplier_name, [(i.description or "", i.quantity) for i in items])
         if items else None,
     )
@@ -146,6 +147,7 @@ def attach_document(session: Session, request_id: UUID, document_id: UUID, role:
     link = RequestDocument(request_id=request_id, document_id=document_id, role=role or doc.doc_type.value)
     session.add(link)
     session.flush()
+    vendors.link_quotation_to_request(session, document_id, request_id)
     audit.append(session, actor_type="user", actor_id=actor, action="request.document_attached",
                  entity_type="request", entity_id=str(request_id),
                  payload={"document_id": str(document_id), "doc_type": doc.doc_type.value, "role": link.role})

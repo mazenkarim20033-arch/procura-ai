@@ -1,0 +1,306 @@
+{
+  "run_date": "2026-11-14",
+  "git_sha": "cf5e691",
+  "pairs": 105,
+  "dev": 58,
+  "test": 47,
+  "chosen_threshold_by_dev_f1_names_only": 0.92,
+  "names_only": {
+    "dev": {
+      "precision": 0.9677,
+      "recall": 1.0,
+      "f1": 0.9836,
+      "tp": 30,
+      "fp": 1,
+      "fn": 0
+    },
+    "test": {
+      "precision": 1.0,
+      "recall": 0.963,
+      "f1": 0.9811,
+      "tp": 26,
+      "fp": 0,
+      "fn": 1
+    }
+  },
+  "with_tax_ids": {
+    "dev": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 30,
+      "fp": 0,
+      "fn": 0
+    },
+    "test": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 27,
+      "fp": 0,
+      "fn": 0
+    }
+  },
+  "per_kind_predicted_same": {
+    "same:upper": {
+      "n": 9,
+      "predicted_same_names_only": 9,
+      "predicted_same_with_tax_ids": 9
+    },
+    "same:lower": {
+      "n": 9,
+      "predicted_same_names_only": 9,
+      "predicted_same_with_tax_ids": 9
+    },
+    "same:suffix_swap": {
+      "n": 6,
+      "predicted_same_names_only": 6,
+      "predicted_same_with_tax_ids": 6
+    },
+    "same:no_suffix": {
+      "n": 6,
+      "predicted_same_names_only": 6,
+      "predicted_same_with_tax_ids": 6
+    },
+    "same:punct": {
+      "n": 9,
+      "predicted_same_names_only": 9,
+      "predicted_same_with_tax_ids": 9
+    },
+    "same:typo_delete": {
+      "n": 9,
+      "predicted_same_names_only": 9,
+      "predicted_same_with_tax_ids": 9
+    },
+    "same:typo_swap": {
+      "n": 9,
+      "predicted_same_names_only": 8,
+      "predicted_same_with_tax_ids": 9
+    },
+    "different:distinct": {
+      "n": 36,
+      "predicted_same_names_only": 0,
+      "predicted_same_with_tax_ids": 0
+    },
+    "different:near_miss": {
+      "n": 12,
+      "predicted_same_names_only": 1,
+      "predicted_same_with_tax_ids": 0
+    }
+  },
+  "sweep_names_only": [
+    {
+      "threshold": 0.8,
+      "dev": {
+        "precision": 0.8824,
+        "recall": 1.0,
+        "f1": 0.9375,
+        "tp": 30,
+        "fp": 4,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.8438,
+        "recall": 1.0,
+        "f1": 0.9153,
+        "tp": 27,
+        "fp": 5,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.82,
+      "dev": {
+        "precision": 0.8824,
+        "recall": 1.0,
+        "f1": 0.9375,
+        "tp": 30,
+        "fp": 4,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.871,
+        "recall": 1.0,
+        "f1": 0.931,
+        "tp": 27,
+        "fp": 4,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.84,
+      "dev": {
+        "precision": 0.8824,
+        "recall": 1.0,
+        "f1": 0.9375,
+        "tp": 30,
+        "fp": 4,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9474,
+        "tp": 27,
+        "fp": 3,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.86,
+      "dev": {
+        "precision": 0.8824,
+        "recall": 1.0,
+        "f1": 0.9375,
+        "tp": 30,
+        "fp": 4,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9474,
+        "tp": 27,
+        "fp": 3,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.88,
+      "dev": {
+        "precision": 0.9375,
+        "recall": 1.0,
+        "f1": 0.9677,
+        "tp": 30,
+        "fp": 2,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.9,
+        "recall": 1.0,
+        "f1": 0.9474,
+        "tp": 27,
+        "fp": 3,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.9,
+      "dev": {
+        "precision": 0.9375,
+        "recall": 1.0,
+        "f1": 0.9677,
+        "tp": 30,
+        "fp": 2,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.9643,
+        "recall": 1.0,
+        "f1": 0.9818,
+        "tp": 27,
+        "fp": 1,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.92,
+      "dev": {
+        "precision": 0.9677,
+        "recall": 1.0,
+        "f1": 0.9836,
+        "tp": 30,
+        "fp": 1,
+        "fn": 0
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 0.963,
+        "f1": 0.9811,
+        "tp": 26,
+        "fp": 0,
+        "fn": 1
+      }
+    },
+    {
+      "threshold": 0.94,
+      "dev": {
+        "precision": 1.0,
+        "recall": 0.9667,
+        "f1": 0.9831,
+        "tp": 29,
+        "fp": 0,
+        "fn": 1
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 0.9259,
+        "f1": 0.9615,
+        "tp": 25,
+        "fp": 0,
+        "fn": 2
+      }
+    },
+    {
+      "threshold": 0.96,
+      "dev": {
+        "precision": 1.0,
+        "recall": 0.9333,
+        "f1": 0.9655,
+        "tp": 28,
+        "fp": 0,
+        "fn": 2
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 0.8519,
+        "f1": 0.92,
+        "tp": 23,
+        "fp": 0,
+        "fn": 4
+      }
+    },
+    {
+      "threshold": 0.98,
+      "dev": {
+        "precision": 1.0,
+        "recall": 0.7667,
+        "f1": 0.8679,
+        "tp": 23,
+        "fp": 0,
+        "fn": 7
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 0.6667,
+        "f1": 0.8,
+        "tp": 18,
+        "fp": 0,
+        "fn": 9
+      }
+    },
+    {
+      "threshold": 1.0,
+      "dev": {
+        "precision": 1.0,
+        "recall": 0.7333,
+        "f1": 0.8462,
+        "tp": 22,
+        "fp": 0,
+        "fn": 8
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 0.6296,
+        "f1": 0.7727,
+        "tp": 17,
+        "fp": 0,
+        "fn": 10
+      }
+    }
+  ],
+  "caveats": [
+    "Synthetic variants of 9 fictional vendors; near-miss negatives are my own invention.",
+    "Small n; the dev/test split is by hash of pair id."
+  ]
+}

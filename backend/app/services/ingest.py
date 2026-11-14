@@ -19,6 +19,7 @@ from app.documents.extract import EXTRACTORS, effective_date
 from app.documents.parse import detect_language, parse_bytes
 from app.documents.validate import validate_extraction
 from app.schemas.documents import SCHEMA_BY_TYPE, ValidationIssue
+from app.services import vendors
 
 
 @dataclass
@@ -79,6 +80,8 @@ def ingest_document(
             validation_errors_json=stored_issues, method="rules",
         ))
         doc.status = E.DocStatus.extracted
+        if cls.doc_type in {"quotation", "invoice", "contract"}:
+            vendors.record_from_document(session, doc, ex.raw, stored_issues)
 
     if cls.doc_type == "policy":
         result.policy = _create_policy(session, doc, parsed, result)

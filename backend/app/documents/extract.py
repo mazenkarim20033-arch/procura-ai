@@ -142,7 +142,7 @@ def _delivery_days(ex: Extractor) -> None:
 
 def _vendor_profile(ex: Extractor) -> None:
     """Optional identification fields printed next to the vendor name (None when the document omits them)."""
-    ex.text_field("vendor_tax_id", ["Vendor Tax ID", "Tax ID", "VAT No\.?", "VAT Number", "Tax Registration(?: No\.?)?"])
+    ex.text_field("vendor_tax_id", ["Vendor Tax ID", "Tax ID", r"VAT No\.?", "VAT Number", r"Tax Registration(?: No\.?)?"])
     ex.text_field("vendor_address", ["Vendor Address", "Address"])
     ex.text_field("vendor_email", ["Vendor Email", "Email"])
     ex.text_field("vendor_phone", ["Vendor Phone", "Vendor Tel", "Phone", "Tel"])

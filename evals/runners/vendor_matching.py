@@ -17,7 +17,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "backend"))
 
-from app.vendors.resolve import Candidate, Profile, resolve_vendor  # noqa: E402
+from app.vendors.resolve import Candidate, Profile, resolve_vendor
 
 PAIRS = ROOT / "evals" / "datasets" / "vendor_pairs.json"
 REPORTS = ROOT / "evals" / "reports"
@@ -31,7 +31,7 @@ def prf(tp, fp, fn):
     p = tp / (tp + fp) if tp + fp else None
     r = tp / (tp + fn) if tp + fn else None
     f = 2 * p * r / (p + r) if p and r else None
-    rd = lambda x: None if x is None else round(x, 4)  # noqa: E731
+    rd = lambda x: None if x is None else round(x, 4)
     return {"precision": rd(p), "recall": rd(r), "f1": rd(f), "tp": tp, "fp": fp, "fn": fn}
 
 

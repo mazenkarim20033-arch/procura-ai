@@ -21,6 +21,9 @@ Output in `out/` (68 PDFs, each with a ground-truth `.json`):
 
 Documents are linked into 12 "deals" (`deal_id` in the truth files): one request, 2-3 competing quotations, and usually an invoice/contract reusing the same items and vendor.
 
+## Vendor master data
+Quotations, invoices and contracts print each vendor's tax ID, address, email, phone and country (template A uses `Vendor Tax ID:` style labels, template B `VAT No:` / `Tel:` style). Some vendors never state some of these fields, and the second Orion quotation prints a transposed tax ID on purpose. `vendor_truth.json` records the master data and the deliberate conflict.
+
 ## Known limits
 - Layouts are simple and text-based (no scans, no multi-column pages, no Arabic). Extraction benchmarks on this set measure **in-distribution** performance only.
 - 45 clauses and 68 documents is smaller than the planned evaluation set (see `docs/EVALUATION.md`); compliance-labelled request scenarios (compliant / violating / ambiguous) arrive with milestones 6-7.

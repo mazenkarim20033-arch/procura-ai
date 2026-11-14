@@ -45,6 +45,15 @@ To use Groq: set `LLM_PROVIDER=groq`, `LLM_API_KEY` and `LLM_MODEL` (default rec
 
 Limitations: confidence is an uncalibrated heuristic; the approved-supplier list must be configured by an admin (no data source otherwise); amount rules are USD-only (no FX source); category-specific rules (for example "IT hardware needs IT review") are left to the LLM stage and the human; the injection scan is a heuristic.
 
+Milestone 8 (vendor intelligence) — implemented and tested:
+
+- Vendor records are created from quotations, invoices and contracts at ingest (`app/services/vendors.py`): tax ID first, then normalised name/alias, then fuzzy name similarity (always `needs_review`; never merges vendors with different tax IDs). Profile gaps (missing tax ID, email, phone, address, country) and conflicts (same name, different tax ID) are reported per vendor. Quotations and their line items are stored in `quotations` / `quotation_items` and linked to a request when attached.
+- Quote comparison (`GET /requests/{id}/quote-comparison`, `app/vendors/compare.py`): ranking (never across currencies; subtotals when tax treatment differs), item alignment by embedding similarity, price outliers / suspiciously low prices against the median, quantity and coverage differences, payment terms, validity, arithmetic errors, and the same vendor's earlier prices.
+- API: `GET /vendors`, `GET /vendors/{id}`, `POST /vendors/{id}/merge` (admin). A request's supplier is linked to a vendor record when its name matches exactly or by a known alias.
+- Every response states that it is based only on uploaded documents: **no external supplier verification, market data or exchange rates exist**, and nothing may be presented as if they did.
+
+Limitations: names and profile fields come from rule-based extraction of simple layouts; item alignment and price thresholds are heuristics (see docs/BENCHMARKS.md for what was and was not measured); vendor insights are not yet folded into the persisted assessment.
+
 ## Setup
 
 ```bash

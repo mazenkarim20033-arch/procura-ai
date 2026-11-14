@@ -11,7 +11,7 @@ Each milestone ends with: tests run, functionality verified, weaknesses noted, d
 | 5 | RAG engine | Embedder/VectorStore/Reranker interfaces, hybrid search, relevance gate, retrieval eval runner | Retrieval metrics produced from a real run; ablation table  Status: done; see docs/BENCHMARKS.md. |
 | 6 | Purchase request intelligence | Request model/API, missing/inconsistent checks, duplicate/split detection | Rule tests + synthetic dup cases pass  Status: done; see docs/BENCHMARKS.md. |
 | 7 | Compliance engine | Rules engine, LLM provider abstraction (Anthropic/OpenAI-compat/Mock), prompts@v1, pipeline, evidence verifier, injection guard | Golden cases run; false-approval-rate and unsupported-claim rate measured; invariant "AI can't approve" tested  Status: done; benchmarked with mock and real Groq models (prompt v1 vs v2), see docs/BENCHMARKS.md. |
-| 8 | Vendor intelligence | Normalization, quote comparison, price anomalies | Tests with alias/fuzzy cases |
+| 8 | Vendor intelligence | Normalization, quote comparison, price anomalies | Tests with alias/fuzzy cases  Status: done; see docs/BENCHMARKS.md. |
 | 9 | Human approval workflow | Decisions, finding reviews, info requests, history | State-machine tests; approve only via decision |
 | 10 | Analytics & audit | Aggregations, audit viewer, chain verification | Numbers match DB; chain verify test |
 | 11 | Frontend | All 9 pages wired to API, dark design system, responsive | Every control functional; manual + Playwright smoke tests; screenshots |

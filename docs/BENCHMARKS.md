@@ -3,12 +3,12 @@
 Every number below comes from a report file in `evals/reports/` produced by a runner in `evals/runners/`. All data is **synthetic** (fictional company, 6 policies / 45 clauses, 68 documents), so results show how the system behaves on this corpus, not how it would perform on real procurement documents. Sample sizes are small; differences of a few hundredths are within noise.
 
 ## Extraction, classification, chunking
-Report: `extraction_2026-11-13_c24b531.json` (`evals/runners/extraction.py`).
+Report: `extraction_2026-11-14_58bcc8d.json` (`evals/runners/extraction.py`; the earlier `extraction_2026-11-13_c24b531.json` predates the vendor-profile fields, all results unchanged).
 
 | Metric | Result |
 |---|---|
 | Document classification accuracy | 1.00 (68 documents) |
-| Field exact-match accuracy | 1.00 on every field |
+| Field exact-match accuracy | 1.00 on every field, including vendor tax ID, address, email, phone and country (absent fields correctly read as missing) |
 | Line-item precision / recall | 1.00 / 1.00 (106 items) |
 | Validation issue precision / recall | 1.00 / 1.00 (injected arithmetic and date flaws) |
 | Policy clause chunking recall | 1.00 (45 of 45 clauses became exactly one chunk) |
@@ -96,3 +96,19 @@ What this shows, and what it does not:
 - Reliability: Groq's JSON mode produced valid schema output on every call that returned; there were no format retries. The free tier rate-limits sustained load, which the provider now absorbs with Retry-After backoff; one 20b call still failed after all retries. Latency (median 4-12 s, slowest 10-16 s) is dominated by those waits and is not representative of a paid tier.
 - Cost: not computed. Groq prices are not configured; `LLM_PRICE_IN_PER_M` / `LLM_PRICE_OUT_PER_M` turn the recorded token counts into an estimate.
 - Default: prompt v2 and `openai/gpt-oss-120b` (0 failed calls, 0 rejected claims, no speculative flags in v2). The two models are close and single runs are noisy, so this is a weak preference, not a measured win. Run-to-run variation: repeating 120b v1 gave 40 vs 41 findings.
+
+## Vendor intelligence
+All data is synthetic: 9 fictional vendors (`data/synthetic/out/vendor_truth.json`), some deliberately missing a tax ID, email, phone or address, and one deliberate tax-ID conflict (the second Orion quotation prints a transposed tax ID). Everything is derived from uploaded documents; no external verification, market prices or exchange rates exist in the system.
+
+**Vendor-name matching** (`vendor_matching_2026-11-14_cf5e691.json`, `evals/runners/vendor_matching.py`): 105 labelled pairs (63 same-vendor variants: case, legal suffix, punctuation, dropped suffix, one-letter typos; 48 different vendors, including 12 near-miss names such as "Nile Cloud Services" vs "Nile Cloud Solutions"). Pairs were frozen before tuning. Fuzzy threshold chosen on the dev split (0.92).
+
+| Setting (test split, 47 pairs) | Precision | Recall |
+|---|---|---|
+| Names only | 1.00 | 0.96 (1 missed one-letter transposition) |
+| Names + tax IDs (different tax IDs never merge) | 1.00 | 1.00 |
+
+On the dev split names-only produced one false merge (a near-miss name). Fuzzy matches are therefore always marked `needs_review`, and only a human admin can merge two vendor records. Names that match exactly after normalisation but carry different tax IDs are kept as one vendor with a recorded conflict rather than silently split or merged.
+
+**Item alignment threshold** (`item_alignment_2026-11-14_cf5e691.json`, `evals/runners/item_alignment.py`): 224 pairs (42 catalogue-item vs hand-written paraphrase, 182 different-item negatives) with real MiniLM embeddings. Dev F1 is 1.00 for cosine thresholds 0.50 to 0.70. My first guess of 0.75 would have cost recall (0.92 dev), so I measured instead: alignment uses 0.60, and price-history matching uses 0.70 (the strict end of the plateau). Paraphrases are mine, so real quotation wording will be harder.
+
+**Not benchmarked:** price-outlier, suspiciously-low, price-gap and vendor-history flags (25%, 40% below median, 30% heuristics, not policy values) are covered by unit tests and by one live test on the synthetic deals (every injected arithmetic flaw is flagged, nothing is flagged as an outlier). With only 9 vendors and randomly generated prices there is no ground truth for "overpriced".
