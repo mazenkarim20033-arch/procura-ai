@@ -29,6 +29,11 @@
     "tax": "48812.73",
     "total": "397475.08",
     "payment_terms": "Net 60",
-    "delivery_days": 21
+    "delivery_days": 21,
+    "vendor_tax_id": null,
+    "vendor_address": "Industrial Zone 4, Dubai",
+    "vendor_email": "info@vertextools.example",
+    "vendor_phone": null,
+    "vendor_country": "UAE"
   }
 }

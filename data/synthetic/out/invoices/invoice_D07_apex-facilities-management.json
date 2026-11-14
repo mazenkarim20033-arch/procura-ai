@@ -36,6 +36,11 @@
     ],
     "subtotal": "96924.55",
     "tax": "0.00",
-    "total": "96924.55"
+    "total": "96924.55",
+    "vendor_tax_id": "TX-150-492-773",
+    "vendor_address": "15 Maadi Street, Cairo",
+    "vendor_email": "service@apexfm.example",
+    "vendor_phone": "+20 2 5550 0155",
+    "vendor_country": "Egypt"
   }
 }

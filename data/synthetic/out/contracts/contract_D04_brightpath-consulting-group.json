@@ -12,6 +12,11 @@
     "end_date": "2027-02-11",
     "currency": "USD",
     "total_value": "106016.45",
-    "payment_terms": "Net 60"
+    "payment_terms": "Net 60",
+    "vendor_tax_id": "TX-264-777-410",
+    "vendor_address": "3 Zamalek Road, Cairo",
+    "vendor_email": "engage@brightpath.example",
+    "vendor_phone": null,
+    "vendor_country": "Egypt"
   }
 }

@@ -23,6 +23,11 @@
     "tax": "0.00",
     "total": "2191.30",
     "payment_terms": "Net 45",
-    "delivery_days": 7
+    "delivery_days": 7,
+    "vendor_tax_id": "TX-481-220-915",
+    "vendor_address": "12 Nile Corniche, Cairo",
+    "vendor_email": "sales@oriontech.example",
+    "vendor_phone": "+20 2 5550 0101",
+    "vendor_country": "Egypt"
   }
 }

@@ -34,6 +34,11 @@
     ],
     "subtotal": "103352.28",
     "tax": "0.00",
-    "total": "103352.28"
+    "total": "103352.28",
+    "vendor_tax_id": "TX-264-777-410",
+    "vendor_address": "3 Zamalek Road, Cairo",
+    "vendor_email": "engage@brightpath.example",
+    "vendor_phone": null,
+    "vendor_country": "Egypt"
   }
 }

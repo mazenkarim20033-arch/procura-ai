@@ -22,6 +22,11 @@
     ],
     "subtotal": "10384.20",
     "tax": "0.00",
-    "total": "10384.20"
+    "total": "10384.20",
+    "vendor_tax_id": null,
+    "vendor_address": "Industrial Zone 4, Dubai",
+    "vendor_email": "info@vertextools.example",
+    "vendor_phone": null,
+    "vendor_country": "UAE"
   }
 }

@@ -1,0 +1,78 @@
+{
+  "synthetic": true,
+  "vendors": {
+    "Orion Tech Supplies Ltd.": {
+      "tax_id": "TX-481-220-915",
+      "email": "sales@oriontech.example",
+      "phone": "+20 2 5550 0101",
+      "address": "12 Nile Corniche, Cairo",
+      "country": "Egypt"
+    },
+    "Summit Networks Inc.": {
+      "tax_id": "TX-772-104-338",
+      "email": "quotes@summitnet.example",
+      "phone": "+1 415 555 0142",
+      "address": "500 Market Street, San Francisco",
+      "country": "United States"
+    },
+    "Vertex Industrial Tools LLC": {
+      "tax_id": null,
+      "email": "info@vertextools.example",
+      "phone": null,
+      "address": "Industrial Zone 4, Dubai",
+      "country": "UAE"
+    },
+    "Delta Office Furniture LLC": {
+      "tax_id": "TX-305-889-641",
+      "email": "orders@deltafurn.example",
+      "phone": "+20 2 5550 0177",
+      "address": "7 Tahrir Square, Cairo",
+      "country": "Egypt"
+    },
+    "Cairo Print & Packaging Co.": {
+      "tax_id": "TX-918-336-052",
+      "email": null,
+      "phone": "+20 2 5550 0188",
+      "address": null,
+      "country": "Egypt"
+    },
+    "Lumen Lighting Solutions Ltd.": {
+      "tax_id": null,
+      "email": "hello@lumenlight.example",
+      "phone": "+44 20 5550 0199",
+      "address": "21 Baker Street, London",
+      "country": "United Kingdom"
+    },
+    "BrightPath Consulting Group": {
+      "tax_id": "TX-264-777-410",
+      "email": "engage@brightpath.example",
+      "phone": null,
+      "address": "3 Zamalek Road, Cairo",
+      "country": "Egypt"
+    },
+    "Nile Cloud Services": {
+      "tax_id": "TX-639-051-826",
+      "email": "support@nilecloud.example",
+      "phone": "+20 2 5550 0123",
+      "address": "88 Corniche Road, Alexandria",
+      "country": "Egypt"
+    },
+    "Apex Facilities Management": {
+      "tax_id": "TX-150-492-773",
+      "email": "service@apexfm.example",
+      "phone": "+20 2 5550 0155",
+      "address": "15 Maadi Street, Cairo",
+      "country": "Egypt"
+    }
+  },
+  "conflicts": [
+    {
+      "vendor": "Orion Tech Supplies Ltd.",
+      "field": "tax_id",
+      "file": "quotations/quotation_D02_orion-tech-supplies-ltd.pdf",
+      "value": "TX-481-220-951",
+      "expected": "TX-481-220-915"
+    }
+  ],
+  "note": "Master data is what each vendor prints on its documents; conflicts are deliberate deviations."
+}

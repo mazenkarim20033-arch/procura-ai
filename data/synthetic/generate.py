@@ -55,6 +55,48 @@ MEMOS = [
     ("NEWSLETTER", "Subject: Company update", "Welcome to the new quarter. The cafeteria menu has been refreshed."),
 ]
 
+# Fictional vendor master data (None = the vendor never states that field on its documents).
+VENDOR_MASTER = {
+    "Orion Tech Supplies Ltd.": {"tax_id": "TX-481-220-915", "email": "sales@oriontech.example", "phone": "+20 2 5550 0101",
+                                 "address": "12 Nile Corniche, Cairo", "country": "Egypt"},
+    "Summit Networks Inc.": {"tax_id": "TX-772-104-338", "email": "quotes@summitnet.example", "phone": "+1 415 555 0142",
+                             "address": "500 Market Street, San Francisco", "country": "United States"},
+    "Vertex Industrial Tools LLC": {"tax_id": None, "email": "info@vertextools.example", "phone": None,
+                                    "address": "Industrial Zone 4, Dubai", "country": "UAE"},
+    "Delta Office Furniture LLC": {"tax_id": "TX-305-889-641", "email": "orders@deltafurn.example", "phone": "+20 2 5550 0177",
+                                   "address": "7 Tahrir Square, Cairo", "country": "Egypt"},
+    "Cairo Print & Packaging Co.": {"tax_id": "TX-918-336-052", "email": None, "phone": "+20 2 5550 0188",
+                                    "address": None, "country": "Egypt"},
+    "Lumen Lighting Solutions Ltd.": {"tax_id": None, "email": "hello@lumenlight.example", "phone": "+44 20 5550 0199",
+                                      "address": "21 Baker Street, London", "country": "United Kingdom"},
+    "BrightPath Consulting Group": {"tax_id": "TX-264-777-410", "email": "engage@brightpath.example", "phone": None,
+                                    "address": "3 Zamalek Road, Cairo", "country": "Egypt"},
+    "Nile Cloud Services": {"tax_id": "TX-639-051-826", "email": "support@nilecloud.example", "phone": "+20 2 5550 0123",
+                            "address": "88 Corniche Road, Alexandria", "country": "Egypt"},
+    "Apex Facilities Management": {"tax_id": "TX-150-492-773", "email": "service@apexfm.example", "phone": "+20 2 5550 0155",
+                                   "address": "15 Maadi Street, Cairo", "country": "Egypt"},
+}
+_STATE: dict = {"orion_docs": 0, "conflicts": []}
+
+
+def profile_lines(vendor: str, template: str, doc_file: str) -> tuple[list[str], dict]:
+    """Vendor identification lines as printed on a document, plus the truth fields. The second Orion
+    quotation deliberately prints a transposed tax ID so conflict detection has something to find."""
+    m = dict(VENDOR_MASTER[vendor])
+    if vendor == "Orion Tech Supplies Ltd.":
+        _STATE["orion_docs"] += 1
+        if _STATE["orion_docs"] == 2:
+            m["tax_id"] = "TX-481-220-951"
+            _STATE["conflicts"].append({"vendor": vendor, "field": "tax_id", "file": doc_file, "value": m["tax_id"],
+                                        "expected": VENDOR_MASTER[vendor]["tax_id"]})
+    labels = ({"tax_id": "Vendor Tax ID", "address": "Vendor Address", "email": "Vendor Email",
+               "phone": "Vendor Phone", "country": "Vendor Country"} if template == "A" else
+              {"tax_id": "VAT No", "address": "Address", "email": "Email", "phone": "Tel", "country": "Country"})
+    lines = [f"{labels[k]}: {m[k]}" for k in ("tax_id", "address", "email", "phone", "country") if m[k]]
+    fields = {f"vendor_{k}": m[k] for k in ("tax_id", "address", "email", "phone", "country")}
+    return lines, fields
+
+
 # One flaw per document keeps the expected validation issues unambiguous.
 QUOTE_FLAWS = {2: "line_total_mismatch", 5: "subtotal_mismatch", 8: "total_mismatch", 11: "missing_valid_until",
                14: "line_total_mismatch", 17: "missing_valid_until", 20: "total_mismatch", 23: "subtotal_mismatch",
@@ -172,7 +214,8 @@ def build_quotation(rng, idx, deal, vendor, items, issue, flaw):
         lines = ["QUOTATION", f"Quotation No: {qno}", f"Date: {issue.isoformat()}"]
         if valid:
             lines.append(f"Valid Until: {valid.isoformat()}")
-        lines += [f"Vendor: {name}", f"Currency: {cur}", f"Payment Terms: {terms}", f"Delivery: {days} days", "",
+        plines, pfields = profile_lines(vendor, "A", f"quotations/quotation_{deal['id']}_{slug(vendor)}.pdf")
+        lines += [f"Vendor: {name}", *plines, f"Currency: {cur}", f"Payment Terms: {terms}", f"Delivery: {days} days", "",
                   f"{'Description':<32}{'Qty':>6}{'Unit Price':>14}{'Line Total':>14}"]
         lines += [row_a(i) for i in printed]
         lines += ["", f"Subtotal: {money(subtotal)}", f"Tax ({pct}%): {money(tax)}", f"Total: {money(total)}"]
@@ -181,7 +224,8 @@ def build_quotation(rng, idx, deal, vendor, items, issue, flaw):
         lines = ["PRICE OFFER", f"Offer Ref: {qno}", f"Issued: {issue.strftime('%d %B %Y')}"]
         if valid:
             lines.append(f"Expires: {valid.strftime('%d %B %Y')}")
-        lines += [f"From: {name}", f"All prices in {cur}", f"Payment Terms: {terms}", f"Lead Time: {days} days", ""]
+        plines, pfields = profile_lines(vendor, "B", f"quotations/quotation_{deal['id']}_{slug(vendor)}.pdf")
+        lines += [f"From: {name}", *plines, f"All prices in {cur}", f"Payment Terms: {terms}", f"Lead Time: {days} days", ""]
         for n, i in enumerate(printed, 1):
             lines.append(f"{n}. {int(i['quantity'])} x {i['description']} @ {cur} {money(i['unit_price'])} = {cur} {money(i['line_total'])}")
         lines += ["", f"Net Total: {money(subtotal)}", f"VAT ({pct}%): {money(tax)}", f"Total Price: {cur} {money(total)}"]
@@ -192,7 +236,7 @@ def build_quotation(rng, idx, deal, vendor, items, issue, flaw):
             "vendor_name": name, "quote_no": qno, "issue_date": issue.isoformat(),
             "valid_until": valid.isoformat() if valid else None, "currency": cur,
             "items": items_truth(printed), "subtotal": plain(subtotal), "tax": plain(tax), "total": plain(total),
-            "payment_terms": terms, "delivery_days": days,
+            "payment_terms": terms, "delivery_days": days, **pfields,
         },
     }
     return f"quotation_{deal['id']}_{slug(vendor)}", lines, truth, total
@@ -204,8 +248,9 @@ def build_invoice(rng, idx, deal, vendor, items, inv_date, flaw):
     due = inv_date + timedelta(days=rng.choice([30, 45, 60]))
     ino, po, cur, pct = f"INV-2026-{idx + 1:04d}", f"PO-{deal['id']}", deal["currency"], int(tax_rate * 100)
     name = vendor_written(rng, vendor)
+    plines, pfields = profile_lines(vendor, "A", f"invoices/invoice_{deal['id']}_{slug(vendor)}.pdf")
     lines = ["INVOICE", f"Invoice No: {ino}", f"Invoice Date: {inv_date.isoformat()}", f"Due Date: {due.isoformat()}",
-             f"Vendor: {name}", f"PO Reference: {po}", f"Currency: {cur}", "",
+             f"Vendor: {name}", *plines, f"PO Reference: {po}", f"Currency: {cur}", "",
              f"{'Description':<32}{'Qty':>6}{'Unit Price':>14}{'Line Total':>14}"]
     lines += [row_a(i) for i in printed]
     lines += ["", f"Subtotal: {money(subtotal)}", f"Tax ({pct}%): {money(tax)}", f"Total Due: {money(total)}"]
@@ -213,7 +258,7 @@ def build_invoice(rng, idx, deal, vendor, items, inv_date, flaw):
         "doc_type": "invoice", "template": "A", "deal_id": deal["id"], "injected_issues": [flaw] if flaw else [],
         "fields": {"vendor_name": name, "invoice_no": ino, "invoice_date": inv_date.isoformat(),
                    "due_date": due.isoformat(), "po_reference": po, "currency": cur, "items": items_truth(printed),
-                   "subtotal": plain(subtotal), "tax": plain(tax), "total": plain(total)},
+                   "subtotal": plain(subtotal), "tax": plain(tax), "total": plain(total), **pfields},
     }
     return f"invoice_{deal['id']}_{slug(vendor)}", lines, truth
 
@@ -245,7 +290,8 @@ def build_contract(rng, idx, deal, vendor, value, start):
     cno, cur = f"CT-2026-{idx + 1:04d}", deal["currency"]
     end = start + timedelta(days=365)
     terms = rng.choice(["Net 30", "Net 45", "Net 60"])
-    lines = ["SERVICES AGREEMENT", f"Contract No: {cno}", f"Vendor: {vendor}", f"Buyer: {COMPANY}",
+    plines, pfields = profile_lines(vendor, "A", f"contracts/contract_{deal['id']}_{slug(vendor)}.pdf")
+    lines = ["SERVICES AGREEMENT", f"Contract No: {cno}", f"Vendor: {vendor}", *plines, f"Buyer: {COMPANY}",
              f"Effective Date: {start.isoformat()}", f"End Date: {end.isoformat()}", f"Currency: {cur}",
              f"Contract Value: {money(value)}", f"Payment Terms: {terms}", "",
              "The vendor shall deliver the services described in the attached quotation.",
@@ -254,7 +300,7 @@ def build_contract(rng, idx, deal, vendor, value, start):
     truth = {"doc_type": "contract", "template": "A", "deal_id": deal["id"], "injected_issues": [],
              "fields": {"contract_no": cno, "vendor_name": vendor, "effective_date": start.isoformat(),
                         "end_date": end.isoformat(), "currency": cur, "total_value": plain(value),
-                        "payment_terms": terms}}
+                        "payment_terms": terms, **pfields}}
     return f"contract_{deal['id']}_{slug(vendor)}", lines, truth
 
 
@@ -280,6 +326,7 @@ def build_policy(p):
 # ----------------------------------------------------------------------------- main
 def main() -> None:
     rng = random.Random(SEED)
+    _STATE.update({"orion_docs": 0, "conflicts": []})
     for sub in OUT.glob("*"):
         if sub.is_dir():
             for f in sub.glob("*"):
@@ -343,6 +390,10 @@ def main() -> None:
         t = json.loads(f.read_text(encoding="utf-8"))
         manifest.append({"file": t["file"], "doc_type": t["doc_type"], "deal_id": t.get("deal_id")})
     (OUT / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+    (OUT / "vendor_truth.json").write_text(json.dumps({
+        "synthetic": True, "vendors": VENDOR_MASTER, "conflicts": _STATE["conflicts"],
+        "note": "Master data is what each vendor prints on its documents; conflicts are deliberate deviations."},
+        indent=2), encoding="utf-8")
     counts = {}
     for m in manifest:
         counts[m["doc_type"]] = counts.get(m["doc_type"], 0) + 1

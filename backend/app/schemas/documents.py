@@ -37,6 +37,11 @@ class QuotationData(Strict):
     total: Decimal
     payment_terms: str | None = None
     delivery_days: int | None = None
+    vendor_tax_id: str | None = None
+    vendor_address: str | None = None
+    vendor_email: str | None = None
+    vendor_phone: str | None = None
+    vendor_country: str | None = None
 
 
 class InvoiceData(Strict):
@@ -50,6 +55,11 @@ class InvoiceData(Strict):
     tax: Decimal = Decimal(0)
     total: Decimal
     po_reference: str | None = None
+    vendor_tax_id: str | None = None
+    vendor_address: str | None = None
+    vendor_email: str | None = None
+    vendor_phone: str | None = None
+    vendor_country: str | None = None
 
 
 class PurchaseRequestData(Strict):
@@ -72,6 +82,11 @@ class ContractData(Strict):
     currency: Currency
     total_value: Decimal
     payment_terms: str | None = None
+    vendor_tax_id: str | None = None
+    vendor_address: str | None = None
+    vendor_email: str | None = None
+    vendor_phone: str | None = None
+    vendor_country: str | None = None
 
 
 class PolicyHeader(Strict):

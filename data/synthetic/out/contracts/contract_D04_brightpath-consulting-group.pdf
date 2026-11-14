@@ -48,7 +48,7 @@ endobj
 endobj
 9 0 obj
 <<
-/Length 1092
+/Length 1350
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -57,17 +57,21 @@ BT 1 0 0 1 40 800 Tm (SERVICES AGREEMENT) Tj T* ET
 BT /F3 10 Tf 12 TL ET
 BT 1 0 0 1 40 788 Tm (Contract No: CT-2026-0001) Tj T* ET
 BT 1 0 0 1 40 776 Tm (Vendor: BrightPath Consulting Group) Tj T* ET
-BT 1 0 0 1 40 764 Tm (Buyer: Northwind Industrial Co.) Tj T* ET
-BT 1 0 0 1 40 752 Tm (Effective Date: 2026-02-11) Tj T* ET
-BT 1 0 0 1 40 740 Tm (End Date: 2027-02-11) Tj T* ET
-BT 1 0 0 1 40 728 Tm (Currency: USD) Tj T* ET
-BT 1 0 0 1 40 716 Tm (Contract Value: 106,016.45) Tj T* ET
-BT 1 0 0 1 40 704 Tm (Payment Terms: Net 60) Tj T* ET
-BT 1 0 0 1 40 692 Tm  T* ET
-BT 1 0 0 1 40 680 Tm (The vendor shall deliver the services described in the attached quotation.) Tj T* ET
-BT 1 0 0 1 40 668 Tm (Either party may terminate this agreement with 30 days written notice.) Tj T* ET
-BT 1 0 0 1 40 656 Tm  T* ET
-BT 1 0 0 1 40 644 Tm (Signed for the buyer: ____________   Signed for the vendor: ____________) Tj T* ET
+BT 1 0 0 1 40 764 Tm (Vendor Tax ID: TX-264-777-410) Tj T* ET
+BT 1 0 0 1 40 752 Tm (Vendor Address: 3 Zamalek Road, Cairo) Tj T* ET
+BT 1 0 0 1 40 740 Tm (Vendor Email: engage@brightpath.example) Tj T* ET
+BT 1 0 0 1 40 728 Tm (Vendor Country: Egypt) Tj T* ET
+BT 1 0 0 1 40 716 Tm (Buyer: Northwind Industrial Co.) Tj T* ET
+BT 1 0 0 1 40 704 Tm (Effective Date: 2026-02-11) Tj T* ET
+BT 1 0 0 1 40 692 Tm (End Date: 2027-02-11) Tj T* ET
+BT 1 0 0 1 40 680 Tm (Currency: USD) Tj T* ET
+BT 1 0 0 1 40 668 Tm (Contract Value: 106,016.45) Tj T* ET
+BT 1 0 0 1 40 656 Tm (Payment Terms: Net 60) Tj T* ET
+BT 1 0 0 1 40 644 Tm  T* ET
+BT 1 0 0 1 40 632 Tm (The vendor shall deliver the services described in the attached quotation.) Tj T* ET
+BT 1 0 0 1 40 620 Tm (Either party may terminate this agreement with 30 days written notice.) Tj T* ET
+BT 1 0 0 1 40 608 Tm  T* ET
+BT 1 0 0 1 40 596 Tm (Signed for the buyer: ____________   Signed for the vendor: ____________) Tj T* ET
 BT /F3 8 Tf 9.6 TL ET
 BT 1 0 0 1 40 28 Tm (SYNTHETIC DATA - fictional company and vendors, not a real document) Tj T* ET
  
@@ -96,5 +100,5 @@ trailer
 /Size 10
 >>
 startxref
-2168
+2426
 %%EOF

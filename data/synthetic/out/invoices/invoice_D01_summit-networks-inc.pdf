@@ -48,7 +48,7 @@ endobj
 endobj
 9 0 obj
 <<
-/Length 1090
+/Length 1428
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -59,16 +59,21 @@ BT 1 0 0 1 40 788 Tm (Invoice No: INV-2026-0001) Tj T* ET
 BT 1 0 0 1 40 776 Tm (Invoice Date: 2026-01-23) Tj T* ET
 BT 1 0 0 1 40 764 Tm (Due Date: 2026-02-22) Tj T* ET
 BT 1 0 0 1 40 752 Tm (Vendor: Summit Networks Incorporated) Tj T* ET
-BT 1 0 0 1 40 740 Tm (PO Reference: PO-D01) Tj T* ET
-BT 1 0 0 1 40 728 Tm (Currency: USD) Tj T* ET
-BT 1 0 0 1 40 716 Tm  T* ET
-BT 1 0 0 1 40 704 Tm (Description                        Qty    Unit Price    Line Total) Tj T* ET
-BT 1 0 0 1 40 692 Tm (Design software licence              5        513.80      2,569.00) Tj T* ET
-BT 1 0 0 1 40 680 Tm (Monitor 27in                         5        220.37      1,101.85) Tj T* ET
-BT 1 0 0 1 40 668 Tm  T* ET
-BT 1 0 0 1 40 656 Tm (Subtotal: 3,670.85) Tj T* ET
-BT 1 0 0 1 40 644 Tm (Tax \(0%\): 0.00) Tj T* ET
-BT 1 0 0 1 40 632 Tm (Total Due: 3,670.85) Tj T* ET
+BT 1 0 0 1 40 740 Tm (Vendor Tax ID: TX-772-104-338) Tj T* ET
+BT 1 0 0 1 40 728 Tm (Vendor Address: 500 Market Street, San Francisco) Tj T* ET
+BT 1 0 0 1 40 716 Tm (Vendor Email: quotes@summitnet.example) Tj T* ET
+BT 1 0 0 1 40 704 Tm (Vendor Phone: +1 415 555 0142) Tj T* ET
+BT 1 0 0 1 40 692 Tm (Vendor Country: United States) Tj T* ET
+BT 1 0 0 1 40 680 Tm (PO Reference: PO-D01) Tj T* ET
+BT 1 0 0 1 40 668 Tm (Currency: USD) Tj T* ET
+BT 1 0 0 1 40 656 Tm  T* ET
+BT 1 0 0 1 40 644 Tm (Description                        Qty    Unit Price    Line Total) Tj T* ET
+BT 1 0 0 1 40 632 Tm (Design software licence              5        513.80      2,569.00) Tj T* ET
+BT 1 0 0 1 40 620 Tm (Monitor 27in                         5        220.37      1,101.85) Tj T* ET
+BT 1 0 0 1 40 608 Tm  T* ET
+BT 1 0 0 1 40 596 Tm (Subtotal: 3,670.85) Tj T* ET
+BT 1 0 0 1 40 584 Tm (Tax \(0%\): 0.00) Tj T* ET
+BT 1 0 0 1 40 572 Tm (Total Due: 3,670.85) Tj T* ET
 BT /F3 8 Tf 9.6 TL ET
 BT 1 0 0 1 40 28 Tm (SYNTHETIC DATA - fictional company and vendors, not a real document) Tj T* ET
  
@@ -97,5 +102,5 @@ trailer
 /Size 10
 >>
 startxref
-2166
+2504
 %%EOF

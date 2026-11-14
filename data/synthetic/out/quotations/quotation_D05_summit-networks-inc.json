@@ -23,6 +23,11 @@
     "tax": "0.00",
     "total": "1915.40",
     "payment_terms": "Net 30",
-    "delivery_days": 21
+    "delivery_days": 21,
+    "vendor_tax_id": "TX-772-104-338",
+    "vendor_address": "500 Market Street, San Francisco",
+    "vendor_email": "quotes@summitnet.example",
+    "vendor_phone": "+1 415 555 0142",
+    "vendor_country": "United States"
   }
 }

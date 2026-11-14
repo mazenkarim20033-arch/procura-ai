@@ -140,9 +140,19 @@ def _delivery_days(ex: Extractor) -> None:
         ex.raw["delivery_days"] = int(m.group()) if m else text
 
 
+def _vendor_profile(ex: Extractor) -> None:
+    """Optional identification fields printed next to the vendor name (None when the document omits them)."""
+    ex.text_field("vendor_tax_id", ["Vendor Tax ID", "Tax ID", "VAT No\.?", "VAT Number", "Tax Registration(?: No\.?)?"])
+    ex.text_field("vendor_address", ["Vendor Address", "Address"])
+    ex.text_field("vendor_email", ["Vendor Email", "Email"])
+    ex.text_field("vendor_phone", ["Vendor Phone", "Vendor Tel", "Phone", "Tel"])
+    ex.text_field("vendor_country", ["Vendor Country", "Country"])
+
+
 def extract_quotation(doc: ParsedDocument) -> Extractor:
     ex = Extractor(doc)
     ex.text_field("vendor_name", ["Vendor", "Supplier", "From", "Issued by"])
+    _vendor_profile(ex)
     ex.text_field("quote_no", ["Quotation No\\.?", "Quote No\\.?", "Offer Ref", "Reference"])
     ex.date_field("issue_date", ["Date", "Issue Date", "Quotation Date", "Issued"])
     ex.date_field("valid_until", ["Valid Until", "Valid Through", "Expires"])
@@ -159,6 +169,7 @@ def extract_quotation(doc: ParsedDocument) -> Extractor:
 def extract_invoice(doc: ParsedDocument) -> Extractor:
     ex = Extractor(doc)
     ex.text_field("vendor_name", ["Vendor", "Supplier", "From", "Issued by"])
+    _vendor_profile(ex)
     ex.text_field("invoice_no", ["Invoice No\\.?", "Invoice Number", "Invoice #"])
     ex.date_field("invoice_date", ["Invoice Date", "Date", "Issued"])
     ex.date_field("due_date", ["Due Date", "Payment Due"])
@@ -189,6 +200,7 @@ def extract_contract(doc: ParsedDocument) -> Extractor:
     ex = Extractor(doc)
     ex.text_field("contract_no", ["Contract No\\.?", "Agreement No\\.?"])
     ex.text_field("vendor_name", ["Vendor", "Supplier", "Contractor"])
+    _vendor_profile(ex)
     ex.date_field("effective_date", ["Effective Date", "Start Date"])
     ex.date_field("end_date", ["End Date", "Expiry Date"])
     ex.currency()

@@ -22,6 +22,11 @@
     ],
     "subtotal": "2079.80",
     "tax": "0.00",
-    "total": "2079.80"
+    "total": "2079.80",
+    "vendor_tax_id": "TX-481-220-915",
+    "vendor_address": "12 Nile Corniche, Cairo",
+    "vendor_email": "sales@oriontech.example",
+    "vendor_phone": "+20 2 5550 0101",
+    "vendor_country": "Egypt"
   }
 }

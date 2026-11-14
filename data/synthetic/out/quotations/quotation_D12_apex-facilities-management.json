@@ -35,6 +35,11 @@
     "tax": "0.00",
     "total": "29358.83",
     "payment_terms": "Net 60",
-    "delivery_days": 7
+    "delivery_days": 7,
+    "vendor_tax_id": "TX-150-492-773",
+    "vendor_address": "15 Maadi Street, Cairo",
+    "vendor_email": "service@apexfm.example",
+    "vendor_phone": "+20 2 5550 0155",
+    "vendor_country": "Egypt"
   }
 }

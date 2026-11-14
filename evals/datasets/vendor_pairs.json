@@ -1,0 +1,1367 @@
+[
+ {
+  "id": "p001",
+  "kind": "same:upper",
+  "label": 1,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "ORION TECH SUPPLIES LTD.",
+   "tax_id": "TX-481-220-915"
+  }
+ },
+ {
+  "id": "p002",
+  "kind": "same:lower",
+  "label": 1,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "orion tech supplies ltd.",
+   "tax_id": "TX-481-220-915"
+  }
+ },
+ {
+  "id": "p003",
+  "kind": "same:suffix_swap",
+  "label": 1,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Orion Tech Supplies Limited",
+   "tax_id": "TX-481-220-915"
+  }
+ },
+ {
+  "id": "p004",
+  "kind": "same:no_suffix",
+  "label": 1,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Orion Tech Supplies",
+   "tax_id": "TX-481-220-915"
+  }
+ },
+ {
+  "id": "p005",
+  "kind": "same:punct",
+  "label": 1,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Orion Tech Supplies Ltd",
+   "tax_id": "TX-481-220-915"
+  }
+ },
+ {
+  "id": "p006",
+  "kind": "same:typo_delete",
+  "label": 1,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Orion ech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  }
+ },
+ {
+  "id": "p007",
+  "kind": "same:typo_swap",
+  "label": 1,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Orion Tech Supplise Ltd.",
+   "tax_id": "TX-481-220-915"
+  }
+ },
+ {
+  "id": "p008",
+  "kind": "same:upper",
+  "label": 1,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "SUMMIT NETWORKS INC.",
+   "tax_id": "TX-772-104-338"
+  }
+ },
+ {
+  "id": "p009",
+  "kind": "same:lower",
+  "label": 1,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "summit networks inc.",
+   "tax_id": "TX-772-104-338"
+  }
+ },
+ {
+  "id": "p010",
+  "kind": "same:suffix_swap",
+  "label": 1,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Summit Networks Incorporated",
+   "tax_id": "TX-772-104-338"
+  }
+ },
+ {
+  "id": "p011",
+  "kind": "same:no_suffix",
+  "label": 1,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Summit Networks",
+   "tax_id": "TX-772-104-338"
+  }
+ },
+ {
+  "id": "p012",
+  "kind": "same:punct",
+  "label": 1,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Summit Networks Inc",
+   "tax_id": "TX-772-104-338"
+  }
+ },
+ {
+  "id": "p013",
+  "kind": "same:typo_delete",
+  "label": 1,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Summit etworks Inc.",
+   "tax_id": "TX-772-104-338"
+  }
+ },
+ {
+  "id": "p014",
+  "kind": "same:typo_swap",
+  "label": 1,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Summit Nteworks Inc.",
+   "tax_id": "TX-772-104-338"
+  }
+ },
+ {
+  "id": "p015",
+  "kind": "same:upper",
+  "label": 1,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "VERTEX INDUSTRIAL TOOLS LLC",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p016",
+  "kind": "same:lower",
+  "label": 1,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "vertex industrial tools llc",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p017",
+  "kind": "same:suffix_swap",
+  "label": 1,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Vertex Industrial Tools L.L.C.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p018",
+  "kind": "same:no_suffix",
+  "label": 1,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Vertex Industrial Tools",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p019",
+  "kind": "same:punct",
+  "label": 1,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p020",
+  "kind": "same:typo_delete",
+  "label": 1,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "VertexIndustrial Tools LLC",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p021",
+  "kind": "same:typo_swap",
+  "label": 1,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "VertexI ndustrial Tools LLC",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p022",
+  "kind": "same:upper",
+  "label": 1,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "DELTA OFFICE FURNITURE LLC",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p023",
+  "kind": "same:lower",
+  "label": 1,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "delta office furniture llc",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p024",
+  "kind": "same:suffix_swap",
+  "label": 1,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "Delta Office Furniture L.L.C.",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p025",
+  "kind": "same:no_suffix",
+  "label": 1,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "Delta Office Furniture",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p026",
+  "kind": "same:punct",
+  "label": 1,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p027",
+  "kind": "same:typo_delete",
+  "label": 1,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "Delta Ofice Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p028",
+  "kind": "same:typo_swap",
+  "label": 1,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "Delta Office Furnitur eLLC",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p029",
+  "kind": "same:upper",
+  "label": 1,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "CAIRO PRINT & PACKAGING CO.",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p030",
+  "kind": "same:lower",
+  "label": 1,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "cairo print & packaging co.",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p031",
+  "kind": "same:suffix_swap",
+  "label": 1,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "Cairo Print & Packaging Company",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p032",
+  "kind": "same:no_suffix",
+  "label": 1,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "Cairo Print & Packaging",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p033",
+  "kind": "same:punct",
+  "label": 1,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "Cairo Print and Packaging Co",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p034",
+  "kind": "same:typo_delete",
+  "label": 1,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "Cairo Print & Pckaging Co.",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p035",
+  "kind": "same:typo_swap",
+  "label": 1,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "Cairo Print & aPckaging Co.",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p036",
+  "kind": "same:upper",
+  "label": 1,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "LUMEN LIGHTING SOLUTIONS LTD.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p037",
+  "kind": "same:lower",
+  "label": 1,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "lumen lighting solutions ltd.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p038",
+  "kind": "same:suffix_swap",
+  "label": 1,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Lumen Lighting Solutions Limited",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p039",
+  "kind": "same:no_suffix",
+  "label": 1,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Lumen Lighting Solutions",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p040",
+  "kind": "same:punct",
+  "label": 1,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Lumen Lighting Solutions Ltd",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p041",
+  "kind": "same:typo_delete",
+  "label": 1,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Lumen Lighting Soltions Ltd.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p042",
+  "kind": "same:typo_swap",
+  "label": 1,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Lumen Lighting SolutionsL td.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p043",
+  "kind": "same:upper",
+  "label": 1,
+  "a": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  },
+  "b": {
+   "name": "BRIGHTPATH CONSULTING GROUP",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p044",
+  "kind": "same:lower",
+  "label": 1,
+  "a": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  },
+  "b": {
+   "name": "brightpath consulting group",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p045",
+  "kind": "same:punct",
+  "label": 1,
+  "a": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  },
+  "b": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p046",
+  "kind": "same:typo_delete",
+  "label": 1,
+  "a": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  },
+  "b": {
+   "name": "BrightPath ConsultingGroup",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p047",
+  "kind": "same:typo_swap",
+  "label": 1,
+  "a": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  },
+  "b": {
+   "name": "BrigthPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p048",
+  "kind": "same:upper",
+  "label": 1,
+  "a": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  },
+  "b": {
+   "name": "NILE CLOUD SERVICES",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p049",
+  "kind": "same:lower",
+  "label": 1,
+  "a": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  },
+  "b": {
+   "name": "nile cloud services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p050",
+  "kind": "same:punct",
+  "label": 1,
+  "a": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  },
+  "b": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p051",
+  "kind": "same:typo_delete",
+  "label": 1,
+  "a": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  },
+  "b": {
+   "name": "Nile Cloud Sevices",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p052",
+  "kind": "same:typo_swap",
+  "label": 1,
+  "a": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  },
+  "b": {
+   "name": "Nile Cluod Services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p053",
+  "kind": "same:upper",
+  "label": 1,
+  "a": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  },
+  "b": {
+   "name": "APEX FACILITIES MANAGEMENT",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p054",
+  "kind": "same:lower",
+  "label": 1,
+  "a": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  },
+  "b": {
+   "name": "apex facilities management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p055",
+  "kind": "same:punct",
+  "label": 1,
+  "a": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  },
+  "b": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p056",
+  "kind": "same:typo_delete",
+  "label": 1,
+  "a": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  },
+  "b": {
+   "name": "Ape Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p057",
+  "kind": "same:typo_swap",
+  "label": 1,
+  "a": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  },
+  "b": {
+   "name": "Apex Facilities aMnagement",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p058",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  }
+ },
+ {
+  "id": "p059",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p060",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p061",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p062",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p063",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p064",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p065",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-481-220-915"
+  },
+  "b": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p066",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p067",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p068",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p069",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p070",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p071",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p072",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-772-104-338"
+  },
+  "b": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p073",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  }
+ },
+ {
+  "id": "p074",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p075",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p076",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p077",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p078",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p079",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  }
+ },
+ {
+  "id": "p080",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p081",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p082",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p083",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-305-889-641"
+  },
+  "b": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p084",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  }
+ },
+ {
+  "id": "p085",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p086",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p087",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-918-336-052"
+  },
+  "b": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p088",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  }
+ },
+ {
+  "id": "p089",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p090",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": null
+  },
+  "b": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p091",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  },
+  "b": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  }
+ },
+ {
+  "id": "p092",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-264-777-410"
+  },
+  "b": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p093",
+  "kind": "different:distinct",
+  "label": 0,
+  "a": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-639-051-826"
+  },
+  "b": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-150-492-773"
+  }
+ },
+ {
+  "id": "p094",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-900-000-111"
+  },
+  "b": {
+   "name": "Nile Cloud Solutions",
+   "tax_id": "TX-900-000-222"
+  }
+ },
+ {
+  "id": "p095",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-901-000-111"
+  },
+  "b": {
+   "name": "Summit Network Systems Inc.",
+   "tax_id": "TX-901-000-222"
+  }
+ },
+ {
+  "id": "p096",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Orion Tech Supplies Ltd.",
+   "tax_id": "TX-902-000-111"
+  },
+  "b": {
+   "name": "Orion Tech Supply Ltd.",
+   "tax_id": "TX-902-000-222"
+  }
+ },
+ {
+  "id": "p097",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Delta Office Furniture LLC",
+   "tax_id": "TX-903-000-111"
+  },
+  "b": {
+   "name": "Delta Office Fixtures LLC",
+   "tax_id": "TX-903-000-222"
+  }
+ },
+ {
+  "id": "p098",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-904-000-111"
+  },
+  "b": {
+   "name": "Apex Facility Management",
+   "tax_id": "TX-904-000-222"
+  }
+ },
+ {
+  "id": "p099",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "BrightPath Consulting Group",
+   "tax_id": "TX-905-000-111"
+  },
+  "b": {
+   "name": "BrightPoint Consulting Group",
+   "tax_id": "TX-905-000-222"
+  }
+ },
+ {
+  "id": "p100",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Lumen Lighting Solutions Ltd.",
+   "tax_id": "TX-906-000-111"
+  },
+  "b": {
+   "name": "Lumen Lighting Systems Ltd.",
+   "tax_id": "TX-906-000-222"
+  }
+ },
+ {
+  "id": "p101",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Vertex Industrial Tools LLC",
+   "tax_id": "TX-907-000-111"
+  },
+  "b": {
+   "name": "Vertex Industrial Tooling LLC",
+   "tax_id": "TX-907-000-222"
+  }
+ },
+ {
+  "id": "p102",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Cairo Print & Packaging Co.",
+   "tax_id": "TX-908-000-111"
+  },
+  "b": {
+   "name": "Cairo Print & Paper Co.",
+   "tax_id": "TX-908-000-222"
+  }
+ },
+ {
+  "id": "p103",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Nile Cloud Services",
+   "tax_id": "TX-909-000-111"
+  },
+  "b": {
+   "name": "Nile Cloud Services Egypt",
+   "tax_id": "TX-909-000-222"
+  }
+ },
+ {
+  "id": "p104",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Summit Networks Inc.",
+   "tax_id": "TX-910-000-111"
+  },
+  "b": {
+   "name": "Summit Networking Inc.",
+   "tax_id": "TX-910-000-222"
+  }
+ },
+ {
+  "id": "p105",
+  "kind": "different:near_miss",
+  "label": 0,
+  "a": {
+   "name": "Apex Facilities Management",
+   "tax_id": "TX-911-000-111"
+  },
+  "b": {
+   "name": "Apex Fire Management",
+   "tax_id": "TX-911-000-222"
+  }
+ }
+]

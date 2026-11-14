@@ -29,6 +29,11 @@
     "tax": "0.00",
     "total": "599.73",
     "payment_terms": "Net 30",
-    "delivery_days": 21
+    "delivery_days": 21,
+    "vendor_tax_id": null,
+    "vendor_address": "21 Baker Street, London",
+    "vendor_email": "hello@lumenlight.example",
+    "vendor_phone": "+44 20 5550 0199",
+    "vendor_country": "United Kingdom"
   }
 }

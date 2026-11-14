@@ -22,6 +22,11 @@
     ],
     "subtotal": "4696.68",
     "tax": "0.00",
-    "total": "4696.68"
+    "total": "4696.68",
+    "vendor_tax_id": "TX-639-051-826",
+    "vendor_address": "88 Corniche Road, Alexandria",
+    "vendor_email": "support@nilecloud.example",
+    "vendor_phone": "+20 2 5550 0123",
+    "vendor_country": "Egypt"
   }
 }

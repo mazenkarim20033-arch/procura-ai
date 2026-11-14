@@ -30,6 +30,11 @@
     ],
     "subtotal": "339104.45",
     "tax": "47474.62",
-    "total": "386616.07"
+    "total": "386616.07",
+    "vendor_tax_id": "TX-772-104-338",
+    "vendor_address": "500 Market Street, San Francisco",
+    "vendor_email": "quotes@summitnet.example",
+    "vendor_phone": "+1 415 555 0142",
+    "vendor_country": "United States"
   }
 }
