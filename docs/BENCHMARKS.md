@@ -91,7 +91,7 @@ Reports: `compliance_2026-11-14_6bc9bd6_gptoss{20b,120b}_prompt-v{1,2}.json` (pl
 | Tokens per assessment (in / out) | 1,117 / 554 | 1,379 / 514 | 1,117 / 597 | 1,251 / 435 |
 
 What this shows, and what it does not:
-- v1 made models flag almost every laptop request with speculative "potential violations" (undocumented IT review, "requester may be self-approving", approval status unknown). v2 tells the model to report only clauses triggered by stated facts and to use `inconclusive` for requirements the data cannot verify; speculative flags dropped from 29 to 1 (120b) and 19 to 0 (20b). This is a prompt change judged on the same 40 scenarios I wrote it against, so some overfitting is possible; "clean scenarios flagged" rests on 11 cases.
+- v1 made models flag almost every laptop request with speculative "potential violations" (undocumented IT review, "requester may be self-approving", approval status unknown). v2 tells the model to report only clauses triggered by stated facts and to use `inconclusive` for requirements the data cannot verify; speculative flags dropped from 29 to 1 (120b, first run; 2 to 4 in three later repeats, see below) and 19 to 0 (20b, single run). This is a prompt change judged on the same 40 scenarios I wrote it against, so some overfitting is possible; "clean scenarios flagged" rests on 11 cases.
 - The deterministic rules were never changed by the LLM stage in any run (0 false approvals, rule P/R stayed 1.00). The LLM stage can only add findings, and v2 adds mostly `inconclusive` ones, which still turn an otherwise clean request's status from `no_issues_found` to `inconclusive` (4 scenarios).
 - Injection: in every injected scenario that reached the model (x01, x02, x06; x03's injected text sits in a document the model is not shown) no run followed the injected instruction; the guard flagged all four injected scenarios. Only 3 cases per run, so this is weak evidence.
 - Verifier: the one model that invented numbers (20b, v1: 3 of 41 claims, 7.3%) was caught by the verifier; v2 had none. The "unsupported-claim rate before the verifier" is therefore 0-7% here, on a small sample.
@@ -100,7 +100,7 @@ What this shows, and what it does not:
 - Default: prompt v2 and `openai/gpt-oss-120b` (0 failed calls, 0 rejected claims, no speculative flags in v2). The two models are close and single runs are noisy, so this is a weak preference, not a measured win. Run-to-run variation: repeating 120b v1 gave 40 vs 41 findings.
 
 ## How certain are the safety numbers?
-Report: `safety_intervals_2026-11-18_1027a68.json`, produced by `evals/safety_intervals.py` from the compliance reports (Wilson 95% intervals; the script lists every report, including the labelled failed runs).
+Report: `safety_intervals_2026-11-18_96c0aa7.json`, produced by `evals/safety_intervals.py` from the compliance reports (Wilson 95% intervals; the script lists every report, including the labelled failed runs).
 
 | Count (identical in every configuration, rules-only, mock and all Groq runs) | Observed | 95% interval for the true rate |
 |---|---|---|
@@ -108,6 +108,29 @@ Report: `safety_intervals_2026-11-18_1027a68.json`, produced by `evals/safety_in
 | Any gold issue reported as `no_issues_found` | 0 / 29 | 0% to 11.7% |
 
 "Zero in this test" is not "zero in general". With 12 and 29 cases, these data cannot rule out a true rate of up to about a quarter and about a ninth respectively. The rules are deterministic and the LLM stage can only add findings (enforced by tests and a database constraint), which is a stronger argument than the sample, but the sample alone is not strong evidence. The unsupported-claim figures quoted above (for example 3 of 41 for 20b with prompt v1) are single runs on 40 scenarios and are not given an interval here.
+
+### Repeated runs of the default configuration (`openai/gpt-oss-120b`, prompt v2)
+Reports: `compliance_2026-11-18_96c0aa7_gptoss120b_prompt-v2_repeat{1,2,3}.json`. Same 40 scenarios, same settings, three consecutive runs on 2026-11-18 (Groq free tier, temperature 0).
+
+| | Run 1 | Run 2 | Run 3 |
+|---|---|---|---|
+| Rule findings P / R | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 |
+| False approvals / invariant violations | 0 / 0 | 0 / 0 | 0 / 0 |
+| LLM `potential_violation` findings | 4 | 3 | 2 |
+| LLM `inconclusive` findings | 36 | 37 | 36 |
+| Findings accepted by the evidence verifier / claims rejected | 40 / 0 | 40 / 0 | 38 / 0 |
+| Clean scenarios (11) given a model-raised potential violation | 0 | 0 | 0 |
+| Clean scenarios given any LLM finding (all `inconclusive`) | 4 | 4 | 4 |
+| Scenarios whose status the LLM stage changed | 4 | 4 | 4 |
+| Failed calls / retries absorbed | 0 / 42 | 0 / 44 | 0 / 45 |
+| Tokens per assessment (in / out) | 1,596 / 570 | 1,667 / 575 | 1,872 / 543 |
+| Latency p50 / p95 (seconds, rate-limit waits included) | 11.8 / 17.8 | 11.4 / 17.1 | 9.2 / 17.1 |
+
+What the repeats show:
+- **The safety properties were stable.** Rule precision and recall, zero false approvals, zero invariant violations and zero failed calls held in all three runs, and the number of scenarios whose status moved was 4 each time. These properties come from the deterministic rules and the architecture, so stability is expected.
+- **The model's own findings are not stable.** Even at temperature 0, `potential_violation` counts were 4, 3 and 2 and `inconclusive` counts 36, 37 and 36. The single earlier run reported above (1 potential violation, 39 inconclusive) falls outside this range, so "v2 cut speculative flags to 1" overstated it: across four runs the figure is **1 to 4**. The 29 of prompt v1 is still far higher, but the size of the improvement should be read as roughly 29 down to 1-4, from single runs.
+- **Token use varied by about 17% in input tokens** (1,596 to 1,872 per assessment) between identical runs. A cost estimate would therefore need a range, and none is given because no prices are configured.
+- Three runs is still a very small sample. No significance claims are made.
 
 ## Vendor intelligence
 All data is synthetic: 9 fictional vendors (`data/synthetic/out/vendor_truth.json`), some deliberately missing a tax ID, email, phone or address, and one deliberate tax-ID conflict (the second Orion quotation prints a transposed tax ID). Everything is derived from uploaded documents; no external verification, market prices or exchange rates exist in the system.
@@ -126,7 +149,7 @@ On the dev split names-only produced one false merge (a near-miss name). Fuzzy m
 **Not benchmarked:** price-outlier, suspiciously-low, price-gap and vendor-history flags (25%, 40% below median, 30% heuristics, not policy values) are covered by unit tests and by one live test on the synthetic deals (every injected arithmetic flaw is flagged, nothing is flagged as an outlier). With only 9 vendors and randomly generated prices there is no ground truth for "overpriced".
 
 ## Not yet measured (planned in docs/EVALUATION.md)
-- **Repeated LLM runs.** Every Groq result above is a single run per configuration; the plan was three. Run-to-run variation is known only from one repeat (40 vs 41 findings). Re-running the default configuration needs a Groq key and a few free-tier rate-limit waits.
+- **Repeated LLM runs for the other configurations.** Only the default (120b, prompt v2) was repeated three times; the 20b model and prompt v1 are single runs.
 - **End-to-end latency and cost.** Latency is only recorded inside the compliance runs (dominated by free-tier rate limits) and no prices are configured, so no cost-per-assessment figure exists.
 - **Scanned documents and OCR**, real (non-synthetic) documents, and Arabic: none are tested.
 - **Human agreement.** There are no real reviewers; the analytics page measures AI-versus-human agreement only on the few synthetic decisions seeded for the demo.

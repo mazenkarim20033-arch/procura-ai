@@ -1,5 +1,5 @@
 {
-  "git_sha": "1027a68",
+  "git_sha": "96c0aa7",
   "method": "Wilson score interval, 95%",
   "rows": [
     {
@@ -305,6 +305,66 @@
     {
       "report": "compliance_2026-11-18_1027a68.json",
       "config": "mock:mock-keyword-rules-v1:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-18_96c0aa7_gptoss120b_prompt-v2_repeat1.json",
+      "config": "groq:openai/gpt-oss-120b:prompt-v2",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-18_96c0aa7_gptoss120b_prompt-v2_repeat2.json",
+      "config": "groq:openai/gpt-oss-120b:prompt-v2",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-18_96c0aa7_gptoss120b_prompt-v2_repeat3.json",
+      "config": "groq:openai/gpt-oss-120b:prompt-v2",
       "false_approval": {
         "k": 0,
         "n": 12,
