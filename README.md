@@ -1,6 +1,6 @@
 # Procura AI — Enterprise Procurement Intelligence Platform
 
-> **Status: milestones 1-11 done (backend, evaluation harness and web UI), 12 done except latency/cost (see docs/BENCHMARKS.md), 13 prepared but not deployed (see docs/DEPLOYMENT.md); 14 (case study) is pending.** See [docs/ROADMAP.md](docs/ROADMAP.md).
+> **Status: milestones 1-11 done (backend, evaluation harness and web UI), 12 done except latency/cost (see docs/BENCHMARKS.md), 13 prepared but not deployed (see docs/DEPLOYMENT.md); 14 (case study) written: [docs/CASE_STUDY.md](docs/CASE_STUDY.md).** See [docs/ROADMAP.md](docs/ROADMAP.md).
 > All data in this project is **synthetic**. Nothing here is connected to a real company or supplier. Sign-in is a demo persona picker, not real authentication.
 
 Procura AI helps procurement teams process purchase requests against company policy. It extracts structured data from documents, retrieves the relevant policy clauses, evaluates the request with deterministic rules plus an LLM, and produces an explainable, evidence-backed assessment. **A human procurement officer always makes the final decision. The AI never approves a purchase.**
@@ -50,6 +50,7 @@ The AI runs in **mock** mode unless `LLM_PROVIDER=groq` and `LLM_API_KEY` are se
 | [docs/EVALUATION.md](docs/EVALUATION.md) | Evaluation dataset and benchmarking strategy |
 | [docs/COST_AND_RISKS.md](docs/COST_AND_RISKS.md) | Cost analysis (what runs free) and risk register |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Milestones with exit criteria |
+| [docs/CASE_STUDY.md](docs/CASE_STUDY.md) | Portfolio write-up: decisions, measured results with sources, what went wrong, limitations, demo script |
 | [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Deployment status, read-only public mode, measured memory, blockers |
 
 ## Principles
