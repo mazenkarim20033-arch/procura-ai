@@ -1,0 +1,326 @@
+{
+  "git_sha": "1027a68",
+  "method": "Wilson score interval, 95%",
+  "rows": [
+    {
+      "report": "compliance_2026-11-14_0ea45c2.json",
+      "config": "none",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_0ea45c2.json",
+      "config": "mock:mock-keyword-rules-v1:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_6bc9bd6_gptoss120b_prompt-v1.json",
+      "config": "groq:openai/gpt-oss-120b:prompt-v1",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_6bc9bd6_gptoss120b_prompt-v2.json",
+      "config": "groq:openai/gpt-oss-120b:prompt-v2",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_6bc9bd6_gptoss20b_prompt-v1.json",
+      "config": "groq:openai/gpt-oss-20b:prompt-v1",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_6bc9bd6_gptoss20b_prompt-v2.json",
+      "config": "groq:openai/gpt-oss-20b:prompt-v2",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_8ef2c01_gptoss120b_run2_rate-limited.json",
+      "config": "groq:openai/gpt-oss-120b:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_8ef2c01_gptoss20b_run2_rate-limited.json",
+      "config": "groq:openai/gpt-oss-20b:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_91541e3.json",
+      "config": "none",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_91541e3.json",
+      "config": "mock:mock-keyword-rules-v1:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_91541e3_gptoss120b.json",
+      "config": "groq:openai/gpt-oss-120b:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_91541e3_gptoss20b.json",
+      "config": "groq:openai/gpt-oss-20b:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_b165cc4_gptoss120b_run1_stage-gated-off.json",
+      "config": "groq:openai/gpt-oss-120b:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-14_b165cc4_gptoss20b_run1_stage-gated-off.json",
+      "config": "groq:openai/gpt-oss-20b:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-18_1027a68.json",
+      "config": "none",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    },
+    {
+      "report": "compliance_2026-11-18_1027a68.json",
+      "config": "mock:mock-keyword-rules-v1:prompt-vNone",
+      "false_approval": {
+        "k": 0,
+        "n": 12,
+        "wilson95": [
+          0.0,
+          0.243
+        ]
+      },
+      "false_clean_any_issue": {
+        "k": 0,
+        "n": 29,
+        "wilson95": [
+          0.0,
+          0.117
+        ]
+      }
+    }
+  ]
+}

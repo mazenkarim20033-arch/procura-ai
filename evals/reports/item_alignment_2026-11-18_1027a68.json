@@ -1,0 +1,313 @@
+{
+  "run_date": "2026-11-18",
+  "git_sha": "1027a68",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "pairs": 224,
+  "positives_min_median_max": [
+    0.742,
+    0.927,
+    0.985
+  ],
+  "negatives_min_median_max": [
+    -0.117,
+    0.088,
+    0.557
+  ],
+  "dev_f1_plateau": [
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7
+  ],
+  "chosen_threshold": 0.6,
+  "at_chosen": {
+    "dev": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 25,
+      "fp": 0,
+      "fn": 0
+    },
+    "test": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 17,
+      "fp": 0,
+      "fn": 0
+    }
+  },
+  "sweep": [
+    {
+      "threshold": 0.3,
+      "dev": {
+        "precision": 0.6944,
+        "recall": 1.0,
+        "f1": 0.8197,
+        "tp": 25,
+        "fp": 11,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.85,
+        "recall": 1.0,
+        "f1": 0.9189,
+        "tp": 17,
+        "fp": 3,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.35,
+      "dev": {
+        "precision": 0.8065,
+        "recall": 1.0,
+        "f1": 0.8929,
+        "tp": 25,
+        "fp": 6,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.8947,
+        "recall": 1.0,
+        "f1": 0.9444,
+        "tp": 17,
+        "fp": 2,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.4,
+      "dev": {
+        "precision": 0.8621,
+        "recall": 1.0,
+        "f1": 0.9259,
+        "tp": 25,
+        "fp": 4,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.8947,
+        "recall": 1.0,
+        "f1": 0.9444,
+        "tp": 17,
+        "fp": 2,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.45,
+      "dev": {
+        "precision": 0.9615,
+        "recall": 1.0,
+        "f1": 0.9804,
+        "tp": 25,
+        "fp": 1,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.9444,
+        "recall": 1.0,
+        "f1": 0.9714,
+        "tp": 17,
+        "fp": 1,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.5,
+      "dev": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 25,
+        "fp": 0,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.9444,
+        "recall": 1.0,
+        "f1": 0.9714,
+        "tp": 17,
+        "fp": 1,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.55,
+      "dev": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 25,
+        "fp": 0,
+        "fn": 0
+      },
+      "test": {
+        "precision": 0.9444,
+        "recall": 1.0,
+        "f1": 0.9714,
+        "tp": 17,
+        "fp": 1,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.6,
+      "dev": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 25,
+        "fp": 0,
+        "fn": 0
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 17,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.65,
+      "dev": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 25,
+        "fp": 0,
+        "fn": 0
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 17,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.7,
+      "dev": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 25,
+        "fp": 0,
+        "fn": 0
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 17,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.75,
+      "dev": {
+        "precision": 1.0,
+        "recall": 0.92,
+        "f1": 0.9583,
+        "tp": 23,
+        "fp": 0,
+        "fn": 2
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 17,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    {
+      "threshold": 0.8,
+      "dev": {
+        "precision": 1.0,
+        "recall": 0.88,
+        "f1": 0.9362,
+        "tp": 22,
+        "fp": 0,
+        "fn": 3
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 0.8235,
+        "f1": 0.9032,
+        "tp": 14,
+        "fp": 0,
+        "fn": 3
+      }
+    },
+    {
+      "threshold": 0.85,
+      "dev": {
+        "precision": 1.0,
+        "recall": 0.76,
+        "f1": 0.8636,
+        "tp": 19,
+        "fp": 0,
+        "fn": 6
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 0.8235,
+        "f1": 0.9032,
+        "tp": 14,
+        "fp": 0,
+        "fn": 3
+      }
+    },
+    {
+      "threshold": 0.9,
+      "dev": {
+        "precision": 1.0,
+        "recall": 0.64,
+        "f1": 0.7805,
+        "tp": 16,
+        "fp": 0,
+        "fn": 9
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 0.5294,
+        "f1": 0.6923,
+        "tp": 9,
+        "fp": 0,
+        "fn": 8
+      }
+    },
+    {
+      "threshold": 0.95,
+      "dev": {
+        "precision": 1.0,
+        "recall": 0.36,
+        "f1": 0.5294,
+        "tp": 9,
+        "fp": 0,
+        "fn": 16
+      },
+      "test": {
+        "precision": 1.0,
+        "recall": 0.3529,
+        "f1": 0.5217,
+        "tp": 6,
+        "fp": 0,
+        "fn": 11
+      }
+    }
+  ],
+  "caveats": [
+    "Hand-written paraphrases of 14 invented catalogue items; real quotation wording is messier."
+  ]
+}

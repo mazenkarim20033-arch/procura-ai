@@ -1,6 +1,6 @@
 # Procura AI — Enterprise Procurement Intelligence Platform
 
-> **Status: milestones 1-11 done (backend, evaluation harness and web UI); 12-14 (final evaluation write-up, deployment, case study) are pending.** See [docs/ROADMAP.md](docs/ROADMAP.md).
+> **Status: milestones 1-11 done (backend, evaluation harness and web UI), 12 partly done (see docs/BENCHMARKS.md); 13-14 (deployment, case study) are pending.** See [docs/ROADMAP.md](docs/ROADMAP.md).
 > All data in this project is **synthetic**. Nothing here is connected to a real company or supplier. Sign-in is a demo persona picker, not real authentication.
 
 Procura AI helps procurement teams process purchase requests against company policy. It extracts structured data from documents, retrieves the relevant policy clauses, evaluates the request with deterministic rules plus an LLM, and produces an explainable, evidence-backed assessment. **A human procurement officer always makes the final decision. The AI never approves a purchase.**

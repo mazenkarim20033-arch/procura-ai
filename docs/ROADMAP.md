@@ -15,7 +15,7 @@ Each milestone ends with: tests run, functionality verified, weaknesses noted, d
 | 9 | Human approval workflow | Decisions, finding reviews, info requests, history | State-machine tests; approve only via decision  Status: done (rules unit-tested, workflow tested against the live database). |
 | 10 | Analytics & audit | Aggregations, audit viewer, chain verification | Numbers match DB; chain verify test  Status: done (live-DB tested). |
 | 11 | Frontend | All 9 pages wired to API, dark design system, responsive | Every control functional; manual + Playwright smoke tests; screenshots  Status: done except Playwright e2e and screenshots (not done); 18 unit/component tests, manual browser checks at desktop and mobile widths; see frontend/README.md. |
-| 12 | Evaluation & benchmarking | Full dataset, runners, reports, ablations, N=3 LLM runs | Reports in `evals/reports`; BENCHMARKS.md generated |
+| 12 | Evaluation & benchmarking | Full dataset, runners, reports, ablations, N=3 LLM runs | Reports in `evals/reports`; BENCHMARKS.md generated  Status: partly done. All deterministic benchmarks re-run and reproduced at 1027a68; confidence intervals added; BENCHMARKS.md is hand-written from report files, not generated. NOT done: N=3 repeated LLM runs, latency/cost measurement (see the end of docs/BENCHMARKS.md). |
 | 13 | Hardening & deployment | CI, load/latency pass, free-tier deployment attempt, demo mode polish | Fresh-clone setup works in ≤5 commands; deployed demo or documented blockers |
 | 14 | Portfolio case study | Architecture diagram, results, screenshots, demo video script, limitations, future work | Page uses only measured numbers |
 

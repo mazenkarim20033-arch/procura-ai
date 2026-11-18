@@ -1,0 +1,264 @@
+{
+  "run_date": "2026-11-18",
+  "git_sha": "1027a68",
+  "dataset": {
+    "documents": 68,
+    "by_type": {
+      "contract": 6,
+      "invoice": 8,
+      "other": 4,
+      "policy": 6,
+      "purchase_request": 12,
+      "quotation": 32
+    },
+    "synthetic": true,
+    "template_matched": true
+  },
+  "classification": {
+    "accuracy": 1.0,
+    "confusion": {}
+  },
+  "field_exact_match": {
+    "contract.contract_no": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.currency": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.effective_date": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.end_date": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.payment_terms": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.total_value": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.vendor_address": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.vendor_country": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.vendor_email": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.vendor_name": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.vendor_phone": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "contract.vendor_tax_id": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "invoice.currency": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.due_date": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.invoice_date": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.invoice_no": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.po_reference": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.subtotal": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.tax": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.total": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.vendor_address": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.vendor_country": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.vendor_email": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.vendor_name": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.vendor_phone": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "invoice.vendor_tax_id": {
+      "accuracy": 1.0,
+      "n": 8
+    },
+    "policy.category": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "policy.code": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "policy.effective_date": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "policy.title": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "policy.version": {
+      "accuracy": 1.0,
+      "n": 6
+    },
+    "purchase_request.currency": {
+      "accuracy": 1.0,
+      "n": 12
+    },
+    "purchase_request.department": {
+      "accuracy": 1.0,
+      "n": 12
+    },
+    "purchase_request.justification": {
+      "accuracy": 1.0,
+      "n": 12
+    },
+    "purchase_request.request_date": {
+      "accuracy": 1.0,
+      "n": 12
+    },
+    "purchase_request.request_no": {
+      "accuracy": 1.0,
+      "n": 12
+    },
+    "purchase_request.requester": {
+      "accuracy": 1.0,
+      "n": 12
+    },
+    "purchase_request.supplier": {
+      "accuracy": 1.0,
+      "n": 12
+    },
+    "purchase_request.total": {
+      "accuracy": 1.0,
+      "n": 12
+    },
+    "quotation.currency": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.delivery_days": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.issue_date": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.payment_terms": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.quote_no": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.subtotal": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.tax": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.total": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.valid_until": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.vendor_address": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.vendor_country": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.vendor_email": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.vendor_name": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.vendor_phone": {
+      "accuracy": 1.0,
+      "n": 32
+    },
+    "quotation.vendor_tax_id": {
+      "accuracy": 1.0,
+      "n": 32
+    }
+  },
+  "line_items": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 106,
+    "fp": 0,
+    "fn": 0
+  },
+  "validation": {
+    "docs_with_exact_issue_set": 1.0,
+    "issue_precision": 1.0,
+    "issue_recall": 1.0,
+    "f1": 1.0
+  },
+  "policy_chunking": {
+    "clauses": 45,
+    "clause_recall": 1.0,
+    "chunks": 45
+  },
+  "failures": [],
+  "caveats": [
+    "Synthetic data generated from the same templates the rule-based extractor targets: in-distribution only.",
+    "No scanned/OCR documents are in this set; OCR is unverified.",
+    "Field confidence scores are not produced by rule-based extraction."
+  ]
+}
