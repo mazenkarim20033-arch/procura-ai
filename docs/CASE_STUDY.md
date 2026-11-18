@@ -4,7 +4,7 @@ Procura AI helps a procurement team review purchase requests against company pol
 
 This write-up is about the engineering choices and what was actually measured. Every number comes from a report file in `evals/reports/` or from a count taken on the repository (sources are named). Where something is weak, untested or not built, it says so.
 
-> **Status in one paragraph.** Built and tested: backend (FastAPI, Postgres with pgvector), the AI pipeline, the web UI and an evaluation harness. **Not done:** nothing is deployed to the public internet; the demo data was assessed by a keyword-based *mock* AI, with a real model (Groq) only used in the benchmarks; there is no real authentication (identities are demo personas); there are no scanned documents, no real company data, no Arabic and no browser end-to-end test suite. All data is synthetic.
+> **Status in one paragraph.** Built and tested: backend (FastAPI, Postgres with pgvector), the AI pipeline, the web UI and an evaluation harness. **Live demo:** https://mazenkarim20033-arch.github.io/procura-ai/, a recorded read-only snapshot with no backend. **Not done:** no live backend is deployed; the demo data was assessed by a keyword-based *mock* AI, with a real model (Groq) only used in the benchmarks; there is no real authentication (identities are demo personas); there are no scanned documents, no real company data, no Arabic and no browser end-to-end test suite. All data is synthetic.
 
 ## 1. The problem and the rule that shaped everything
 
@@ -105,14 +105,14 @@ Read the perfect scores with suspicion. The rule benchmark is a consistency chec
 - **The AI quality evidence is thin.** One model family, 40 scenarios written by me, three repeats of one configuration. The deterministic rules have no gold labels from anyone else.
 - **Heuristic risk scores.** Risk bands and "confidence" are documented heuristics, not calibrated probabilities. The similarity threshold given to the model stage was not calibrated.
 - **Currencies.** There is no exchange-rate source, so amount rules apply to USD only and other currencies are reported as a limitation, not converted.
-- **No real authentication.** Roles are demo headers. A public instance must run in read-only mode (implemented and tested); a deployment has not been attempted.
+- **No real authentication.** Roles are demo headers. A public instance must run in read-only mode (implemented and tested); the public demo avoids the question by being a recorded snapshot with no backend, and a live backend deployment has not been attempted.
 - **Supplier checks use only uploaded documents.** There is no external verification, price data or sanctions screening, and the interface says so.
 - **Not load-tested,** and the dashboard queries run sequentially against a remote database (about ten seconds on a first load from a laptop).
 - **No end-to-end browser tests.** The final "Approve" click was never driven in a browser; the flow is covered by the live-database backend tests and component tests.
 
 ## 8. What I would do next
 
-1. Deploy a read-only public demo (configs exist, untested) with a dedicated database that holds only demo data.
+1. Deploy a live read-only backend (a Render config exists, untested) with a dedicated database that holds only demo data, so policy search and fresh assessments work on the public demo.
 2. Replace demo personas with real authentication and database roles.
 3. Get independent labels: have another person write scenarios and judge findings, then measure agreement.
 4. Test on scanned and messy documents, and add a fallback extractor for layouts the rules do not handle.
@@ -126,7 +126,7 @@ Read the perfect scores with suspicion. The rule benchmark is a consistency chec
 3. **The decision panel (45 s).** Try to approve with no reasoning (the button stays disabled). Switch the persona to a requester to show it cannot decide. Explain the override each confirmed violation requires.
 4. **The invariant (30 s).** "Even if this interface lied, the database refuses to mark a request approved without a human decision, and a test scans the code for any other way."
 5. **Audit log (15 s).** Click "Verify the chain" to show the tamper-evident log.
-6. **Close (10 s).** "Everything is synthetic, nothing is deployed yet, and the write-up lists what I did not measure."
+6. **Close (10 s).** "Everything is synthetic, this public demo is a recorded snapshot rather than a live backend, and the write-up lists what I did not measure."
 
 ## 10. Reproduce it
 

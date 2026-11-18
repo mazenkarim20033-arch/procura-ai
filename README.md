@@ -1,6 +1,8 @@
 # Procura AI — Enterprise Procurement Intelligence Platform
 
-> **Status: milestones 1-11 done (backend, evaluation harness and web UI), 12 done except latency/cost (see docs/BENCHMARKS.md), 13 prepared but not deployed (see docs/DEPLOYMENT.md); 14 (case study) written: [docs/CASE_STUDY.md](docs/CASE_STUDY.md).** See [docs/ROADMAP.md](docs/ROADMAP.md).
+> **Status: milestones 1-11 done (backend, evaluation harness and web UI), 12 done except latency/cost (see docs/BENCHMARKS.md), 13 done except a live backend (a recorded demo is deployed, see docs/DEPLOYMENT.md); 14 (case study) written: [docs/CASE_STUDY.md](docs/CASE_STUDY.md).**
+>
+> **Live demo:** https://mazenkarim20033-arch.github.io/procura-ai/ is a recorded, read-only snapshot of the app over synthetic data, with the keyword-based mock AI. It has no backend, so creating requests, assessing, deciding and live policy search are off there; run the project locally for those. See [docs/ROADMAP.md](docs/ROADMAP.md).
 > All data in this project is **synthetic**. Nothing here is connected to a real company or supplier. Sign-in is a demo persona picker, not real authentication.
 
 Procura AI helps procurement teams process purchase requests against company policy. It extracts structured data from documents, retrieves the relevant policy clauses, evaluates the request with deterministic rules plus an LLM, and produces an explainable, evidence-backed assessment. **A human procurement officer always makes the final decision. The AI never approves a purchase.**
@@ -23,7 +25,7 @@ cd frontend && npm install && npm run dev              # http://localhost:5173
 
 On Windows, keep the project in a short path (for example `C:\Users\you\procura-ai`): a deeply nested folder can exceed the 260-character path limit and `pip install` then fails with "No such file or directory".
 
-The seed step is optional (without it the UI is empty) and `--scenarios` adds extra requests so every risk level appears. A public instance must set `READ_ONLY=true` (see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), which also records what is and is not deployed: nothing is deployed yet).
+The seed step is optional (without it the UI is empty) and `--scenarios` adds extra requests so every risk level appears. A public instance must set `READ_ONLY=true` (see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), which also records what is deployed: the snapshot demo only, no live backend).
 
 The AI runs in **mock** mode unless `LLM_PROVIDER=groq` and `LLM_API_KEY` are set in `backend/.env`. Mock output is labelled as mock everywhere in the UI. The seed scripts refuse to run twice, and the audit log is append-only by design, so use a fresh database if you need a clean slate.
 
