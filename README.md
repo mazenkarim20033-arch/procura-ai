@@ -21,6 +21,8 @@ cd backend && python -m venv .venv && .venv/Scripts/python -m pip install -e ".[
 cd frontend && npm install && npm run dev              # http://localhost:5173
 ```
 
+On Windows, keep the project in a short path (for example `C:\Users\you\procura-ai`): a deeply nested folder can exceed the 260-character path limit and `pip install` then fails with "No such file or directory".
+
 The seed step is optional (without it the UI is empty) and `--scenarios` adds extra requests so every risk level appears. A public instance must set `READ_ONLY=true` (see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), which also records what is and is not deployed: nothing is deployed yet).
 
 The AI runs in **mock** mode unless `LLM_PROVIDER=groq` and `LLM_API_KEY` are set in `backend/.env`. Mock output is labelled as mock everywhere in the UI. The seed scripts refuse to run twice, and the audit log is append-only by design, so use a fresh database if you need a clean slate.
