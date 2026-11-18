@@ -16,10 +16,13 @@ from app.api import (
     vendors,
 )
 from app.config import get_settings
-from app.errors import install_error_handlers
+from app.errors import _problem, install_error_handlers
 from app.logging import configure_logging, request_id_var
 
 log = logging.getLogger("procura")
+
+READ_METHODS = {"GET", "HEAD", "OPTIONS"}
+READ_ONLY_ALLOWED_POSTS = {"/policies/search"}
 
 
 def create_app() -> FastAPI:
@@ -32,6 +35,13 @@ def create_app() -> FastAPI:
         allow_methods=["*"], allow_headers=["*"],
     )
     install_error_handlers(app)
+
+    @app.middleware("http")
+    async def read_only_guard(request: Request, call_next):
+        if settings.read_only and request.method not in READ_METHODS and request.url.path not in READ_ONLY_ALLOWED_POSTS:
+            return _problem(403, "read_only_demo", "This public demo is read-only. Run Procura locally to create requests, "
+                            "upload documents or record decisions.")
+        return await call_next(request)
 
     @app.middleware("http")
     async def request_context(request: Request, call_next):

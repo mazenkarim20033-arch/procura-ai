@@ -40,6 +40,10 @@ class Settings(BaseSettings):
     llm_stage_min_similarity: float = 0.30
 
     cors_origins: list[str] = ["http://localhost:5173"]
+    # Public-demo switch. Identities are demo headers, not real authentication, so an internet-facing instance must
+    # not accept writes: with READ_ONLY=true every request that is not GET/HEAD/OPTIONS is refused (403), except
+    # POST /policies/search, which only reads policies (it writes one retrieval-log row).
+    read_only: bool = False
 
     @field_validator("database_url")
     @classmethod

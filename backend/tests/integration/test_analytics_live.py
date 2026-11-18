@@ -107,7 +107,7 @@ def test_analytics_match_the_data_created_by_the_workflow(db, client):
     before = overview(client)
     before_clean = overview(client, exclude_mock=True)
 
-    r1, r2, r3, r4, _r5 = (mk(client, requester=f"Person {i}") for i in range(5))
+    r1, _r2, _r3, r4, _r5 = (mk(client, requester=f"Person {i}") for i in range(5))
     r2_blank = mk(client, justification="", requester="Person 6")
     r3_blank = mk(client, justification="", requester="Person 7")
     a1, a4 = assess(client, r1), assess(client, r4)
@@ -119,7 +119,7 @@ def test_analytics_match_the_data_created_by_the_workflow(db, client):
     decide(client, r2_blank, "reject", a2)  # agrees with an AI that found issues
     fid = next(f["id"] for f in a3["findings"] if f["category"] == "confirmed_violation")
     decide(client, r3_blank, "approve", a3, [{"finding_id": fid, "verdict": "disagree", "note": "Reason supplied by phone and logged"}])
-    assert (r2, r3, a4["id"])  # r2/r3 were left unassessed on purpose: they stay in the queue
+    assert a4["id"]  # r2 and r3 stay unassessed on purpose, so they remain in the review queue
 
     after = overview(client)
     d = lambda *path: bucket(after, *path) - bucket(before, *path)

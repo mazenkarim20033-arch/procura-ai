@@ -124,13 +124,13 @@ def seed_scenarios(s: Session, embedder, provider) -> None:
         submitted = today - timedelta(days=(n - i) * 3 + 1)
         delta = (submitted - date.fromisoformat(r["submitted_on"])).days
 
-        def shift(d):
+        def shift(d, delta=delta):
             return (date.fromisoformat(d) + timedelta(days=delta)).isoformat() if d else None
 
         names = {"Orion Tech Supplies Ltd.": APPROVED[i % 7], "Summit Networks Inc.": APPROVED[(i + 1) % 7],
                  "Vertex Industrial Tools LLC": APPROVED[(i + 2) % 7], "Nile Cloud Services": APPROVED[(i + 3) % 7]}
 
-        def rename(v):
+        def rename(v, names=names):
             return names.get(v, v) if v else v
 
         total = Decimal(r["total_amount"]) if r["total_amount"] else None
@@ -188,7 +188,7 @@ def seed_scenarios(s: Session, embedder, provider) -> None:
             dec_svc.record_decision(s, req.id, body, user)
             s.commit()
             print(f"decision {action}: {req.request_no}")
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - a demo seed reports and continues
             s.rollback()
             print(f"skipped {action} for {req.request_no}: {exc}")
 
@@ -256,7 +256,7 @@ def main() -> None:
 
         # A few human decisions, chosen from the assessment results so the story is coherent.
         counts = {"approve": 0, "reject": 0, "request_info": 0}
-        for deal, a in sorted(assessed.items()):
+        for _deal, a in sorted(assessed.items()):
             req = s.get(PurchaseRequest, a.request_id)
             confirmed = [f for f in dec_svc._assessment_view(s, a).findings if f.category == "confirmed_violation"]
             action = None
@@ -275,7 +275,7 @@ def main() -> None:
                 s.commit()
                 counts[action] += 1
                 print(f"decision {action}: {req.request_no}")
-            except Exception as exc:  # a rule refused it (e.g. approval level); leave the request pending
+            except Exception as exc:  # noqa: BLE001 - a rule refused it (e.g. approval level); leave the request pending
                 s.rollback()
                 print(f"skipped {action} for {req.request_no}: {exc}")
         print("done.", counts)

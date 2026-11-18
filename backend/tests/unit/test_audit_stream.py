@@ -18,7 +18,7 @@ def chain(n: int):
 def test_streaming_verification_in_batches_equals_full_verification():
     rows = chain(7)
     assert audit.verify_chain(rows) == (True, None)
-    ok, bad, head = audit._verify(rows[:3], audit.GENESIS_HASH)
+    ok, _bad, head = audit._verify(rows[:3], audit.GENESIS_HASH)
     assert ok and head == rows[2].hash
     assert audit.verify_chain(rows[3:], prev_hash=head) == (True, None)  # second batch continues from the first
     assert audit.verify_chain(rows[3:]) == (False, 4)  # without the carried hash the link is (correctly) broken

@@ -149,7 +149,7 @@ export interface VendorDetail {
 export interface AuditEntry { id: number; ts: string; actor_type: string; actor: string | null; action: string; entity_type: string; entity_id: string | null; payload: Record<string, unknown>; hash: string; prev_hash: string }
 export interface AuditVerify { ok: boolean; entries_checked: number; first_bad_id: number | null; head_hash: string | null; verified_at: string; scope?: string }
 
-export interface Health { status: string; checks: { database: { ok: boolean }; pgvector: { ok: boolean }; embedding: { provider: string; model: string; loaded: boolean | null }; llm: { provider: string; mock: boolean } } }
+export interface Health { status: string; read_only?: boolean; checks: { database: { ok: boolean }; pgvector: { ok: boolean }; embedding: { provider: string; model: string; loaded: boolean | null }; llm: { provider: string; mock: boolean } } }
 
 type Counts = Record<string, number>;
 export interface Overview {

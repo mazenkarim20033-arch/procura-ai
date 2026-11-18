@@ -77,6 +77,13 @@ Milestone 11 (demo data and UI support):
 - The review queue's `age_days` is measured from the audit `request.created` time, and the assessment summary is plain English ("not a decision ... a procurement officer must review and decide").
 - Integration tests now empty every table inside their own rolled-back transaction (`tests/integration/helpers.py`), so they pass on a seeded database and never touch real data.
 
+Milestone 13 (hardening) - implemented:
+
+- `READ_ONLY=true` refuses every non-read request (403 `read_only_demo`), for any public instance; see docs/DEPLOYMENT.md. Unit-tested.
+- Lint is clean across `backend/` and `evals/`; this surfaced a test assertion that could never fail (`assert (a, b, c)`), now fixed.
+- `pymupdf` is pinned below 2.x to avoid nine unneeded dependencies; `pyproject.toml` now declares its package discovery and the runtime dependencies (fastembed, httpx, numpy) that were previously missing, so a fresh install works.
+- GitHub Actions workflow in `.github/workflows/ci.yml` (lint, unit tests, frontend typecheck/test/build). Not yet run on GitHub.
+
 ## Setup
 
 ```bash

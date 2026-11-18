@@ -41,10 +41,9 @@ def ready(response: Response) -> dict:
     emb = get_settings()
     checks["embedding"] = {"ok": True, "provider": emb.embedding_provider, "model": emb.embedding_model,
                            "loaded": getattr(_peek_embedder(), "loaded", None)}
-    # Honest status: the real LLM provider is wired in a later milestone.
     checks["llm"] = {"ok": True, "provider": settings.llm_provider, "mock": settings.is_mock_ai}
 
     healthy = all(c["ok"] for c in checks.values())
     if not healthy:
         response.status_code = 503
-    return {"status": "ok" if healthy else "degraded", "checks": checks}
+    return {"status": "ok" if healthy else "degraded", "read_only": settings.read_only, "checks": checks}

@@ -1,6 +1,6 @@
 # Procura AI — Enterprise Procurement Intelligence Platform
 
-> **Status: milestones 1-11 done (backend, evaluation harness and web UI), 12 partly done (see docs/BENCHMARKS.md); 13-14 (deployment, case study) are pending.** See [docs/ROADMAP.md](docs/ROADMAP.md).
+> **Status: milestones 1-11 done (backend, evaluation harness and web UI), 12 done except latency/cost (see docs/BENCHMARKS.md), 13 prepared but not deployed (see docs/DEPLOYMENT.md); 14 (case study) is pending.** See [docs/ROADMAP.md](docs/ROADMAP.md).
 > All data in this project is **synthetic**. Nothing here is connected to a real company or supplier. Sign-in is a demo persona picker, not real authentication.
 
 Procura AI helps procurement teams process purchase requests against company policy. It extracts structured data from documents, retrieves the relevant policy clauses, evaluates the request with deterministic rules plus an LLM, and produces an explainable, evidence-backed assessment. **A human procurement officer always makes the final decision. The AI never approves a purchase.**
@@ -9,21 +9,19 @@ Procura AI helps procurement teams process purchase requests against company pol
 
 Needs Python 3.12, Node 20+ and a Postgres database with pgvector (the project uses a free Supabase project; no Docker).
 
+One manual step first: copy `backend/.env.example` to `backend/.env` and put your database connection string in `DATABASE_URL`. Then, from the repository root, four command lines in two terminals:
+
 ```bash
-# 1. Backend (see backend/README.md for details): set DATABASE_URL in backend/.env first
-cd backend
-python -m venv .venv
-.venv/Scripts/python -m pip install -e ".[dev]"      # use .venv/bin/python on macOS/Linux
-.venv/Scripts/python -m alembic upgrade head
-.venv/Scripts/python scripts/seed_demo.py              # base demo data (policies, 12 requests, decisions)
-.venv/Scripts/python scripts/seed_demo.py --scenarios  # optional: extra requests so every risk level appears
+# terminal 1 (macOS/Linux: use .venv/bin/python)
+cd backend && python -m venv .venv && .venv/Scripts/python -m pip install -e ".[dev]"
+.venv/Scripts/python -m alembic upgrade head && .venv/Scripts/python scripts/seed_demo.py --yes && .venv/Scripts/python scripts/seed_demo.py --scenarios --yes
 .venv/Scripts/python -m uvicorn app.main:app --port 8000
 
-# 2. Frontend (another terminal)
-cd frontend
-npm install
-npm run dev                                            # http://localhost:5173
+# terminal 2
+cd frontend && npm install && npm run dev              # http://localhost:5173
 ```
+
+The seed step is optional (without it the UI is empty) and `--scenarios` adds extra requests so every risk level appears. A public instance must set `READ_ONLY=true` (see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md), which also records what is and is not deployed: nothing is deployed yet).
 
 The AI runs in **mock** mode unless `LLM_PROVIDER=groq` and `LLM_API_KEY` are set in `backend/.env`. Mock output is labelled as mock everywhere in the UI. The seed scripts refuse to run twice, and the audit log is append-only by design, so use a fresh database if you need a clean slate.
 
@@ -50,6 +48,7 @@ The AI runs in **mock** mode unless `LLM_PROVIDER=groq` and `LLM_API_KEY` are se
 | [docs/EVALUATION.md](docs/EVALUATION.md) | Evaluation dataset and benchmarking strategy |
 | [docs/COST_AND_RISKS.md](docs/COST_AND_RISKS.md) | Cost analysis (what runs free) and risk register |
 | [docs/ROADMAP.md](docs/ROADMAP.md) | Milestones with exit criteria |
+| [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) | Deployment status, read-only public mode, measured memory, blockers |
 
 ## Principles
 

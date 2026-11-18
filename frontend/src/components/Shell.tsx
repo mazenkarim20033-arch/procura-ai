@@ -95,6 +95,7 @@ export function Shell() {
   const id = useIdentity();
   const loc = useLocation();
   const queue = useQueue();
+  const readOnly = useHealth().data?.read_only === true;
   const waiting = queue.data?.length;
 
   const nav = (
@@ -130,7 +131,7 @@ export function Shell() {
             <Wordmark hideTextOnXs />
           </div>
           <div className="hidden items-center gap-2 text-[13px] text-faint lg:flex"><Activity className="h-3.5 w-3.5" aria-hidden />Synthetic demo data. Every decision is made by a person.</div>
-          <div className="flex items-center gap-3"><span className="hidden text-[13px] text-muted sm:inline">Acting as</span><IdentityPicker /></div>
+          <div className="flex items-center gap-3">{readOnly && <Badge tone="amber" title="Creating requests, uploading documents and recording decisions are disabled on this public demo">Read-only</Badge>}<span className="hidden text-[13px] text-muted sm:inline">Acting as</span><IdentityPicker /></div>
         </header>
 
         <main key={loc.pathname} className="mx-auto w-full max-w-[1280px] px-4 py-8 lg:px-8"><Outlet /></main>
