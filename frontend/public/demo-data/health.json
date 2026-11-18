@@ -1,0 +1,1 @@
+{"status":"ok","read_only":true,"checks":{"database":{"ok":true},"pgvector":{"ok":true},"embedding":{"ok":true,"provider":"fastembed","model":"sentence-transformers/all-MiniLM-L6-v2","loaded":null},"llm":{"provider":"mock","mock":true}},"snapshot":true,"snapshot_at":"2026-11-18T20:18:00.231993+00:00"}

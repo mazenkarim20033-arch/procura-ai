@@ -40,7 +40,7 @@ function AiStatus() {
     <div className="space-y-1.5 text-[12.5px]">
       <div className="flex items-center gap-2 text-muted">
         <span className={cn("h-1.5 w-1.5 rounded-full", healthy ? "bg-ok" : "bg-danger")} aria-hidden />
-        {healthy ? "API connected" : "API degraded"}
+        {data.snapshot ? "Recorded snapshot" : healthy ? "API connected" : "API degraded"}
       </div>
       <div className="flex items-center gap-2">
         {llm.mock ? <MockBadge /> : <Badge tone="quiet">Live model</Badge>}
@@ -95,7 +95,9 @@ export function Shell() {
   const id = useIdentity();
   const loc = useLocation();
   const queue = useQueue();
-  const readOnly = useHealth().data?.read_only === true;
+  const health = useHealth().data;
+  const readOnly = health?.read_only === true;
+  const snapshot = health?.snapshot === true;
   const waiting = queue.data?.length;
 
   const nav = (
@@ -131,7 +133,7 @@ export function Shell() {
             <Wordmark hideTextOnXs />
           </div>
           <div className="hidden items-center gap-2 text-[13px] text-faint lg:flex"><Activity className="h-3.5 w-3.5" aria-hidden />Synthetic demo data. Every decision is made by a person.</div>
-          <div className="flex items-center gap-3">{readOnly && <Badge tone="amber" title="Creating requests, uploading documents and recording decisions are disabled on this public demo">Read-only</Badge>}<span className="hidden text-[13px] text-muted sm:inline">Acting as</span><IdentityPicker /></div>
+          <div className="flex items-center gap-3">{readOnly && <Badge tone="amber" title={snapshot ? "A recorded snapshot of the demo: nothing can be created, assessed or decided here, and live policy search is off" : "Creating requests, uploading documents and recording decisions are disabled on this public demo"}>{snapshot ? "Snapshot" : "Read-only"}</Badge>}<span className="hidden text-[13px] text-muted sm:inline">Acting as</span><IdentityPicker /></div>
         </header>
 
         <main key={loc.pathname} className="mx-auto w-full max-w-[1280px] px-4 py-8 lg:px-8"><Outlet /></main>

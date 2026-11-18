@@ -1,13 +1,10 @@
+import { ApiError } from "./errors";
 import { getIdentity } from "./identity";
+import { STATIC_DEMO, snapshotGet, snapshotWriteError } from "./snapshot";
 
 export const API_URL: string = (import.meta.env.VITE_API_URL as string | undefined) ?? "http://localhost:8000";
 
-/** RFC 7807 problem+json errors from the backend, with the server's own explanation kept intact. */
-export class ApiError extends Error {
-  constructor(public status: number, public title: string, public detail: string, public extra?: unknown) {
-    super(detail || title);
-  }
-}
+export { ApiError };
 
 function headers(json: boolean): HeadersInit {
   const id = getIdentity();
@@ -45,11 +42,13 @@ async function call<T>(input: string, init: RequestInit): Promise<T> {
 
 export const api = {
   get: <T>(path: string, params?: Record<string, string | number | boolean | undefined | null>) =>
-    call<T>(url(path, params), { headers: headers(false) }),
+    STATIC_DEMO ? snapshotGet<T>(path, params) : call<T>(url(path, params), { headers: headers(false) }),
   post: <T>(path: string, body?: unknown) =>
-    call<T>(url(path), { method: "POST", headers: headers(true), body: body === undefined ? undefined : JSON.stringify(body) }),
-  put: <T>(path: string, body: unknown) => call<T>(url(path), { method: "PUT", headers: headers(true), body: JSON.stringify(body) }),
+    STATIC_DEMO ? Promise.reject(snapshotWriteError(path)) : call<T>(url(path), { method: "POST", headers: headers(true), body: body === undefined ? undefined : JSON.stringify(body) }),
+  put: <T>(path: string, body: unknown) =>
+    STATIC_DEMO ? Promise.reject(snapshotWriteError(path)) : call<T>(url(path), { method: "PUT", headers: headers(true), body: JSON.stringify(body) }),
   upload: <T>(path: string, file: File) => {
+    if (STATIC_DEMO) return Promise.reject(snapshotWriteError(path));
     const form = new FormData();
     form.append("file", file);
     return call<T>(url(path), { method: "POST", headers: headers(false), body: form });
@@ -147,9 +146,9 @@ export interface VendorDetail {
 }
 
 export interface AuditEntry { id: number; ts: string; actor_type: string; actor: string | null; action: string; entity_type: string; entity_id: string | null; payload: Record<string, unknown>; hash: string; prev_hash: string }
-export interface AuditVerify { ok: boolean; entries_checked: number; first_bad_id: number | null; head_hash: string | null; verified_at: string; scope?: string }
+export interface AuditVerify { snapshot?: boolean; ok: boolean; entries_checked: number; first_bad_id: number | null; head_hash: string | null; verified_at: string; scope?: string }
 
-export interface Health { status: string; read_only?: boolean; checks: { database: { ok: boolean }; pgvector: { ok: boolean }; embedding: { provider: string; model: string; loaded: boolean | null }; llm: { provider: string; mock: boolean } } }
+export interface Health { status: string; read_only?: boolean; snapshot?: boolean; snapshot_at?: string; checks: { database: { ok: boolean }; pgvector: { ok: boolean }; embedding: { provider: string; model: string; loaded: boolean | null }; llm: { provider: string; mock: boolean } } }
 
 type Counts = Record<string, number>;
 export interface Overview {

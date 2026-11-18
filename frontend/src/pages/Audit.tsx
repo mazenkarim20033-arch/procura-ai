@@ -38,9 +38,9 @@ export function Audit() {
         <div role="status" className={cn("reveal mb-5 flex items-start gap-3 rounded-panel border p-4 text-[13.5px]", v.ok ? "border-ok/30 bg-ok/5" : "border-danger/40 bg-danger/10")}>
           {v.ok ? <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-ok" /> : <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-danger" />}
           <div className="min-w-0">
-            <div className="font-medium">{v.ok ? `The chain is intact: ${v.entries_checked} entries recomputed and matched.` : `The chain is broken at entry ${v.first_bad_id}.`}</div>
+            <div className="font-medium">{v.ok ? (v.snapshot ? `The chain was intact when this snapshot was recorded: ${v.entries_checked} entries recomputed and matched at that time.` : `The chain is intact: ${v.entries_checked} entries recomputed and matched.`) : `The chain is broken at entry ${v.first_bad_id}.`}</div>
             {v.ok && v.head_hash && <div className="mt-1 break-all text-muted">Latest hash <span className="font-mono text-[12px]">{v.head_hash}</span></div>}
-            {v.scope && <p className="mt-1 text-[12.5px] text-faint">{v.scope}</p>}
+            {v.snapshot ? <p className="mt-1 text-[12.5px] text-faint">Recorded {dateTime(v.verified_at)}. The running app recomputes the whole chain every time you click; this recorded demo replays that saved result.</p> : v.scope && <p className="mt-1 text-[12.5px] text-faint">{v.scope}</p>}
           </div>
         </div>
       )}
